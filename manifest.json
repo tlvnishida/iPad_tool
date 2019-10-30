@@ -1,12 +1,12 @@
 {
-  "name": "iPadテスト",
-  "short_name": "iPadテスト",
+  "name": "iPadTest",
+  "short_name": "iPadTest",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "display": "standalone",
   "orientation": "landscape",
   "Scope": "/",
-  "start_url": "/",
+  "start_url": "/index.html",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

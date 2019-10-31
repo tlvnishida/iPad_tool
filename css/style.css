@@ -1,0 +1,99 @@
+@charset "utf-8"; 
+
+/* CSSリセット */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,
+pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,
+strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
+caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,
+figure,footer,header,hgroup,menu,nav,section,summary,time,mark,
+audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;
+vertical-align:baseline;background:transparent;font-weight:normal;}
+body{line-height:1}article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{display:block}
+ul{list-style:none}blockquote,q{quotes:none}blockquote:before,
+blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;
+font-size:100%;vertical-align:baseline;background:transparent}
+del{text-decoration:line-through}abbr[title],dfn[title]
+{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;
+margin:1em 0;padding:0}input,select{vertical-align:middle}
+
+#wrapper{
+     width: 2224px;
+	height: 1668px;
+     margin: 0 auto;
+    position: relative;
+}
+header{
+	display: block;
+	position: fixed;
+	z-index: 4;
+}
+
+footer{
+	display: block;
+	position: fixed;
+	z-index: 4;
+	margin-top: 1460px;
+}
+
+nav ul{
+    padding: 0px;
+}
+
+nav li{
+          display: inline;
+	position: absolute;
+          margin-left: 0px;
+	z-index: 3;
+     }
+     nav a{
+          color: #666;
+          text-decoration: none;
+     }
+     nav a:hover{color: #69c;}
+
+#popup,#action,#info,#background,#main{
+    display: flex;
+    position: absolute;
+    margin-top: 0px;
+}
+
+#nav2{
+	margin-left: 700px;
+}
+#nav3{
+	margin-left: 1488px;
+}
+
+#main{
+	z-index: 2;
+	margin-top: 300px;
+}
+
+#background{
+	position: fixed;
+	z-index: 1;
+	margin: 0px;
+	padding: 0px;
+}
+
+#popup{
+	z-index: 3;
+    margin-top: 880px;
+    margin-left: 1100px;
+    
+}
+
+#action{
+	z-index: 3;
+	margin-left: 50px;
+	margin-top: 1400px;
+}
+
+#info{
+	z-index: 3;
+	margin-left: 1800px;
+	margin-top: 1400px;
+}

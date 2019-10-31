@@ -1,0 +1,120 @@
+@charset "utf-8"; 
+@font-face {
+	font-family: "A1 Gothic R";
+	src: url(file:///Volumes/Elements/19_%E3%82%B5%E3%82%A4%E3%83%B3%E3%83%8F%E3%82%99%E3%83%AB%E3%82%BFiPad/html/asset/AP-OTF-A1GothicStd-Regular.otf);
+}
+
+/* CSSリセット */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,
+pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,
+strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
+caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,
+figure,footer,header,hgroup,menu,nav,section,summary,time,mark,
+audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;
+vertical-align:baseline;background:transparent;font-weight:normal;}
+body{line-height:1}article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{display:block}
+ul{list-style:none}blockquote,q{quotes:none}blockquote:before,
+blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;
+font-size:100%;vertical-align:baseline;background:transparent}
+del{text-decoration:line-through}abbr[title],dfn[title]
+{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;
+margin:1em 0;padding:0}input,select{vertical-align:middle}
+
+
+
+body {
+	font-family: "A1 Gothic R";
+}
+
+.tab_wrap{width:2224px; margin:80px auto;}
+input[type="radio"]{display:none;}
+.tab_area{font-size:0; margin:0px;}
+.tab_area label{width:730.5px; height: 100px; margin:0 2px; display:inline-block; padding:12px 0; color:#00429a; background:#cce1ee; text-align:center; font-size:50px; font-family: "A1 Gothic R"; cursor:pointer; transition:ease 0.2s opacity; transform: skewX(-20deg);}
+
+.tab_area label p{
+    margin-top: 25px;
+	transform: skewX(20deg);
+    font-family: "A1 Gothic R";
+}
+
+.tab1_label{
+    font-size: 20px;
+    font-family: "A1 Gothic R";
+}
+
+.tab1_label:before{
+	content: "";
+  position: absolute;
+  top: 0;
+  right: 96.9%;
+  width: 0;
+  height: 0;
+  border-bottom: 124px solid transparent;
+  border-left: 50px solid transparent;
+	transform: skewX(20deg);
+}
+
+.tab3_label:after{
+	content: "";
+  position: absolute;
+  top: 0;
+  left: 96.9%;
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-bottom: 124px solid transparent;
+	transform: skewX(20deg);
+}
+
+.panel_area{background:#ddd;}
+.tab_panel{width:100%; padding:80px 0; display:none;}
+.tab_panel p{font-size:14px; letter-spacing:1px; text-align:center;}
+
+#tab1:checked ~ .tab_area .tab1_label{background:#0068ac; color:#fff;}
+#tab1:checked ~ .tab_area .tab1_label::before{background:#0068ac; color:#fff;}
+#tab1:checked ~ .panel_area #panel1{display:block;}
+#tab1:checked ~ .tab_area .tab3_label::after{background:#cce1ee; color:#fff;}
+#tab2:checked ~ .tab_area .tab2_label{background:#0068ac; color:#fff;}
+#tab2:checked ~ .panel_area #panel2{display:block;}
+#tab2:checked ~ .tab_area .tab1_label::before{background:#cce1ee; color:#fff;}
+#tab2:checked ~ .tab_area .tab3_label::after{background:#cce1ee; color:#fff;}
+#tab3:checked ~ .tab_area .tab3_label{background:#0068ac; color:#fff;}
+#tab3:checked ~ .panel_area #panel3{display:block;}
+#tab3:checked ~ .tab_area .tab1_label::before{background:#cce1ee; color:#fff;}
+#tab3:checked ~ .tab_area .tab3_label::after{background:#0068ac; color:#fff;}
+
+
+
+
+
+
+
+#tab-box{
+     width: 2224px;
+	height: 1668px;
+     margin: 0 auto;
+    position: relative;
+}
+
+li{
+          display: inline;
+	position: absolute;
+          margin-left: 0px;
+	z-index: 3;
+     }
+    
+
+
+#nav2{
+    display: inline;
+	position: absolute;
+	padding-left: 700px;
+}
+#nav3{
+    display: inline;
+	position: absolute;
+    padding-left: 1488px;
+}

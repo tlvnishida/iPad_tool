@@ -25,7 +25,47 @@
     <script src="js/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="css/jquery.modal_customized.css" />
     
-    
+    <script type="text/javascript">
+      $(function(){
+    var isReverse = false;  //正面が逆かどうかのフラグを用意しておく
+
+    if (navigator.userAgent.indexOf('Android') > 0) {
+        //Androidなら正面設定を確認
+        var orientation = screen.orientation || screen.mozOrientation || screen.msOrientation;
+        if (orientation.type === "portrait-secondary" || orientation.type === "landscape-primary") {
+            isReverse = true;
+        }
+    }
+
+    $(window).on("orientationchange", function() {
+        if(isReverse){
+            orientCheckReverse();  //正面が逆の場合
+        }else{
+            orientCheck();  //正面が通常の場合
+        }
+    });
+});
+
+//正面設定が通常の場合の縦横判定処理
+function orientCheck() {
+    var orientation = window.orientation;
+    if (orientation === 0) {
+        alert("画面を横にしてください");/*  縦画面時の処理  */
+    } else {
+       ; /*  横画面時の処理  */
+    }
+};
+
+//正面設定が逆の場合の縦横判定処理
+function orientCheckReverse() {
+    var orientation = window.orientation;
+    if (orientation === 0) {
+        alert("画面を横にしてください");/*  横画面時の処理  */
+    } else {
+        ; /*  縦画面時の処理  */
+    }
+};
+    </script>
     
     <style>
 <!--

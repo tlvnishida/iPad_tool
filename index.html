@@ -1,20 +1,70 @@
-<!doctype html>
-<html>
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="iPad_tool">
+    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
+    <title>Document</title>
     <link rel="stylesheet" href="css/menutab_img5.css">
     <link rel="stylesheet" href="css/display-none_test5.css">
 
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/display-none_test5.js"></script>
-    
+
     <script src="js/modal-in-modal.js"></script>
     <script src="js/jquery-ui.js"></script>
-    
+
     <!-- jQuery Modal -->
     <script src="js/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="css/jquery.modal_customized.css" />
+
+
+    <script type="text/javascript">
+        $(function() {
+            var isReverse = false; //正面が逆かどうかのフラグを用意しておく
+
+            if (navigator.userAgent.indexOf('Android') > 0) {
+                //Androidなら正面設定を確認
+                var orientation = screen.orientation || screen.mozOrientation || screen.msOrientation;
+                if (orientation.type === "portrait-secondary" || orientation.type === "landscape-primary") {
+                    isReverse = true;
+                }
+            }
+
+            $(window).on("orientationchange", function() {
+                if (isReverse) {
+                    orientCheckReverse(); //正面が逆の場合
+                } else {
+                    orientCheck(); //正面が通常の場合
+                }
+            });
+        });
+
+        //正面設定が通常の場合の縦横判定処理
+        function orientCheck() {
+            var orientation = window.orientation;
+            if (orientation === 0) {
+                alert("画面を横にしてください"); /*  縦画面時の処理  */
+            } else {
+                ; /*  横画面時の処理  */
+            }
+        };
+
+        //正面設定が逆の場合の縦横判定処理
+        function orientCheckReverse() {
+            var orientation = window.orientation;
+            if (orientation === 0) {
+                ; /*  横画面時の処理  */
+            } else {
+                alert("画面を横にしてください"); /*  縦画面時の処理  */
+            }
+        };
+    </script>
 
     <style>
         <!--
@@ -28,13 +78,9 @@
     </style>
 
     <style>
-
-        #ex1{
+        #ex1 {
             width: 50%;
         }
-
-
-
     </style>
 
 

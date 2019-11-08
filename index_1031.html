@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="iPad_tool">
+    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/menutab_img.css">
+    <script src="js/jquery-3.4.1.js"></script>
+
+    <link rel="stylesheet" href="css/jquery.fancybox.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.css">
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <link rel="stylesheet" href="css/video_tag.css">
+    
+    <!-- jQuery Modal -->
+    <script src="js/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.modal_customized.css" />
+    
+    <script type="text/javascript">
+      $(function(){
+    var isReverse = false;  //正面が逆かどうかのフラグを用意しておく
+
+    if (navigator.userAgent.indexOf('Android') > 0) {
+        //Androidなら正面設定を確認
+        var orientation = screen.orientation || screen.mozOrientation || screen.msOrientation;
+        if (orientation.type === "portrait-secondary" || orientation.type === "landscape-primary") {
+            isReverse = true;
+        }
+    }
+
+    $(window).on("orientationchange", function() {
+        if(isReverse){
+            orientCheckReverse();  //正面が逆の場合
+        }else{
+            orientCheck();  //正面が通常の場合
+        }
+    });
+});
+
+//正面設定が通常の場合の縦横判定処理
+function orientCheck() {
+    var orientation = window.orientation;
+    if (orientation === 0) {
+        alert("画面を横にしてください");/*  縦画面時の処理  */
+    } else {
+       ; /*  横画面時の処理  */
+    }
+};
+
+//正面設定が逆の場合の縦横判定処理
+function orientCheckReverse() {
+    var orientation = window.orientation;
+    if (orientation === 0) {
+        ;/*  横画面時の処理  */
+    } else {
+        alert("画面を横にしてください"); /*  縦画面時の処理  */
+    }
+};
+    </script>
+    
+    <style>
+<!--
+#jquery-ui-effect {
+    position: absolute;
+    top: 200px;
+    left: 1000px;
+    padding: 50px 15px;
+}
+-->
+</style>
+    
+    <style>
+    
+        #ex1{
+            width: 50%;
+        }
+    
+    
+    
+    </style>
+    
+</head>
+<body>
+   <header id="maze"><img src="asset/header.png" width="2224px" height="163px"></header>
+   
+   <div id="tab-box">
+<ul id="nav" class="tab clearfix">
+<li id="nav1"><img src="asset/nav_1_on.png" alt="" width="743" height="104"/></li>
+<li id="nav2"><img src="asset/nav_2_off.png" alt="" width="831" height="104"/></li>
+<li id="nav3"><img src="asset/nav_3_off.png" alt="" width="736" height="104"/></li>
+<li id="nav3-2"><img src="asset/nav_3-2_off.png" alt="" width="775" height="105"/></li>
+</ul>
+
+   
+
+<div class="panel_area">
+		<ul id="panel1" class="tab_panel">
+			<img src="asset/main.png" alt="">
+		</ul>
+		<ul id="panel2">
+			<img src="asset/sampleCG/CYM_CG_sample01.jpg" alt="">
+		</ul>
+		<ul id="panel3">
+			<img src="asset/sampleCG/CYM_CG_sample02.jpg" alt="">
+		</ul>
+
+    <div>   
+        
+        <div class="action"><img src="asset/action.png" alt=""></div>
+        
+        
+        <div id="ex1" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1280" height="720" rel="modal*close"></video></div>
+        
+        <a href="#ex1" rel="modal:open"><img class="popup" src="asset/popup.png" alt=""></a>
+        
+        
+    </div>
+    
+
+   <a id="jquery-ui-toggle" class="info"><img src="asset/info.png" alt=""></a>
+   
+<div id="jquery-ui-effect" class="ui-widget-content ui-corner-all hidden">
+    <img src="asset/info2.png" alt="">
+</div>
+   
+    </div>
+    
+    
+    </div>
+    
+<footer id="logo"><img src="asset/footer2.png" width="2224" height="103" alt=""/></footer>
+
+
+<script>
+$(function() {
+ 
+  // ①タブをクリックしたら発動
+  $('.tab li').on('click touchstart', function() {
+ 
+    // ②クリックされたタブの順番を変数に格納
+    var index = $('.tab li').index(this);
+ 
+    // ③画像を一旦非クリックの状態にリセットするためのループ処理
+    $('.tab li img').each(function() {
+ 
+      // ④_onのファイル名を_offに書き換え、変数に格納
+      var file = $(this).attr('src').replace(/_on/g, '_off');
+ 
+      // ⑤書き換えたファイル名をimg要素に適用する
+      $(this).attr('src', file);
+    });
+ 
+    // ⑥改めてクリックされた画像のファイル名を_onに書き換え、変数に格納
+    var file2 = $(this).children('img').attr('src').replace(/_off/g, '_on');
+ 
+    // ⑦書き換えたファイル名をimg要素に適用する
+    $(this).children('img').attr('src', file2);
+ 
+    // ⑧コンテンツを一旦非表示にし、クリックされた順番のコンテンツのみを表示
+    $('.panel_area ul').removeClass('tab_panel').eq(index).addClass('tab_panel');
+ 
+  });
+});
+</script>
+
+
+<script>
+<!--
+jQuery( function() {
+   
+    jQuery( '#jquery-ui-toggle' ) .on('click touchstart', function() {
+        jQuery( '#jquery-ui-effect' ) . toggle( 'drop', '', 700 );
+    } );
+} );
+// -->
+</script>
+
+
+</body>
+</html>

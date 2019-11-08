@@ -1,189 +1,152 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!doctype html>
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="iPad_tool">
-    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" sizes="72x72">
-    <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
-    <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
-    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/menutab_img.css">
-    <script src="js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="css/menutab_img5.css">
+    <link rel="stylesheet" href="css/display-none_test5.css">
 
-    <link rel="stylesheet" href="css/jquery.fancybox.css" />
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/jquery-ui.structure.css">
-    <link rel="stylesheet" href="css/jquery-ui.theme.css">
-    <script type="text/javascript" src="js/jquery-ui.js"></script>
-    <script src="js/jquery.fancybox.js"></script>
-    <link rel="stylesheet" href="css/video_tag.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/display-none_test5.js"></script>
+    
+    <script src="js/modal-in-modal.js"></script>
+    <script src="js/jquery-ui.js"></script>
     
     <!-- jQuery Modal -->
     <script src="js/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="css/jquery.modal_customized.css" />
-    
-    <script type="text/javascript">
-      $(function(){
-    var isReverse = false;  //正面が逆かどうかのフラグを用意しておく
 
-    if (navigator.userAgent.indexOf('Android') > 0) {
-        //Androidなら正面設定を確認
-        var orientation = screen.orientation || screen.mozOrientation || screen.msOrientation;
-        if (orientation.type === "portrait-secondary" || orientation.type === "landscape-primary") {
-            isReverse = true;
-        }
-    }
-
-    $(window).on("orientationchange", function() {
-        if(isReverse){
-            orientCheckReverse();  //正面が逆の場合
-        }else{
-            orientCheck();  //正面が通常の場合
-        }
-    });
-});
-
-//正面設定が通常の場合の縦横判定処理
-function orientCheck() {
-    var orientation = window.orientation;
-    if (orientation === 0) {
-        alert("画面を横にしてください");/*  縦画面時の処理  */
-    } else {
-       ; /*  横画面時の処理  */
-    }
-};
-
-//正面設定が逆の場合の縦横判定処理
-function orientCheckReverse() {
-    var orientation = window.orientation;
-    if (orientation === 0) {
-        ;/*  横画面時の処理  */
-    } else {
-        alert("画面を横にしてください"); /*  縦画面時の処理  */
-    }
-};
-    </script>
-    
     <style>
-<!--
-#jquery-ui-effect {
-    position: absolute;
-    top: 200px;
-    left: 1000px;
-    padding: 50px 15px;
-}
--->
-</style>
-    
+        <!--
+        #jquery-ui-effect {
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            padding: 50px 15px;
+        }
+        -->
+    </style>
+
     <style>
-    
+
         #ex1{
             width: 50%;
         }
-    
-    
-    
+
+
+
     </style>
-    
+
+
 </head>
-<body>
-   <header id="maze"><img src="asset/header.png" width="2224px" height="163px"></header>
-   
-   <div id="tab-box">
-<ul id="nav" class="tab clearfix">
-<li id="nav1"><img src="asset/nav_1_on.png" alt="" width="743" height="104"/></li>
-<li id="nav2"><img src="asset/nav_2_off.png" alt="" width="831" height="104"/></li>
-<li id="nav3"><img src="asset/nav_3_off.png" alt="" width="736" height="104"/></li>
-<li id="nav3-2"><img src="asset/nav_3-2_off.png" alt="" width="775" height="105"/></li>
-</ul>
 
-   
+<body id="content">
+    <header id="maze"><img src="asset/header.png" width="2224px" height="163px"></header>
+    <div id="tab-box">
+        <button id="nav1" onclick="SelectPage(1);"><img src="asset/nav_1_on.png" alt="" width="743" height="104"></button>
+        <button id="nav1-2" onclick="SelectPage(1);" style="display: none;"><img src="asset/nav_1_off.png" alt="" width="743" height="104"></button>
+        <button id="nav2" onclick="SelectPage(2);" style="display: none;"><img src="asset/nav_2_on.png" alt="" width="831" height="104"></button>
+        <button id="nav2-2" onclick="SelectPage(2);"><img src="asset/nav_2_off.png" alt="" width="831" height="104"></button>
+        <button id="nav3" onclick="SelectPage(3);" style="display: none;"><img src="asset/nav_3_on.png" alt="" width="736" height="104"></button>
+        <button id="nav3-2" onclick="SelectPage(3);"><img src="asset/nav_3_off.png" alt="" width="736" height="104"></button>
+        <button id="nav4" onclick="SelectPage(4);" style="display: none;"><img src="asset/nav_3-2_on.png" alt="" width="775" height="105"></button>
+        <button id="nav4-2" onclick="SelectPage(4);" style="display: none;"><img src="asset/nav_3-2_off.png" alt="" width="775" height="105"></button>
+    
+    
+        <div class="panel_area">
+            <div id='panel1' class='panel1'>
+                <ul class="tab_panel">
+                    <img src="asset/main.png" alt="">
+                </ul>
+            </div>
+            <div id='panel2' class='panel2' style="display: none;">
+                <ul class="tab_panel">
+                    <img src="asset/main2.png" alt="">
+                </ul>
+            </div>
+            <div id='panel3' class='panel3' style="display: none;">
+                <ul class="tab_panel">
+                    <img src="asset/main3.png" alt="">
+                </ul>
+            </div>
+            <div id='panel4' class='panel4' style="display: none;">
+                <ul class="tab_panel">
+                    <img src="asset/main4.png" alt="">
+                </ul>
+            </div>
 
-<div class="panel_area">
-		<ul id="panel1" class="tab_panel">
-			<img src="asset/main.png" alt="">
-		</ul>
-		<ul id="panel2">
-			<img src="asset/sampleCG/CYM_CG_sample01.jpg" alt="">
-		</ul>
-		<ul id="panel3">
-			<img src="asset/sampleCG/CYM_CG_sample02.jpg" alt="">
-		</ul>
+            <div>   
 
-    <div>   
+                <div class="action"><img src="asset/action.png" alt=""></div>
+
+
+                <div id="ex1" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1280" height="720" rel="modal*close"></video></div>
+                <div id="ex2" class="modal"><video src="img/sample_2.mp4" muted autoplay loop width="1280" height="720" rel="modal*close"></video></div>
+                <div id="ex3" class="modal"><video src="img/sample_3.mp4" muted autoplay loop width="1280" height="720" rel="modal*close"></video></div>
+                <div id="ex4" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1280" height="720" rel="modal*close"></video></div>
+
+                <a id="popup1" href="#ex1" rel="modal:open"><img class="popup" src="asset/popup.png" alt=""></a>
+                <a id="popup2" href="#ex2" rel="modal:open" style="display: none;"><img class="popup" src="asset/popup2.png" alt=""></a>
+                <a id="popup3" href="#ex3" rel="modal:open" style="display: none;"><img class="popup" src="asset/popup3.png" alt=""></a>
+                <a id="popup4" href="#ex4" rel="modal:open" style="display: none;"><img class="popup" src="asset/popup4.png" alt=""></a>
+                
+                
+                <button id="popup"><img src="asset/popup.png" alt=""></button>
+
+                <div class="box" id="mov1"><video src="img/sample_3.mp4" width="1280" height="720" muted autoplay loop></video></div>
+
+
+            </div>
+
+
+            <a id="jquery-ui-toggle" class="info"><img src="asset/info.png" alt=""></a>
+
+            <div id="jquery-ui-effect" class="ui-widget-content ui-corner-all hidden">
+                <img src="asset/info_psd.png" alt="">
+            </div>
+
         
-        <div class="action"><img src="asset/action.png" alt=""></div>
-        
-        
-        <div id="ex1" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1280" height="720" rel="modal*close"></video></div>
-        
-        <a href="#ex1" rel="modal:open"><img class="popup" src="asset/popup.png" alt=""></a>
-        
-        
+
+        </div>
+    
+    
+    
+    
+    
+    
     </div>
-    
-
-   <a id="jquery-ui-toggle" class="info"><img src="asset/info.png" alt=""></a>
-   
-<div id="jquery-ui-effect" class="ui-widget-content ui-corner-all hidden">
-    <img src="asset/info2.png" alt="">
-</div>
-   
-    </div>
-    
-    
-    </div>
-    
-<footer id="logo"><img src="asset/footer2.png" width="2224" height="103" alt=""/></footer>
 
 
-<script>
-$(function() {
- 
-  // ①タブをクリックしたら発動
-  $('.tab li').on('click touchstart', function() {
- 
-    // ②クリックされたタブの順番を変数に格納
-    var index = $('.tab li').index(this);
- 
-    // ③画像を一旦非クリックの状態にリセットするためのループ処理
-    $('.tab li img').each(function() {
- 
-      // ④_onのファイル名を_offに書き換え、変数に格納
-      var file = $(this).attr('src').replace(/_on/g, '_off');
- 
-      // ⑤書き換えたファイル名をimg要素に適用する
-      $(this).attr('src', file);
-    });
- 
-    // ⑥改めてクリックされた画像のファイル名を_onに書き換え、変数に格納
-    var file2 = $(this).children('img').attr('src').replace(/_off/g, '_on');
- 
-    // ⑦書き換えたファイル名をimg要素に適用する
-    $(this).children('img').attr('src', file2);
- 
-    // ⑧コンテンツを一旦非表示にし、クリックされた順番のコンテンツのみを表示
-    $('.panel_area ul').removeClass('tab_panel').eq(index).addClass('tab_panel');
- 
-  });
-});
-</script>
 
 
-<script>
-<!--
+
+    <footer id="logo"><img src="asset/footer2.png" width="2224" height="103" alt=""/></footer>
+
+
+
+    <script>
+        var btn = document.getElementById('popup');
+        var box = document.getElementById('mov1');
+
+        btn.onclick = function() {
+            box.classList.toggle('is-show')
+        }
+
+    </script>
+
+    <script>
+    <!--
 jQuery( function() {
-   
-    jQuery( '#jquery-ui-toggle' ) .on('click touchstart', function() {
-        jQuery( '#jquery-ui-effect' ) . toggle( 'drop', '', 700 );
-    } );
+
+jQuery( '#jquery-ui-toggle' ) .on('click touchstart', function() {
+jQuery( '#jquery-ui-effect' ) . toggle( 'drop', '', 700 );
+} );
 } );
 // -->
-</script>
+    </script>
+
 
 
 </body>
+
 </html>

@@ -1,3 +1,8 @@
+ul {
+  list-style: none;
+}
+
+
 /* Clearing floats */
 .cf:before,
 .cf:after {
@@ -122,37 +127,61 @@
 }
 
   
-
-#sample label{
-  cursor: pointer;
+img{
+    margin: 0;
 }
-#sample input{
+
+#nav input{
   display: none;
 }
 
-#sample input+div{
+#nav input~label{
   display: none;
 }
-#sample input:checked+div{
+#nav input:checked~label{
   display: block;
 }
 
-#sample .click{
+#nav input+label{
+    display: block;
+}
+
+#nav input:checked+label{
+    display: none;
+}
+
+#nav input~div{
+    display: none;
+}
+
+#nav input:checked~div{
+    display: block;
+}
+
+
+#nav input:checked+label{
+    display: none;
+}
+
+#nav .click{
   cursor: pointer;
 }
 
 
 
 /* トグルチェックボックスを隠す */
+/*
 #toggle2 {
     display: none;
 }
 /* 開く要素は既定で隠す */
+/*
 .click{
     visibility: collapse;
   background: #ddd;
 }
 /* チェックボックスをチェックしたときに隠しコンテンツを表示 */
+/*
 #toggle2:checked ~ * .click {
   visibility: visible;
 }

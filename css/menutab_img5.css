@@ -1,0 +1,102 @@
+@charset "utf-8"; 
+
+/* CSSリセット */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,
+pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,
+strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
+caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,
+figure,footer,header,hgroup,menu,nav,section,summary,time,mark,
+audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;
+vertical-align:baseline;background:transparent;font-weight:normal;}
+body{line-height:1}article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{display:block}
+ul{list-style:none}blockquote,q{quotes:none}blockquote:before,
+blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;
+font-size:100%;vertical-align:baseline;background:transparent}
+del{text-decoration:line-through}abbr[title],dfn[title]
+{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;
+margin:1em 0;padding:0}input,select{vertical-align:middle}
+
+
+.tab_wrap{width:2224px; margin:80px auto;}
+input[type="radio"]{display:none;}
+.tab_area{font-size:0; margin:0px;}
+
+
+
+#tab-box{
+     width: 2224px;
+	height: 1398px;
+     margin: 0px;
+    position: relative;
+}
+
+li{
+          display: inline;
+	position: relative;
+          margin-left: 0px;
+	z-index: 3;
+     }
+
+
+/* トグルチェックボックスを隠す */
+#toggle {
+    display: none;
+}
+/* 開く要素は既定で隠す */
+.click{
+    visibility: collapse;
+  background: #ddd;
+}
+/* チェックボックスをチェックしたときに隠しコンテンツを表示 */
+#toggle:checked ~ * .click {
+  visibility: visible;
+}
+
+
+.panel_area ul {
+  display: none;
+}
+.panel_area ul.tab_panel {
+  display: block;
+}
+
+
+.info{
+    display: block;
+    position: absolute;
+    z-index: 8;
+    bottom: 70px;
+    right: 50px;
+}
+
+.action{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    bottom: 60px;
+    left: 50px;
+}
+
+.popup{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    bottom: 650px;
+    left: 1080px;
+}
+
+
+
+footer, header{
+	display: inline;
+	position: relative;
+	z-index: 4;
+}
+
+
+.hidden{
+       display:none;
+    }

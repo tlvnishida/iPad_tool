@@ -1,0 +1,87 @@
+.page1 {
+    display: block;
+
+}
+
+.page2 {
+    display: none;
+
+}
+
+.page3 {
+    display: none;
+
+
+}
+
+.nav1 {
+    display: block;
+
+}
+
+.nav2 {
+    display: none;
+
+}
+
+.nav3 {
+    display: none;
+
+
+}
+
+.nav1-2 {
+    display: none;
+
+}
+
+.nav2-2 {
+    display: block;
+
+}
+
+.nav3-2 {
+    display: block;
+
+
+}
+
+
+
+
+
+button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+button img {
+    display: block;
+}
+
+.box {
+    /* 変更：　iOS Safariでも動く */
+    transition: opacity 1s, visibility 0s ease 1s;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.box.is-show {
+    /* 変更：　iOS Safariでも動く */
+    transition-delay: 0s;
+
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/********************/
+.box {
+    /* Box Styling */
+    width: 150px;
+    height: 50px;
+    background: #98b900;
+}

@@ -1,0 +1,124 @@
+@charset "utf-8"; 
+
+/* CSSリセット */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,
+pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,
+strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
+caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,
+figure,footer,header,hgroup,menu,nav,section,summary,time,mark,
+audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;
+    vertical-align:baseline;background:transparent;font-weight:normal;}
+body{line-height:1}article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{display:block}
+ul{list-style:none}blockquote,q{quotes:none}blockquote:before,
+blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;
+    font-size:100%;vertical-align:baseline;background:transparent}
+del{text-decoration:line-through}abbr[title],dfn[title]
+{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;
+    margin:1em 0;padding:0}input,select{vertical-align:middle}
+
+
+.tab_wrap{width:2224px; margin:80px auto;}
+input[type="radio"]{display:none;}
+.tab_area{font-size:0; margin:0px;}
+
+
+
+#tab-box{
+    width: 2224px;
+    height: 1398px;
+    margin: 0px;
+    position: relative;
+}
+
+
+#nav1,#nav2,#nav3,#nav4,#nav1-2,#nav2-2,#nav3-2,#nav4-2{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#nav1,#nav1-2{
+    float: left;
+}
+
+#nav2,#nav2-2{
+    float: left;
+    margin-left: -44px;
+    
+}
+
+#nav3,#nav3-2{
+    float: right;
+    margin-left: -48.5px;
+}
+
+#nav4,#nav4-2{
+    position: absolute;
+    margin-top: 104px;
+    right: 0;
+
+   
+}
+
+
+
+button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+button img {
+    display: block;
+}
+
+
+.infoPSD{
+    position: absolute;
+    top: 200px;
+    left: 80px;
+    z-index: 900;
+}
+
+.box {
+    /* 変更：　iOS Safariでも動く */
+    transition: opacity 1s, visibility 0s ease 1s;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.box.is-show {
+    /* 変更：　iOS Safariでも動く */
+    transition-delay: 0s;
+
+    opacity: 1;
+    visibility: visible;
+    animation-name:is-show;
+    animation-duration:2s; //アニメーション時間
+    animation-timing-function: ease-out; //アニメーションさせるイージング
+    animation-delay:1s; //アニメーション開始させる時間
+    animation-iteration-count:1; //繰り返し回数
+    animation-direction:normal; //往復処理をするかどうか
+    animation-fill-mode: forwards; //アニメーション後のスタイルをどうするか
+    animation-delay: 1s;
+}
+
+@keyframes is-show {
+    0% {opacity: 0; transform: translate(-300px,0);}
+    100% {opacity: 1; transform: translate(0px,0);}
+}
+
+
+
+#launch {
+    position:absolute;
+    top: 0;
+    width:2224px;;
+    background-color:white;
+    z-index: 999;
+}

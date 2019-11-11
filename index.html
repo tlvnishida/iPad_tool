@@ -1,20 +1,13 @@
-<html lang="ja">
+<!doctype html>
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="iPad_tool">
-    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" sizes="72x72">
-    <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
-    <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
-    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
-    <title>Document</title>
     <link rel="stylesheet" href="css/menutab_img5.css">
-    <link rel="stylesheet" href="css/display-none_test5.css">
+    <link rel="stylesheet" href="css/display-none_test6.css">
 
     <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/display-none_test5.js"></script>
+    <script src="js/display-none_test6.js"></script>
 
     <script src="js/modal-in-modal.js"></script>
     <script src="js/jquery-ui.js"></script>
@@ -22,49 +15,6 @@
     <!-- jQuery Modal -->
     <script src="js/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="css/jquery.modal_customized.css" />
-
-
-    <script type="text/javascript">
-        $(function() {
-            var isReverse = false; //正面が逆かどうかのフラグを用意しておく
-
-            if (navigator.userAgent.indexOf('Android') > 0) {
-                //Androidなら正面設定を確認
-                var orientation = screen.orientation || screen.mozOrientation || screen.msOrientation;
-                if (orientation.type === "portrait-secondary" || orientation.type === "landscape-primary") {
-                    isReverse = true;
-                }
-            }
-
-            $(window).on("orientationchange", function() {
-                if (isReverse) {
-                    orientCheckReverse(); //正面が逆の場合
-                } else {
-                    orientCheck(); //正面が通常の場合
-                }
-            });
-        });
-
-        //正面設定が通常の場合の縦横判定処理
-        function orientCheck() {
-            var orientation = window.orientation;
-            if (orientation === 0) {
-                alert("画面を横にしてください"); /*  縦画面時の処理  */
-            } else {
-                ; /*  横画面時の処理  */
-            }
-        };
-
-        //正面設定が逆の場合の縦横判定処理
-        function orientCheckReverse() {
-            var orientation = window.orientation;
-            if (orientation === 0) {
-                ; /*  横画面時の処理  */
-            } else {
-                alert("画面を横にしてください"); /*  縦画面時の処理  */
-            }
-        };
-    </script>
 
     <style>
         <!--
@@ -97,8 +47,8 @@
         <button id="nav3-2" onclick="SelectPage(3);"><img src="asset/nav_3_off.png" alt="" width="736" height="104"></button>
         <button id="nav4" onclick="SelectPage(4);" style="display: none;"><img src="asset/nav_3-2_on.png" alt="" width="775" height="105"></button>
         <button id="nav4-2" onclick="SelectPage(4);" style="display: none;"><img src="asset/nav_3-2_off.png" alt="" width="775" height="105"></button>
-    
-    
+
+
         <div class="panel_area">
             <div id='panel1' class='panel1'>
                 <ul class="tab_panel">
@@ -121,7 +71,7 @@
                 </ul>
             </div>
 
-            <div>   
+            <div>
 
                 <div class="action"><img src="asset/action.png" alt=""></div>
 
@@ -135,62 +85,106 @@
                 <a id="popup2" href="#ex2" rel="modal:open" style="display: none;"><img class="popup" src="asset/popup2.png" alt=""></a>
                 <a id="popup3" href="#ex3" rel="modal:open" style="display: none;"><img class="popup" src="asset/popup3.png" alt=""></a>
                 <a id="popup4" href="#ex4" rel="modal:open" style="display: none;"><img class="popup" src="asset/popup4.png" alt=""></a>
-                
-                
-                <button id="popup"><img src="asset/popup.png" alt=""></button>
 
-                <div class="box" id="mov1"><video src="img/sample_3.mp4" width="1280" height="720" muted autoplay loop></video></div>
+
+               
 
 
             </div>
 
 
-            <a id="jquery-ui-toggle" class="info"><img src="asset/info.png" alt=""></a>
+            <button id="info1" class="info"><img src="asset/info.png" alt=""></button>
+            <button id="info2" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
+            <button id="info3" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
+            <button id="info4" class="info" style="display: none;"><img src="asset/info4.png" alt=""></button>
 
-            <div id="jquery-ui-effect" class="ui-widget-content ui-corner-all hidden">
+            <div id="infoPSD1" class="box infoPSD">
                 <img src="asset/info_psd.png" alt="">
             </div>
+            <div id="infoPSD2" class="box infoPSD">
+                <img src="asset/info_psd2.png" alt="">
+            </div>
+            <div id="infoPSD3" class="box infoPSD">
+                <img src="asset/info_psd3.png" alt="">
+            </div>
+            <div id="infoPSD4" class="box infoPSD">
+                <img src="asset/info_psd4.png" alt="">
+            </div>
 
-        
+
 
         </div>
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+    </div>
+
+
+    <div id="launch">
+        <img src="asset/launch_screen2.png" alt="">
     </div>
 
 
 
 
 
-    <footer id="logo"><img src="asset/footer2.png" width="2224" height="103" alt=""/></footer>
+    <footer id="logo"><img src="asset/footer2.png" width="2224" height="103" alt="" /></footer>
 
 
 
     <script>
-        var btn = document.getElementById('popup');
-        var box = document.getElementById('mov1');
+        var btn = document.getElementById('info1');
+        var box = document.getElementById('infoPSD1');
 
         btn.onclick = function() {
             box.classList.toggle('is-show')
-        }
+        };
+        
+        var btn2 = document.getElementById('info2');
+        var box2 = document.getElementById('infoPSD2');
 
+        btn2.onclick = function() {
+            box2.classList.toggle('is-show')
+        };
+        
+        var btn3 = document.getElementById('info3');
+        var box3 = document.getElementById('infoPSD3');
+
+        btn3.onclick = function() {
+            box3.classList.toggle('is-show')
+        };
+        
+        var btn4 = document.getElementById('info4');
+        var box4 = document.getElementById('infoPSD4');
+
+        btn4.onclick = function() {
+            box4.classList.toggle('is-show')
+        };
     </script>
 
     <script>
-    <!--
-jQuery( function() {
+        $(function() {
 
-jQuery( '#jquery-ui-toggle' ) .on('click touchstart', function() {
-jQuery( '#jquery-ui-effect' ) . toggle( 'drop', '', 700 );
-} );
-} );
-// -->
+            $('#jquery-ui-toggle').on('click touchstart', function() {
+                $('#jquery-ui-effect').toggle('drop', '', 700);
+            });
+        });
     </script>
 
+    <script>
+        $(document).ready(function() {
+            //queue()で処理を溜めてdequeue()で実行。3秒経ったらfadeOut()
+            $("#launch").fadeIn().queue(function() {
+                setTimeout(function() {
+                    $("#launch").dequeue();
+                }, 3000);
+            });
+            $("#launch").fadeOut(2000);
+        });
+    </script>
 
 
 </body>

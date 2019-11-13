@@ -86,7 +86,7 @@ button img {
 
 .box {
     /* 変更：　iOS Safariでも動く */
-  
+    transition: opacity 1s, visibility 0s ease 1s;
 
     opacity: 0;
     visibility: hidden;

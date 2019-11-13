@@ -1,47 +1,34 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="iPad_tool">
-        <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" sizes="72x72">
-        <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
-        <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
-        <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
-        <title>Document</title>
-        <link rel="stylesheet" href="css/menutab_img5.css">
-        <link rel="stylesheet" href="css/display-none_test6.css">
+<!doctype html>
+<html>
 
-        <script src="js/jquery-3.4.1.js"></script>
-        <script src="js/display-none_test6.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="iPad_tool">
+    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
+    <title>サインバルタ</title>
+    <link rel="stylesheet" href="css/menutab_img5.css">
+    <link rel="stylesheet" href="css/display-none_test6.css">
 
-        <script src="js/modal-in-modal.js"></script>
-        <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/display-none_test7.js"></script>
 
-        <!-- jQuery Modal -->
-        <script src="js/jquery.modal.min.js"></script>
-        <link rel="stylesheet" href="css/jquery.modal_customized.css" />
+    <script src="js/modal-in-modal.js"></script>
+    <script src="js/jquery-ui.js"></script>
 
-        <style>
-            <!--
-            #jquery-ui-effect {
-                position: absolute;
-                top: 200px;
-                left: 100px;
-                padding: 50px 15px;
-            }
-            -->
-        </style>
-
-        <style>
-            #ex1 {
-                width: 50%;
-            }
-        </style>
+    <!-- jQuery Modal -->
+    <script src="js/jquery.modal.js"></script>
+    <link rel="stylesheet" href="css/jquery.modal_customized7.css" />
 
 
-    </head>
+
+
+
+</head>
 
 <body id="content">
     <header id="maze"><img src="asset/header.png" width="2224px" height="163px"></header>
@@ -80,20 +67,27 @@
 
             <div>
 
-                <div class="action"><img src="asset/action.png" alt=""></div>
+                
+                
+                
+                <a id="popup1" href="#ex1"><img class="popup" src="asset/popup.png" alt=""></a>
+                <a id="popup2" href="#ex2" style="display: none;"><img class="popup" src="asset/popup2.png" alt=""></a>
+                <a id="popup3" href="#ex3" style="display: none;"><img class="popup" src="asset/popup3.png" alt=""></a>
+                <a id="popup4" href="#ex4" style="display: none;"><img class="popup" src="asset/popup4.png" alt=""></a>
 
 
-                <div id="ex1" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1280" height="720" rel="modal*close"></video></div>
-                <div id="ex2" class="modal"><video src="img/sample_2.mp4" muted autoplay loop width="1280" height="720" rel="modal*close"></video></div>
-                <div id="ex3" class="modal"><video src="img/sample_3.mp4" muted autoplay loop width="1280" height="720" rel="modal*close"></video></div>
-                <div id="ex4" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1280" height="720" rel="modal*close"></video></div>
+                <div id="ex1" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1920" height="1080" rel="modal*close"></video></div>
+                <div id="ex2" class="modal"><video src="img/sample_2.mp4" muted autoplay loop width="1920" height="1080"></video></div>
+                <div id="ex3" class="modal"><video src="img/sample_3.mp4" muted autoplay loop width="1920" height="1080"></video></div>
+                <div id="ex4" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(5);"><a href="#ex5-1" rel="modal*close"><img src="asset/action.png" alt=""></a></div></div>
+                
+                <div id="ex5-1" class="modal"><video src="img/sample_2.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(6);"><a href="#ex5-2" rel="modal*close"><img src="asset/action2.png" alt=""></a></div></div>
+                <div id="ex5-2" class="modal"><video src="img/sample_3.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(6);"><a href="#ex6" rel="modal*close"><img src="asset/action2.png" alt=""></a></div></div>
+                
 
-                <a id="popup1" href="#ex1" rel="modal:open"><img class="popup" src="asset/popup.png" alt=""></a>
-                <a id="popup2" href="#ex2" rel="modal:open" style="display: none;"><img class="popup" src="asset/popup2.png" alt=""></a>
-                <a id="popup3" href="#ex3" rel="modal:open" style="display: none;"><img class="popup" src="asset/popup3.png" alt=""></a>
-                <a id="popup4" href="#ex4" rel="modal:open" style="display: none;"><img class="popup" src="asset/popup4.png" alt=""></a>
+        
 
-
+               
                
 
 
@@ -104,6 +98,8 @@
             <button id="info2" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
             <button id="info3" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
             <button id="info4" class="info" style="display: none;"><img src="asset/info4.png" alt=""></button>
+            <button id="info5-1" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
+            <button id="info5-2" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
 
             <div id="infoPSD1" class="box infoPSD">
                 <img src="asset/info_psd.png" alt="">
@@ -116,6 +112,12 @@
             </div>
             <div id="infoPSD4" class="box infoPSD">
                 <img src="asset/info_psd4.png" alt="">
+            </div>
+            <div id="infoPSD5-1" class="box infoPSD">
+                <img src="asset/info_psd2.png" alt="">
+            </div>
+            <div id="infoPSD5-2" class="box infoPSD">
+                <img src="asset/info_psd3.png" alt="">
             </div>
 
 
@@ -170,16 +172,23 @@
         btn4.onclick = function() {
             box4.classList.toggle('is-show')
         };
+        
+        var btn5a = document.getElementById('info5-1');
+        var box5a = document.getElementById('infoPSD5-1');
+
+        btn5a.onclick = function() {
+            box5a.classList.toggle('is-show')
+        };
+        
+        var btn5b = document.getElementById('info5-2');
+        var box5b = document.getElementById('infoPSD5-2');
+
+        btn5b.onclick = function() {
+            box5b.classList.toggle('is-show')
+        };
     </script>
 
-    <script>
-        $(function() {
 
-            $('#jquery-ui-toggle').on('click touchstart', function() {
-                $('#jquery-ui-effect').toggle('drop', '', 700);
-            });
-        });
-    </script>
 
     <script>
         $(document).ready(function() {
@@ -192,6 +201,66 @@
             $("#launch").fadeOut(2000);
         });
     </script>
+
+
+<script>
+    //jQueryModalのスクリプト
+    $(function() {
+
+        $('a[href="#ex1"]').on('click touchstart',function(event) {
+            event.preventDefault();
+            $(this).modal({
+                fadeDuration: 1000,
+                fadeDelay: 0.50
+            });
+        });
+        $('a[href="#ex2"]').on('click touchstart',function(event) {
+            event.preventDefault();
+            $(this).modal({
+                fadeDuration: 1000,
+                fadeDelay: 0.50
+            });
+        });
+        $('a[href="#ex3"]').on('click touchstart',function(event) {
+            event.preventDefault();
+            $(this).modal({
+                fadeDuration: 1000,
+                fadeDelay: 0.50
+            });
+        });
+        $('a[href="#ex4"]').on('click touchstart',function(event) {
+            event.preventDefault();
+            $(this).modal({
+                fadeDuration: 1000,
+                fadeDelay: 0.50,
+                escapeClose: false,
+                clickClose: false,
+                showClose: false
+            });
+        });
+        $('a[href="#ex5-1"]').on('click touchstart',function(event) {
+            event.preventDefault();
+            $(this).modal({
+                fadeDuration: 200,
+                escapeClose: false,
+                clickClose: false,
+                showClose: false
+            });
+        });
+        $('a[href="#ex5-2"]').on('click touchstart',function(event) {
+            event.preventDefault();
+            $(this).modal({
+                fadeDuration: 200
+     
+            });
+        });
+
+
+
+    });
+</script>
+
+
 
 
 </body>

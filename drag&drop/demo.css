@@ -1,0 +1,104 @@
+body {
+    font: normal 16px/20px "Helvetica Neue", Helvetica, sans-serif;
+    background: rgb(237, 237, 236);
+    margin: 0;
+    padding: 0;
+    height: 1668px;
+}
+
+section, header, footer {
+    display: block;
+}
+
+#wrapper {
+    width: 2224px;
+    margin: 0 auto;
+    background: #fff url(shade.jpg) repeat-x center bottom;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-top: 1px solid #fff;
+    padding-bottom: 76px;
+}
+
+
+
+
+
+li {
+    list-style: none;
+}
+
+li:after {
+    content: 'サインバルタ投与';
+    color: white;
+    font-weight: 500;
+    position: relative;
+    bottom: -10px;
+    left: -140px;
+}
+
+li:hover:after {
+    display: none;
+}
+
+ul {
+    
+    min-height: 300px;
+}
+
+#medicine{
+    display: block;
+    position: absolute;
+    z-index: 100;
+    left: 500px;
+    top: 200px;
+}
+
+#bin {
+    height: 360px;
+    width: 640px;
+    border: 5px solid #000;
+    position: relative;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+
+#bin p {
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    width: 166px;
+    font-size: 32px;
+    color: #fff;
+    text-shadow: #000 2px 2px 2px;
+}
+
+#innerBin {
+    position: absolute;
+    z-index: 10;
+    top: 100px;
+    left: 150px;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, .1);
+    border: 2px dashed white;
+    border-radius: 5px;
+}
+
+.zoom {
+    transition: transform 500ms;
+}
+
+.zoom.in {
+    
+    opacity: 0.5;
+}
+
+.fadeout {
+    transition: opacity 1s;
+    opacity: 0;
+}
+

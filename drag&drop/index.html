@@ -21,6 +21,8 @@
         <p>Drag the list items over the dustbin, and drop them to have the bin eat the item</p>
 
         <div id="bin">
+           <img id="drug_before" src="./drug_before.png" alt="">
+           <img id="drug_after" src="drug_after.png" style="display: none;" alt="">
             <video id="before" src="../img/sample_1.mp4" muted autoplay loop width="640" height="360"></video>
             <video id="after" src="../img/sample_2.mp4" muted autoplay loop width="640" height="360" style="display: none;"></video>
             <div id="innerBin"></div>
@@ -48,8 +50,10 @@
         
         
         
-        let beforeDrag = document.getElementById('before');
-        let afterDrag = document.getElementById('after');
+        let beforeDrug = document.getElementById('before');
+        let afterDrug = document.getElementById('after');
+        let drugStatusBefore = document.getElementById('drug_before');
+        let drugStatusAfter = document.getElementById('drug_after');
         
 
         //        var DEBUG = false;
@@ -422,8 +426,11 @@
 
         addEvent(innerBin, 'drop', function (e) {
             
-            beforeDrag.style.display = 'none';
-            afterDrag.style.display = 'block';
+            beforeDrug.style.display = 'none';
+            afterDrug.style.display = 'block';
+            drugStatusBefore.style.display ='none';
+            drugStatusAfter.style.display = 'block';
+            
             console.log('apperture drop');
 
             e.stopPropagation(); // stop it here to prevent it bubble up

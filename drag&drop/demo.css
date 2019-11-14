@@ -47,6 +47,11 @@ ul {
     min-height: 300px;
 }
 
+
+#drug_after,#drug_before{
+    position: absolute;
+}
+
 #medicine{
     display: block;
     position: absolute;

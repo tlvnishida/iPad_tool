@@ -98,7 +98,7 @@ var current = getCurrent();
 if (event.which === 27 && current.options.escapeClose) current.close();
 });
 if (this.options.clickClose)
-this.$blocker.click(function(e) {
+this.$blocker.on('click touchstart',function(e) {
 if (e.target === this)
 $.modal.close();
 });

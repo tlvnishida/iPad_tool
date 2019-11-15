@@ -3,19 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="iPad_tool">
-    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" sizes="72x72">
-    <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
-    <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
-    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
-    <title>サインバルタ</title>
-    <link rel="stylesheet" href="css/menutab_img5.css">
-    <link rel="stylesheet" href="css/display-none_test6.css">
+    <link rel="stylesheet" href="css/menutab_img8.css">
+    <link rel="stylesheet" href="css/display-none_test8.css">
 
     <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/display-none_test7.js"></script>
+    <script src="js/display-none_test8.js"></script>
 
     <script src="js/modal-in-modal.js"></script>
     <script src="js/jquery-ui.js"></script>
@@ -31,8 +23,10 @@
 </head>
 
 <body id="content">
+   <div id="wrap">
     <header id="maze"><img src="asset/header.png" width="2224px" height="163px"></header>
     <div id="tab-box">
+       <div id="nav" class="navA navB navC navD">
         <button id="nav1" onclick="SelectPage(1);"><img src="asset/nav_1_on.png" alt="" width="743" height="104"></button>
         <button id="nav1-2" onclick="SelectPage(1);" style="display: none;"><img src="asset/nav_1_off.png" alt="" width="743" height="104"></button>
         <button id="nav2" onclick="SelectPage(2);" style="display: none;"><img src="asset/nav_2_on.png" alt="" width="831" height="104"></button>
@@ -41,7 +35,7 @@
         <button id="nav3-2" onclick="SelectPage(3);"><img src="asset/nav_3_off.png" alt="" width="736" height="104"></button>
         <button id="nav4" onclick="SelectPage(4);" style="display: none;"><img src="asset/nav_3-2_on.png" alt="" width="775" height="105"></button>
         <button id="nav4-2" onclick="SelectPage(4);" style="display: none;"><img src="asset/nav_3-2_off.png" alt="" width="775" height="105"></button>
-
+    </div>
 
         <div class="panel_area">
             <div id='panel1' class='panel1'>
@@ -64,6 +58,7 @@
                     <img src="asset/main4.png" alt="">
                 </ul>
             </div>
+           
 
             <div>
 
@@ -77,12 +72,15 @@
 
 
                 <div id="ex1" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1920" height="1080" rel="modal*close"></video></div>
+                　　　<!--jQueryModalのexample1以外「rel="modal*close"」はなくても良い？ -->
                 <div id="ex2" class="modal"><video src="img/sample_2.mp4" muted autoplay loop width="1920" height="1080"></video></div>
                 <div id="ex3" class="modal"><video src="img/sample_3.mp4" muted autoplay loop width="1920" height="1080"></video></div>
                 <div id="ex4" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(5);"><a href="#ex5-1" rel="modal*close"><img src="asset/action.png" alt=""></a></div></div>
                 
-                <div id="ex5-1" class="modal"><video src="img/sample_2.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(6);"><a href="#ex5-2" rel="modal*close"><img src="asset/action2.png" alt=""></a></div></div>
-                <div id="ex5-2" class="modal"><video src="img/sample_3.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(6);"><a href="#ex6" rel="modal*close"><img src="asset/action2.png" alt=""></a></div></div>
+                <div id="ex5-1" class="modal"><video src="img/sample_2.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(6);"><a href="#wrap_secondary" rel="modal*close"><img src="asset/action2.png" alt=""></a></div></div>
+                <div id="ex5-2" class="modal"><video src="img/sample_3.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(6);"><a href="#wrap_secondary" rel="modal*close"><img src="asset/action2.png" alt=""></a></div></div>
+                
+                
                 
 
         
@@ -93,14 +91,15 @@
 
             </div>
 
-
+        
             <button id="info1" class="info"><img src="asset/info.png" alt=""></button>
             <button id="info2" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
             <button id="info3" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
             <button id="info4" class="info" style="display: none;"><img src="asset/info4.png" alt=""></button>
             <button id="info5-1" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
             <button id="info5-2" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
-
+           
+        
             <div id="infoPSD1" class="box infoPSD">
                 <img src="asset/info_psd.png" alt="">
             </div>
@@ -120,7 +119,7 @@
                 <img src="asset/info_psd3.png" alt="">
             </div>
 
-
+       
 
         </div>
 
@@ -137,8 +136,46 @@
     </div>
 
 
+    </div>
 
-
+    
+    <div id="wrap_secondary" style="display: none;">
+        <header id="green_belt"><img src="asset/header2_2.png" width="2224px" height="163px"></header>
+        <div id="tab-box_secondary">
+            <div id="nav_secondary" class="navA navB navC navD">
+                <button id="nav5" onclick="SelectPage(7);"><img src="asset/nav_4_on.png" alt="" width="1179" height="104"></button>
+                <button id="nav5-2" onclick="SelectPage(7);" style="display: none;"><img src="asset/nav_4_off.png" alt="" width="1179" height="104"></button>
+                <button id="nav6" onclick="SelectPage(8);" style="display: none;"><img src="asset/nav_5_on.png" alt="" width="1105" height="104"></button>
+                <button id="nav6-2" onclick="SelectPage(8);"><img src="asset/nav_5_off.png" alt="" width="1105" height="104"></button>
+                
+            </div>
+            
+            <div class="panel_area">
+                <div id='panel6' class='panel6'>
+                    <ul class="tab_panel">
+                        <img src="asset/main6.png" alt="">
+                    </ul>
+                </div>
+                <div id='panel7' class='panel7' style="display: none;">
+                    <ul class="tab_panel">
+                        <img src="asset/main2.png" alt="">
+                    </ul>
+                </div>
+                <div id='panel8' class='panel8' style="display: none;">
+                    <ul class="tab_panel">
+                        <img src="asset/main3.png" alt="">
+                    </ul>
+                </div>
+            
+                
+            </div>
+            
+        </div>
+        
+        
+    </div>
+    
+    
 
     <footer id="logo"><img src="asset/footer2.png" width="2224" height="103" alt="" /></footer>
 
@@ -147,44 +184,66 @@
     <script>
         var btn = document.getElementById('info1');
         var box = document.getElementById('infoPSD1');
+        var btn2 = document.getElementById('info2');
+        var box2 = document.getElementById('infoPSD2');
+        var btn3 = document.getElementById('info3');
+        var box3 = document.getElementById('infoPSD3');
+        var btn4 = document.getElementById('info4');
+        var box4 = document.getElementById('infoPSD4');
+        var btn4 = document.getElementById('info4');
+        var box4 = document.getElementById('infoPSD4');
+        var btn5a = document.getElementById('info5-1');
+        var box5a = document.getElementById('infoPSD5-1');
+        var btn5b = document.getElementById('info5-2');
+        var box5b = document.getElementById('infoPSD5-2');
+        var nav = document.getElementById('nav');
 
         btn.onclick = function() {
             box.classList.toggle('is-show')
         };
-        
-        var btn2 = document.getElementById('info2');
-        var box2 = document.getElementById('infoPSD2');
-
+        box.onclick = function() {
+            box.classList.remove('is-show')
+        };
+        nav.onclick = function() {
+            box.classList.remove('is-show')
+        };
+    
         btn2.onclick = function() {
             box2.classList.toggle('is-show')
         };
+        box2.onclick = function() {
+            box2.classList.remove('is-show')
+        };
+        nav2.onclick = function() {
+            box2.classList.remove('is-show')
+        };
         
-        var btn3 = document.getElementById('info3');
-        var box3 = document.getElementById('infoPSD3');
-
         btn3.onclick = function() {
             box3.classList.toggle('is-show')
         };
-        
-        var btn4 = document.getElementById('info4');
-        var box4 = document.getElementById('infoPSD4');
+        box3.onclick = function() {
+            box3.classList.remove('is-show')
+        };
 
         btn4.onclick = function() {
             box4.classList.toggle('is-show')
         };
-        
-        var btn5a = document.getElementById('info5-1');
-        var box5a = document.getElementById('infoPSD5-1');
+        box4.onclick = function() {
+            box4.classList.remove('is-show')
+        };
 
         btn5a.onclick = function() {
             box5a.classList.toggle('is-show')
         };
+        box5a.onclick = function() {
+            box5a.classList.remove('is-show')
+        };
         
-        var btn5b = document.getElementById('info5-2');
-        var box5b = document.getElementById('infoPSD5-2');
-
         btn5b.onclick = function() {
             box5b.classList.toggle('is-show')
+        };
+        box5b.onclick = function() {
+            box5b.classList.remove('is-show')
         };
     </script>
 
@@ -232,10 +291,7 @@
             event.preventDefault();
             $(this).modal({
                 fadeDuration: 1000,
-                fadeDelay: 0.50,
-                escapeClose: false,
-                clickClose: false,
-                showClose: false
+                fadeDelay: 0.50
             });
         });
         $('a[href="#ex5-1"]').on('click touchstart',function(event) {

@@ -84,6 +84,14 @@ li{
     left: 50px;
 }
 
+.action2{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    bottom: 60px;
+    right: 350px;
+}
+
 .popup{
     display: block;
     position: absolute;

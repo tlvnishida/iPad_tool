@@ -41,8 +41,7 @@ function SelectPage(page) {
     let elementInfo8 = document.getElementById("info8");
     
     let elementEx4 = document.getElementById("ex4");
-    let elementEx5a = document.getElementById("ex5-1");
-    let elementEx5b = document.getElementById("ex5-2");
+    let elementEx5 = document.getElementById("ex5");
     
     let elementWrap1 = document.getElementById("wrap");
     let elementWrap2 = document.getElementById("wrap_secondary");
@@ -201,8 +200,7 @@ function SelectPage(page) {
             elementInfo5b.style.display = 'none';
             
             elementEx4.style.display = 'none';
-            elementEx5a.style.display = 'block';
-            elementEx5b.style.display = 'none';
+            elementEx5.style.display = 'block';
             break;
             
             

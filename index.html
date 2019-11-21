@@ -10,11 +10,11 @@
         <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
         <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
         <title>サインバルタ</title>
-    <link rel="stylesheet" href="css/menutab_img8.css">
-    <link rel="stylesheet" href="css/display-none_test8.css">
+    <link rel="stylesheet" href="css/menutab_img10.css">
+   
     <link rel="stylesheet" href="css/drag&drop.css">
-    <link rel="stylesheet" href="css/hamburger2.css">
-    <link rel="stylesheet" href="css/drawer_customized2.css">
+    <link rel="stylesheet" href="css/hamburger3.css">
+    <link rel="stylesheet" href="css/drawer_customized3.css">
 
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/display-none_test10.js"></script>
@@ -24,17 +24,26 @@
 
     <!-- jQuery Modal -->
     <script src="js/jquery.modal.js"></script>
-    <link rel="stylesheet" href="css/jquery.modal_customized7.css" />
+   
     
     <script src="js/drag&drop.js"></script>
     <script src="js/mobiledragdrop.js"></script>
     
     <script src="js/iscroll.js"></script>
     <script src="js/drawer.js"></script>
-
-
-
-
+    
+    <script>
+        $(function(){
+            var style = '<link rel="stylesheet" href="css/display-none_test8.css">';
+            $('head link:last').after(style);
+        });
+    </script>
+    <script>
+        $(function(){
+            var style = '<link rel="stylesheet" href="css/jquery.modal_customized7.css">';
+            $('head link:last').after(style);
+        });
+    </script>
 
 </head>
 
@@ -56,22 +65,22 @@
         <div class="panel_area">
             <div id='panel1' class='panel1'>
                 <ul class="tab_panel">
-                    <img src="asset/main.png" alt="">
+                   <video src="img/CYM_CG_01.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
             <div id='panel2' class='panel2' style="display: none;">
                 <ul class="tab_panel">
-                    <img src="asset/main2.png" alt="">
+                    <video src="img/CYM_CG_02.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
             <div id='panel3' class='panel3' style="display: none;">
                 <ul class="tab_panel">
-                    <img src="asset/main3.png" alt="">
+                    <video src="img/CYM_CG_03.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
             <div id='panel4' class='panel4' style="display: none;">
                 <ul class="tab_panel">
-                    <img src="asset/main4.png" alt="">
+                    <video src="img/CYM_CG_04.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
            
@@ -179,17 +188,18 @@
 
     
     <div id="wrap_secondary" style="display: none;" class="drawer drawer--left">
-        <header id="green_belt">
-            <img src="asset/header2_2.png" width="2224px" height="163px">
+        <header class="green_belt">
+            <img id="green_belt" src="asset/header2_2.png" width="2224px" height="163px">
+            <button type="button" class="drawer-toggle drawer-hamburger">
+                <a class="menu-trigger" href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </button>
             </header>
             
-        <button type="button" class="drawer-toggle drawer-hamburger">
-            <a class="menu-trigger" href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
-        </button>
+    
         
         <div id="tab-box_secondary">
             <div id="nav_secondary" class="navA navB navC navD">
@@ -238,7 +248,7 @@
         </div>
         <nav class="drawer-nav" role="navigation">
             <ul class="drawer-menu">
-                <li><a class="drawer-brand" href="#">前の画面にもどる</a></li>
+                <li><a class="drawer-brand" href="#">はじめの画面にもどる</a></li>
                 <hr><hr>
                 <li><a class="drawer-menu-item" onclick="SelectPage(1);"><img src="asset/main.png" width="300" alt="">痛みの伝わり方</a></li>
                 <hr>
@@ -990,5 +1000,4 @@
 
 
 </body>
-
 </html>

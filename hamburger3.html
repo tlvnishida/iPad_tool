@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="iPad_tool">
+        <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" sizes="72x72">
+        <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
+        <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
+        <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
+        <title>サインバルタ</title>
+ 
+    <link rel="stylesheet" href="css/hamburger2.css">
+    <link rel="stylesheet" href="css/drawer_customized2.css">
+    
+    <script src='js/jquery-3.4.1.js'></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/drawer.js"></script>
+ 
+        
+   
+</head>
+    <body class="drawer drawer--left">
+    
+    
+    <img src="asset/main.png" alt="">
+    
+    <button type="button" class="drawer-toggle drawer-hamburger">
+        <!-- 中の要素は自由！ -->
+        <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </button>
+    
+    
+    <nav class="drawer-nav" role="navigation">
+        <ul class="drawer-menu">
+            <li><a class="drawer-brand" href="#">はじめにもどる</a></li>
+            <hr><hr>
+            <li><a class="drawer-menu-item" href="#nav1"><img src="asset/main.png" width="300" alt="">痛みの伝わり方</a></li>
+            <hr>
+            <li><a class="drawer-menu-item" href="#nav2"><img src="asset/main2.png" width="300" alt="">急性期の痛み</a></li>
+            <hr>
+            <li><a class="drawer-menu-item" href="#nav3"><img src="asset/main3.png" width="300" alt="">慢性期の痛み</a></li>
+            <hr>
+            <li><a class="drawer-menu-item" href="#nav4"><img src="asset/main4.png" width="300" alt="">サインバルタ®の効果</a></li>
+            <hr>
+        </ul>
+    </nav>
+    
+    
+    
+  
+        
+        
+    
+    <script>
+        $(function($) {
+        $(document).ready(function() {
+            $('.drawer').drawer();
+            $('.menu-trigger').on('click touchstart', function () { //クリックしたら
+                $(this).toggleClass('active');  //toggleでクラス追加・削除
+            });
+        });
+            //別領域をクリックでクラス'active'削除
+            $(document).on('click touchstart', function(event) {
+            if (!$(event.target).closest('.menu-trigger').length) {
+                $('.menu-trigger').removeClass('active');
+            }
+        });
+        });
+    </script>
+ 
+</body>
+</html>

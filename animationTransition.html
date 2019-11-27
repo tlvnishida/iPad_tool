@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>Animate transition</title>
+
+    <link rel="stylesheet" href="css/transitions.css" type="text/css"/>
+    <script type="text/javascript" src="js/animateTransition.js"></script>
+    
+<style>
+  .bottom-bar {
+        position: absolute;
+        z-index: 10;
+        left:0;
+        width: 100px;
+        height: 3rem;
+    }
+   .animation-container_block {
+        position: absolute;
+    }
+    [data-block="out"] {
+        z-index: 1;
+    }
+
+    @media screen and (max-width: 900px) {
+    }
+
+    @media screen and (max-width: 650px),
+        screen and (max-height: 700px) {
+    }
+
+    @media screen and (max-width: 480px) {
+    }  
+</style>
+
+
+
+</head>
+<body>
+
+
+    <div class="main">
+        <div class="animation-container">
+            <div class="animation-container_block first" data-block="out">
+<video src="img/CYM_CG_01-3.mp4" muted autoplay loop width="2224"></video>
+            </div>
+            <div class="animation-container_block second" data-block="in">
+<video src="img/CYM_CG_02-3.mp4" muted autoplay loop width="2224"></video>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <button class="animate-slide">Animate</button>
+    </div>
+
+    <button id="nav1" class="animate-slide" onclick="SelectPage(1);"><img src="asset/nav_1_on.png" alt="" width="743" height="104"></button>
+    <button id="nav1-2" class="animate-slide" onclick="SelectPage(1);" style="display: none;"><img src="asset/nav_1_off.png" alt="" width="743" height="104"></button>
+    <button id="nav2" onclick="SelectPage(2);" style="display: none;"><img src="asset/nav_2_on.png" alt="" width="831" height="104"></button>
+    <button id="nav2-2" onclick="SelectPage(2);"><img src="asset/nav_2_off.png" alt="" width="831" height="104"></button>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function (event) {
+        var button = document.querySelector('.animate-slide'),
+            container = '.animation-container',
+            blockIn = '[data-block="in"]',
+            blockOut = '[data-block="out"]',
+            select = document.getElementById('animation-select');
+
+        function animateBlocks(event) {
+
+
+            AnimateTransition({
+                container: container,
+                blockIn: blockIn,
+                blockOut: blockOut,
+                animation: 'fade-in',
+                onTransitionStart: function (blockIn, blockOut, container, event) {
+                    button.setAttribute('disabled', 'disabled');
+                },
+                onTransitionEnd: function (blockIn, blockOut, container, event) {
+                    button.removeAttribute('disabled');
+                    if (blockOut) {
+                        blockIn.setAttribute('data-block', 'out');
+                        blockOut.setAttribute('data-block', 'in');
+                        container.appendChild(blockOut);
+                    }
+                }
+            });
+        }
+
+        button.addEventListener('click', animateBlocks);
+
+    });    
+    
+</script>
+
+</body>
+</html>

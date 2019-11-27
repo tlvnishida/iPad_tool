@@ -110,13 +110,13 @@ video{
     /* 変更：　iOS Safariでも動く */
     transition: opacity 1s, visibility 0s ease 1s;
 
-    opacity: 0;
-    visibility: hidden;
+   display: none;
 }
 
 .box.is-show {
     /* 変更：　iOS Safariでも動く */
     transition-delay: 0s;
+    display: block;
 
     opacity: 1;
     visibility: visible;
@@ -132,7 +132,7 @@ video{
 
 @keyframes is-show {
     0% {opacity: 0; transform: translate(-300px,0);}
-    100% {opacity: 1; transform: translate(0px,0);}
+    99.99%,to {opacity: 1; transform: translate(0px,0);}
 }
 
 
@@ -148,4 +148,5 @@ video{
 ul.tab_panel video{
     position: absolute;
     left: 0;
+    top: 125px;
 }

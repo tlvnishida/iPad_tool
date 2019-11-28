@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" manifest="demo.manifest">
 <head>
     <meta charset="UTF-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -9,6 +9,7 @@
     <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
     <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
     <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-startup-image" href="asset/launch_screen.png">
     <title>サインバルタ</title>
     <link rel="stylesheet" href="css/menutab_img10.css">
     <link rel="stylesheet" href="css/display-none_test12.css">
@@ -57,22 +58,22 @@
         <div class="panel_area">
             <div id='panel1' class='panel1'>
                 <ul class="tab_panel">
-                   <video src="img/CYM_CG_01-3.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_01_4.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
             <div id='panel2' class='panel2' style="visibility: hidden; opacity: 0;">
                 <ul class="tab_panel">
-                    <video src="img/CYM_CG_02-3.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_02_4.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
             <div id='panel3' class='panel3' style="visibility: hidden; opacity: 0;">
                 <ul class="tab_panel">
-                    <video src="img/CYM_CG_03-3.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_03_4.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
             <div id='panel4' class='panel4' style="visibility: hidden; opacity: 0;">
                 <ul class="tab_panel">
-                    <video src="img/CYM_CG_04-3.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_04_4.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
            
@@ -99,7 +100,7 @@
                 
               
 
-                    <div id="ex5" class="modal">
+                <div id="ex5" class="modal">
                         <img id="drug_before" src="asset/drug_before.png" width="800" alt="">
                         <img id="drug_after" src="asset/drug_after.png" width="800" style="display: none;" alt="">
                         <video id="before" src="img/sample_2.mp4" muted autoplay loop width="1920" height="1080"></video>
@@ -183,7 +184,7 @@
         <header class="green_belt">
             <img id="green_belt" src="asset/header2_2.png" width="2224px" height="163px">
             <button type="button" class="drawer-toggle drawer-hamburger">
-                <a class="menu-trigger" href="#">
+                <a class="menu-trigger">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -240,7 +241,7 @@
         </div>
         <nav class="drawer-nav" role="navigation">
             <ul class="drawer-menu">
-                <li><a class="drawer-brand" href="#">はじめの画面にもどる</a></li>
+                <li class="drawer-brand">はじめの画面にもどる</li>
                 <hr><hr>
                 <li><a class="drawer-menu-item" onclick="SelectPage(1);"><img src="asset/main.png" width="300" alt="">痛みの伝わり方</a></li>
                 <hr>
@@ -1025,6 +1026,15 @@
                 }
             });
         });
+    </script>
+    <script>
+        var scrollOff = function( e ){
+            e.preventDefault();
+        }
+        // スクロールをキャンセル
+        document.addEventListener( 'touchmove',scrollOff, false);
+        //removeEventListenerで「スクロールをキャンセル」をキャンセル
+        document.removeEventListener( 'touchmove', scrollOff, false );
     </script>
 
 

@@ -147,3 +147,7 @@ ul.tab_panel video{
     left: 0;
     top: 125px;
 }
+
+.disable{
+    pointer-events: none;
+}

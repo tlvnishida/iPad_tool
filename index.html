@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" manifest="demo.manifest">
 <head>
     <meta charset="UTF-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -9,15 +9,14 @@
     <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
     <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
     <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-startup-image" href="asset/launch_screen.png">
     <title>サインバルタ</title>
     <link rel="stylesheet" href="css/menutab_img10.css">
-    <link rel="stylesheet" href="css/display-none_test12.css">
+    <link rel="stylesheet" href="css/display-none_test13.css">
     <link rel="stylesheet" href="css/drag&drop.css">
     <link rel="stylesheet" href="css/hamburger3.css">
     <link rel="stylesheet" href="css/drawer_customized3.css">
     
-    <!-- animsition.css -->
-    <link rel="stylesheet" href="css/animsition.css">
 
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/display-none_test12.js"></script>
@@ -34,8 +33,7 @@
     
     <script src="js/iscroll.js"></script>
     <script src="js/drawer.js"></script>
-    <!-- animsition.js -->
-    <script src="js/animsition.js"></script>
+
 
 </head>
 
@@ -43,7 +41,7 @@
    <div id="wrap">
     <header id="maze"><img src="asset/header.png" width="2224px" height="163px"></header>
     <div id="tab-box">
-       <div id="nav" class="navA navB navC navD">
+       <div id="nav">
         <button id="nav1"><img src="asset/nav_1_on.png" alt="" width="743" height="104"></button>
         <button id="nav1-2" onclick="SelectPage(1);" style="display: none;"><img src="asset/nav_1_off.png" alt="" width="743" height="104"></button>
         <button id="nav2" style="display: none;"><img src="asset/nav_2_on.png" alt="" width="831" height="104"></button>
@@ -57,22 +55,22 @@
         <div class="panel_area">
             <div id='panel1' class='panel1'>
                 <ul class="tab_panel">
-                   <video src="img/CYM_CG_01.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_01_4.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
             <div id='panel2' class='panel2' style="visibility: hidden; opacity: 0;">
                 <ul class="tab_panel">
-                    <video src="img/CYM_CG_02.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_02_4.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
             <div id='panel3' class='panel3' style="visibility: hidden; opacity: 0;">
                 <ul class="tab_panel">
-                    <video src="img/CYM_CG_03.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_03_4.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
             <div id='panel4' class='panel4' style="visibility: hidden; opacity: 0;">
                 <ul class="tab_panel">
-                    <video src="img/CYM_CG_04.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_04_4.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
            
@@ -88,24 +86,24 @@
                 <a id="popup4" href="#ex4" style="display: none;"><img class="popup" src="asset/popup4.png" alt=""></a>
 
 
-                <div id="ex1" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1920" height="1080" rel="modal:close"></video></div>
+                <div id="ex1" class="modal"><video src="img/CYM_CG_01_popup.mp4" muted autoplay loop width="1920" height="1080" rel="modal:close"></video></div>
                 　　　<!--jQueryModalのexample1以外「rel="modal*close"」はなくても良い？ -->
-                <div id="ex2" class="modal"><video src="img/sample_2.mp4" muted autoplay loop width="1920" height="1080"></video></div>
-                <div id="ex3" class="modal"><video src="img/sample_3.mp4" muted autoplay loop width="1920" height="1080"></video></div>
-                <div id="ex4" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(5);"><a href="#ex5"><img src="asset/action.png" alt=""></a></div></div>
+                <div id="ex2" class="modal"><video src="img/CYM_CG_02_popup.mp4" muted autoplay loop width="1920" height="1080"></video></div>
+                <div id="ex3" class="modal"><video src="img/CYM_CG_03_popup.mp4" muted autoplay loop width="1920" height="1080"></video></div>
+                <div id="ex4" class="modal"><video src="img/CYM_CG_04_popup.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(5);"><a href="#ex5" id="action1"><img src="asset/action.png" alt=""></a></div></div>
                 
           
                 
                 
               
 
-                    <div id="ex5" class="modal">
+                <div id="ex5" class="modal">
                         <img id="drug_before" src="asset/drug_before.png" width="800" alt="">
                         <img id="drug_after" src="asset/drug_after.png" width="800" style="display: none;" alt="">
                         <video id="before" src="img/sample_2.mp4" muted autoplay loop width="1920" height="1080"></video>
                         <video id="after" src="img/sample_4.mp4" muted autoplay loop width="1920" height="1080" style="display: none;"></video>
-                        <div class="action" onclick="SelectPage(6);"><a href="#wrap_secondary" rel="modal:close"><img src="asset/action3.png" alt=""></a></div>
-                        <div class="action2" onclick="SelectPage(8);"><a href="#wrap_secondary" rel="modal:close"><img src="asset/action2.png" alt=""></a></div>
+                        <div class="action" onclick="SelectPage(6);"><a href="#wrap_secondary" rel="modal:close" id="action3"><img src="asset/action3.png" alt=""></a></div>
+                        <div class="action2" onclick="SelectPage(8);"><a href="#wrap_secondary" rel="modal:close" id="action2"><img src="asset/action2.png" alt=""></a></div>
                         
                         <div id="innerBin"></div>
                         <ul>
@@ -129,16 +127,16 @@
                
 
 
-            </div>
-
-        
+            </div> 
+            
+        <div id="info">
             <button id="info1" class="info"><img src="asset/info.png" alt=""></button>
             <button id="info2" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
             <button id="info3" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
             <button id="info4" class="info" style="display: none;"><img src="asset/info4.png" alt=""></button>
             <button id="info5-1" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
             <button id="info5-2" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
-           
+        </div>
         
             <div id="infoPSD1" class="box infoPSD">
                 <img src="asset/info_psd.png" alt="">
@@ -183,7 +181,7 @@
         <header class="green_belt">
             <img id="green_belt" src="asset/header2_2.png" width="2224px" height="163px">
             <button type="button" class="drawer-toggle drawer-hamburger">
-                <a class="menu-trigger" href="#">
+                <a class="menu-trigger">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -194,7 +192,7 @@
     
         
         <div id="tab-box_secondary">
-            <div id="nav_secondary" class="navA navB navC navD">
+            <div id="nav_secondary">
                 <button id="nav5" onclick="SelectPage(7);"><img src="asset/nav_4_on.png" alt="" width="1179" height="104"></button>
                 <button id="nav5-2" onclick="SelectPage(7);" style="display: none;"><img src="asset/nav_4_off.png" alt="" width="1179" height="104"></button>
                 <button id="nav6" onclick="SelectPage(8);" style="display: none;"><img src="asset/nav_5_on.png" alt="" width="1105" height="104"></button>
@@ -240,7 +238,7 @@
         </div>
         <nav class="drawer-nav" role="navigation">
             <ul class="drawer-menu">
-                <li><a class="drawer-brand" href="#">はじめの画面にもどる</a></li>
+                <li class="drawer-brand">はじめの画面にもどる</li>
                 <hr><hr>
                 <li><a class="drawer-menu-item" onclick="SelectPage(1);"><img src="asset/main.png" width="300" alt="">痛みの伝わり方</a></li>
                 <hr>
@@ -270,35 +268,6 @@
         });
     
     </script>
-    <script>
-        $(document).ready(function() {
-            $(".animsition").animsition({
-                inClass: 'fade-in',
-                outClass: 'fade-out',
-                inDuration: 1500,
-                outDuration: 800,
-                linkElement: '.animsition-link',
-                // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
-                loading: true,
-                loadingParentElement: 'body', //animsition wrapper element
-                loadingClass: 'animsition-loading',
-                loadingInner: '', // e.g '<img src="loading.svg" />'
-                timeout: false,
-                timeoutCountdown: 5000,
-                onLoadEvent: true,
-                browser: [ 'animation-duration', '-webkit-animation-duration'],
-                // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-                // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-                overlay : false,
-                overlayClass : 'animsition-overlay-slide',
-                overlayParentElement : 'body',
-                transition: function(url){ window.location.href = url; }
-            });
-        });
-    
-    </script>
-    
-
 
     <script>
         var btn = document.getElementById('info1');
@@ -322,75 +291,105 @@
         var btn8 = document.getElementById('info8');
         var box8 = document.getElementById('infoPSD8');
         var nav = document.getElementById('nav');
+        var nav2 = document.getElementById('nav_secondary');
+        var action = document.getElementById('action1');
+        var action2 = document.getElementById('action2');
+        var action3 = document.getElementById('action3');
+        
 
         btn.onclick = function() {
-            box.classList.toggle('is-show')
+            box.classList.toggle('is-show');
+            nav.classList.toggle('disable');
         };
         box.onclick = function() {
-            box.classList.remove('is-show')
+            box.classList.remove('is-show');
+            nav.classList.remove('disable');
         };
-        nav.onclick = function() {
-            box.classList.remove('is-show')
-        };
+      
     
         btn2.onclick = function() {
-            box2.classList.toggle('is-show')
+            box2.classList.toggle('is-show');
+            nav.classList.toggle('disable');
         };
         box2.onclick = function() {
-            box2.classList.remove('is-show')
-        };
-        nav2.onclick = function() {
-            box2.classList.remove('is-show')
+            box2.classList.remove('is-show');
+            nav.classList.toggle('disable');
         };
         
         btn3.onclick = function() {
-            box3.classList.toggle('is-show')
+            box3.classList.toggle('is-show');
+            nav.classList.toggle('disable');
         };
         box3.onclick = function() {
-            box3.classList.remove('is-show')
+            box3.classList.remove('is-show');
+            nav.classList.remove('disable');
         };
 
         btn4.onclick = function() {
-            box4.classList.toggle('is-show')
+            box4.classList.toggle('is-show');
+            nav.classList.toggle('disable');
         };
         box4.onclick = function() {
+            box4.classList.remove('is-show');
+            nav.classList.remove('disable');
+        };
+        action.onclick = function(){
             box4.classList.remove('is-show')
         };
 
         btn5a.onclick = function() {
-            box5a.classList.toggle('is-show')
+            box5a.classList.toggle('is-show');
+            nav.classList.toggle('disable'); 
         };
         box5a.onclick = function() {
-            box5a.classList.remove('is-show')
+            box5a.classList.remove('is-show');
+        };
+        action2.onclick = function(){
+            box5a.classList.remove('is-show');
+        };
+        action3.onclick = function(){
+            box5a.classList.remove('is-show');
+            nav.classList.remove('disable');
         };
         
         btn5b.onclick = function() {
-            box5b.classList.toggle('is-show')
+            box5b.classList.toggle('is-show');
+            nav.classList.toggle('disable');
         };
         box5b.onclick = function() {
-            box5b.classList.remove('is-show')
+            box5b.classList.remove('is-show');
+            nav.classList.remove('disable');
         };
         
+        
         btn6.onclick = function() {
-            box6.classList.toggle('is-show')
+            box6.classList.toggle('is-show');
+            nav2.classList.toggle('disable');
         };
         box6.onclick = function() {
-            box6.classList.remove('is-show')
+            box6.classList.remove('is-show');
+            nav2.classList.remove('disable');
         };
         
         btn7.onclick = function() {
-            box7.classList.toggle('is-show')
+            box7.classList.toggle('is-show');
+            nav2.classList.toggle('disable');
         };
         box7.onclick = function() {
-            box7.classList.remove('is-show')
+            box7.classList.remove('is-show');
+            nav2.classList.remove('disable');
         };
         
         btn8.onclick = function() {
-            box8.classList.toggle('is-show')
+            box8.classList.toggle('is-show');
+            nav2.classList.toggle('disable');
         };
         box8.onclick = function() {
-            box8.classList.remove('is-show')
+            box8.classList.remove('is-show');
+            nav2.classList.remove('disable');
         };
+
+        
     </script>
 
 
@@ -1025,6 +1024,15 @@
                 }
             });
         });
+    </script>
+    <script>
+        var scrollOff = function( e ){
+            e.preventDefault();
+        }
+        // スクロールをキャンセル
+        document.addEventListener( 'touchmove',scrollOff, false);
+        //removeEventListenerで「スクロールをキャンセル」をキャンセル
+        document.removeEventListener( 'touchmove', scrollOff, false );
     </script>
 
 

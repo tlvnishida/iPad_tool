@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="css/menutab_img10.css">
     <link rel="stylesheet" href="css/display-none_test13.css">
     <link rel="stylesheet" href="css/drag&drop.css">
-    <link rel="stylesheet" href="css/hamburger3.css">
-    <link rel="stylesheet" href="css/drawer_customized3.css">
+    <link rel="stylesheet" href="css/drawer_customized4.css">
+    <link rel="stylesheet" href="css/drawer-open2.css">
     
 
     <script src="js/jquery-3.4.1.js"></script>
@@ -181,7 +181,7 @@
         <header class="green_belt">
             <img id="green_belt" src="asset/header2_2.png" width="2224px" height="163px">
             <button type="button" class="drawer-toggle drawer-hamburger">
-                <a class="menu-trigger">
+                <a class="drawer-hamburger-icon">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -1013,14 +1013,14 @@
         $(function($) {
             $(document).ready(function() {
                 $('.drawer').drawer();
-                $('.menu-trigger').on('click touchstart', function () { //クリックしたら
+                $('.drawer-hamburger-icon').on('click touchstart', function () { //クリックしたら
                     $(this).toggleClass('active');  //toggleでクラス追加・削除
                 });
             });
             //別領域をクリックでクラス'active'削除
             $(document).on('click touchstart', function(event) {
-                if (!$(event.target).closest('.menu-trigger').length) {
-                    $('.menu-trigger').removeClass('active');
+                if (!$(event.target).closest('.drawer-hamburger-icon').length) {
+                    $('.drawer-hamburger-icon').removeClass('active');
                 }
             });
         });

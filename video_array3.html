@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+<script src="js/jquery-3.4.1.js"></script>
+    <script src="js/display-poster-again.js"></script>
+    <script src="js/jquery.jplayer.js"></script>
+       <script>
+        
+            $("#jquery_jplayer_1").jPlayer({
+                ready: function () {
+                    $(this).jPlayer("setMedia", {
+                        m4v: "img/CYM_CG_06_synapse.mp4",
+        poster: "asset/poster1.png"
+        }).jPlayer("stop");;
+        },
+            ended: function() { // The $.jPlayer.event.ended event
+                $('#jquery_jplayer_1 img').css('display','inline'); // show poster at end of video
+                $('#jquery_jplayer_1 video').css({'width':'0','height':'0'}); // hide video div
+                $("#jp_container_1").mouseover(function(){
+                    $("#jp-interface").show(); // show control interface at mouse hover
+                });
+                $("#jp_container_1").mouseout(function(){
+                    $("#jp-interface").hide();  // hide control interface at mouse hover
+                });
+            },
+            });
+       
+    </script>
+    
+    
+    
+</head>
+<body>
+   
+   
+   
+  
+    
+    
+    <video class="video" poster="asset/poster1.png" id="video1" width="2224" muted autoplay>
+        <source src="img/CYM_CG_06_synapse.mp4">
+    </video>
+    <span id="video2Output"></span>
+    <video class="video" preload="none" poster="asset/poster2.png" id="video2" width="2224" style="display: none;" onended="setPoster('asset/poster1.png');">
+        <source src="img/CYM_CG_07_synapse.mp4">
+    </video>
+    
+ 
+    <video poster="asset/poster1.png" muted controlslist="nodownload" autoplay preload="metadata" id="video3">
+    <source src="img/CYM_CG_06_synapse.mp4" type="video/mp4"/>
+    </video>
+    
+    <video id="player_name" class="video-js vjs-default-skin" muted
+           autoplay controls="controls" data-setup="{}" poster="asset/poster1.png" preload="auto">
+        <source type="video/mp4" src="img/CYM_CG_06_synapse.mp4">
+    </video>
+    
+   
+    
+   
+   
+   <script>
+       let videoArray = document.getElementById("")
+       $('.video').click(function(){this.play();});
+       $(function(){
+           $("#video1").on("ended", function() {
+               $("#video1").hide();
+               $("#video2").show();
+               
+
+           });
+
+           $("#video2").on("ended", function() {
+               $("#video2").hide();
+               
+               $("#video1").show();
+               
+             
+
+           });
+       });
+    </script>
+    <script>
+        function setPoster( $poster ) {
+            var $elementReference = document.getElementById( "video2" );
+            $elementReference.poster = $poster;
+            var $poster = $elementReference.poster;
+            document.getElementById( "video2Output" ).innerHTML = $poster;
+        }
+    </script>
+  
+    
+</body>
+</html>

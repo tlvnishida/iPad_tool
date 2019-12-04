@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
     <link rel="apple-touch-startup-image" href="asset/launch_screen.png">
     <title>サインバルタ</title>
-    <link rel="stylesheet" href="css/menutab_img10.css">
+    <link rel="stylesheet" href="css/menutab_img15.css">
     <link rel="stylesheet" href="css/display-none_test13.css">
     <link rel="stylesheet" href="css/drag&drop.css">
     <link rel="stylesheet" href="css/drawer_customized4.css">
@@ -19,7 +19,7 @@
     
 
     <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/display-none_test12.js"></script>
+    <script src="js/display-none_test15.js"></script>
 
     <script src="js/modal-in-modal.js"></script>
     <script src="js/jquery-ui.js"></script>
@@ -203,17 +203,17 @@
             <div class="panel_area">
                 <div id='panel6' class='panel6'>
                     <ul class="tab_panel">
-                        <img src="asset/main6.png" alt="">
+                        <video class="video" id="video6" src="img/CYM_CG_06_synapse_1.mp4" width="2224" muted autoplay></video>
                     </ul>
                 </div>
-                <div id='panel7' class='panel7' style="display: none;">
+                <div id='panel7' class='panel7'>
                     <ul class="tab_panel">
-                        <img src="asset/main7.png" alt="">
+                        <video class="video" id="video7" preload="none" poster="asset/poster2.png" src="img/CYM_CG_07_synapse_1.mp4" width="2224" style="display: none;"></video>
                     </ul>
                 </div>
                 <div id='panel8' class='panel8' style="display: none;">
                     <ul class="tab_panel">
-                        <img src="asset/main8.png" alt="">
+                        <video src="img/CYM_CG_08_synapse.mp4" muted autoplay loop width="2224"></video>
                     </ul>
                 </div>
                 
@@ -1037,7 +1037,35 @@
         document.removeEventListener( 'touchmove', scrollOff, false );
     </script>
 -->
-
+<!--
+    <script >
+        $( window ).ready(function(){
+            var video = document.getElementsById('panel6')["#video1", "#video2"];
+           
+            video1.addEventListener('ended', function() {
+                video.load();
+                video.autoplay=false;
+            }, false);
+        });
+    </script>
+    -->
+    <script>
+        $('.video').click(function(){this.play();});
+        $(function(){
+            $("#video6").on("ended", function() {
+                $("#video6").hide();
+                $("#video7").show();
+                $("#info6").hide();
+                $("#info7").show();
+            });
+            $("#video7").on("ended", function() {
+                $("#video7").hide();
+                $("#video6").show();
+                $("#info7").hide();
+                $("#info6").show();
+            });
+        });
+    </script>
 
 </body>
 </html>

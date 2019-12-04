@@ -11,10 +11,10 @@
     <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
     <link rel="apple-touch-startup-image" href="asset/launch_screen.png">
     <title>サインバルタ</title>
-    <link rel="stylesheet" href="css/menutab_img15.css">
+    <link rel="stylesheet" href="css/menutab_img16.css">
     <link rel="stylesheet" href="css/display-none_test13.css">
     <link rel="stylesheet" href="css/drag&drop.css">
-    <link rel="stylesheet" href="css/drawer_customized4.css">
+    <link rel="stylesheet" href="css/drawer_customized5.css">
     <link rel="stylesheet" href="css/drawer-open2.css">
     
 
@@ -83,7 +83,7 @@
                 <a id="popup1" href="#ex1"><img class="popup" src="asset/popup.png" alt=""></a>
                 <a id="popup2" href="#ex2" style="display: none;"><img class="popup" src="asset/popup2.png" alt=""></a>
                 <a id="popup3" href="#ex3" style="display: none;"><img class="popup" src="asset/popup3.png" alt=""></a>
-                <a id="popup4" href="#ex4" style="display: none;"><img class="popup" src="asset/popup4.png" alt=""></a>
+                <a id="popup4" href="#ex5" style="display: none;"><img class="popup" src="asset/popup4.png" alt=""></a>
 
 
                 <div id="ex1" class="modal"><video src="img/CYM_CG_01_popup.mp4" muted autoplay loop width="1920" height="1080" rel="modal:close"></video></div>
@@ -100,14 +100,14 @@
                 <div id="ex5" class="modal">
                         <img id="drug_before" src="asset/drug_before.png" width="800" alt="">
                         <img id="drug_after" src="asset/drug_after.png" width="800" style="display: none;" alt="">
-                        <video id="before" src="img/sample_2.mp4" muted autoplay loop width="1920" height="1080"></video>
-                        <video id="after" src="img/sample_4.mp4" muted autoplay loop width="1920" height="1080" style="display: none;"></video>
+                        <video id="before" src="img/CYM_CG_05_before.mp4" muted autoplay loop width="1920" height="1080"></video>
+                        <video id="after" src="img/CYM_CG_05_after.mp4" muted autoplay loop width="1920" height="1080" style="display: none;"></video>
                         <div class="action" onclick="SelectPage(6);"><a href="#wrap_secondary" rel="modal:close" id="action3"><img src="asset/action3.png" alt=""></a></div>
                         <div class="action2" onclick="SelectPage(8);"><a href="#wrap_secondary" rel="modal:close" id="action2"><img src="asset/action2.png" alt=""></a></div>
                         
                         <div id="innerBin"></div>
                         <ul>
-                            <li id="medicine"><a href="#" id="one"><img src="asset/item_cat_pouch.png" draggable="true" width="320" height="320" alt=""></a></li>
+                            <li id="medicine"><a href="#" id="one"><img src="asset/cymbalta.png" draggable="true" width="320" height="320" alt=""></a></li>
                         </ul>
 
                     </div>
@@ -180,7 +180,7 @@
     <div id="wrap_secondary" style="display: none;" class="drawer drawer--left">
         <header class="green_belt">
             <img id="green_belt" src="asset/header2_2.png" width="2224px" height="163px">
-            <button type="button" class="drawer-toggle drawer-hamburger">
+            <button type="button" id="hamburger" class="drawer-toggle drawer-hamburger">
                 <a class="drawer-hamburger-icon">
                     <span></span>
                     <span></span>
@@ -240,13 +240,13 @@
             <ul class="drawer-menu">
                 <li class="drawer-brand">はじめの画面にもどる</li>
                 <hr><hr>
-                <li><a class="drawer-menu-item" onclick="SelectPage(1);"><img src="asset/main.png" width="300" alt="">痛みの伝わり方</a></li>
+                <li><a class="drawer-menu-item drawer-toggle" onclick="SelectPage(1);"><img src="asset/main.png" width="300" alt="">痛みの伝わり方</a></li>
                 <hr>
-                <li><a class="drawer-menu-item" onclick="SelectPage(2);"><img src="asset/main2.png" width="300" alt="">急性期の痛み</a></li>
+                <li><a class="drawer-menu-item drawer-toggle" onclick="SelectPage(2);"><img src="asset/main2.png" width="300" alt="">急性期の痛み</a></li>
                 <hr>
-                <li><a class="drawer-menu-item" onclick="SelectPage(3);"><img src="asset/main3.png" width="300" alt="">慢性期の痛み</a></li>
+                <li><a class="drawer-menu-item drawer-toggle" onclick="SelectPage(3);"><img src="asset/main3.png" width="300" alt="">慢性期の痛み</a></li>
                 <hr>
-                <li><a class="drawer-menu-item" onclick="SelectPage(4);"><img src="asset/main4.png" width="300" alt="">サインバルタ®の効果</a></li>
+                <li><a class="drawer-menu-item drawer-toggle" onclick="SelectPage(4);"><img src="asset/main4.png" width="300" alt="">サインバルタ®の効果</a></li>
                 <hr>
             </ul>
         </nav>
@@ -278,8 +278,6 @@
         var box3 = document.getElementById('infoPSD3');
         var btn4 = document.getElementById('info4');
         var box4 = document.getElementById('infoPSD4');
-        var btn4 = document.getElementById('info4');
-        var box4 = document.getElementById('infoPSD4');
         var btn5a = document.getElementById('info5-1');
         var box5a = document.getElementById('infoPSD5-1');
         var btn5b = document.getElementById('info5-2');
@@ -296,6 +294,12 @@
         var action2 = document.getElementById('action2');
         var action3 = document.getElementById('action3');
         
+        let elementPop4 = document.getElementById("popup4");
+        let elementModal = document.getElementById("ex5");
+        
+        let elementPanel6 = document.getElementById("panel6");
+        let elementPanel7 = document.getElementById("panel7");
+        let hamburger = document.getElementById("hamburger");
 
         btn.onclick = function() {
             box.classList.toggle('is-show');
@@ -328,10 +332,12 @@
         btn4.onclick = function() {
             box4.classList.toggle('is-show');
             nav.classList.toggle('disable');
+            elementPop4.classList.toggle('disable');
         };
         box4.onclick = function() {
             box4.classList.remove('is-show');
             nav.classList.remove('disable');
+            elementPop4.classList.remove('disable');
         };
         action.onclick = function(){
             box4.classList.remove('is-show')
@@ -339,10 +345,12 @@
 
         btn5a.onclick = function() {
             box5a.classList.toggle('is-show');
-            nav.classList.toggle('disable'); 
+            nav.classList.toggle('disable');
+            elementModal.classList.toggle('disable');
         };
         box5a.onclick = function() {
             box5a.classList.remove('is-show');
+            elementModal.classList.remove('disable');
         };
         action2.onclick = function(){
             box5a.classList.remove('is-show');
@@ -355,38 +363,52 @@
         btn5b.onclick = function() {
             box5b.classList.toggle('is-show');
             nav.classList.toggle('disable');
+            elementModal.classList.toggle('disable');
         };
         box5b.onclick = function() {
             box5b.classList.remove('is-show');
             nav.classList.remove('disable');
+            elementModal.classList.remove('disable');
         };
         
         
         btn6.onclick = function() {
             box6.classList.toggle('is-show');
             nav2.classList.toggle('disable');
+            elementPanel7.classList.toggle('disable');
+            hamburger.classList.toggle('disable');
         };
         box6.onclick = function() {
             box6.classList.remove('is-show');
             nav2.classList.remove('disable');
+            elementPanel6.classList.remove('disable');
+            elementPanel7.classList.remove('disable');
+            hamburger.classList.remove('disable');
         };
         
         btn7.onclick = function() {
             box7.classList.toggle('is-show');
             nav2.classList.toggle('disable');
+            elementPanel6.classList.toggle('disable');
+            hamburger.classList.toggle('disable');
         };
         box7.onclick = function() {
             box7.classList.remove('is-show');
             nav2.classList.remove('disable');
+            elementPanel6.classList.remove('disable');
+            elementPanel7.classList.remove('disable');
+            hamburger.classList.remove('disable');
         };
         
         btn8.onclick = function() {
             box8.classList.toggle('is-show');
             nav2.classList.toggle('disable');
+            hamburger.classList.toggle('disable');
         };
         box8.onclick = function() {
             box8.classList.remove('is-show');
             nav2.classList.remove('disable');
+            hamburger.classList.remove('disable');
         };
 
         
@@ -442,11 +464,16 @@
         $('a[href="#ex5"]').on('click touchstart',function(event) {
             event.preventDefault();
             $(this).modal({
-                fadeDuration: 200,
+                fadeDuration: 1000,
+                fadeDelay: 0.50,
                 escapeClose: false,
                 clickClose: false,
                 showClose: false
             });
+            $("#info4").hide();
+            $("#info5-1").show();
+            $("#info5-2").hide();
+         
         });
 
 
@@ -1055,17 +1082,23 @@
             $("#video6").on("ended", function() {
                 $("#video6").hide();
                 $("#video7").show();
-                $("#info6").hide();
-                $("#info7").show();
             });
             $("#video7").on("ended", function() {
                 $("#video7").hide();
                 $("#video6").show();
+            });
+            $("#video6").on('click touchstart', function() {
                 $("#info7").hide();
                 $("#info6").show();
             });
+            $("#video7").on('click touchstart', function() {
+                $("#info6").hide();
+                $("#info7").show();
+            });
+            
         });
     </script>
+
 
 </body>
 </html>

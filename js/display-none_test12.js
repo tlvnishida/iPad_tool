@@ -214,10 +214,14 @@ function SelectPage(page) {
             elementNav32.style.display = 'none';
             elementNav42.style.display = 'none';
 
-            elementPanel1.style.display = 'none';
-            elementPanel2.style.display = 'none';
-            elementPanel3.style.display = 'none';
-            elementPanel4.style.display = 'block';
+            elementPanel1.style.visibility = 'hidden';
+            elementPanel2.style.visibility = 'hidden';
+            elementPanel3.style.visibility = 'hidden';
+            elementPanel4.style.visibility = 'visible';
+            elementPanel1.style.opacity = '0';
+            elementPanel2.style.opacity = '0';
+            elementPanel3.style.opacity = '0';
+            elementPanel4.style.opacity = '1';
 
             elementPop1.style.display = 'none';
             elementPop2.style.display = 'none';

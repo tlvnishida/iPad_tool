@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="iPad_tool">
-        <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" sizes="72x72">
-        <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
-        <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
-        <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
-        <title>サインバルタ</title>
-    <link rel="stylesheet" href="css/menutab_img10.css">
-    <link rel="stylesheet" href="css/display-none_test8.css">
-    <link rel="stylesheet" href="css/drag&drop2.css">
-    <link rel="stylesheet" href="css/hamburger3.css">
-    <link rel="stylesheet" href="css/drawer_customized3.css">
+<html lang="ja" manifest="demo.manifest">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="サインバルタ">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <link rel="apple-touch-icon" href="img/ico/apple-touch-icon.png"> <!--Here replace 'icon.png' with the path of your app's icon-->                         
+    
+    <link href="asset/splashscreens/ipad_splash.png" media="(device-width: 1024px) and (device-height: 768px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" /> <link href="asset/splashscreens/ipadpro1_splash.png" media="(device-width: 1112px) and (device-height: 834px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" /> <link href="asset/splashscreens/ipadpro2_splash.png" media="(device-width: 1366px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" /> 
+    <title>サインバルタ</title>
+    <link rel="stylesheet" href="css/menutab_img16.css">
+    <link rel="stylesheet" href="css/display-none_test13.css">
+    <link rel="stylesheet" href="css/drag&drop.css">
+    <link rel="stylesheet" href="css/drawer_customized5.css">
+    <link rel="stylesheet" href="css/drawer-open2.css">
+    
 
     <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/display-none_test10.js"></script>
+    <script src="js/display-none_test15.js"></script>
 
     <script src="js/modal-in-modal.js"></script>
     <script src="js/jquery-ui.js"></script>
@@ -32,42 +35,43 @@
     <script src="js/iscroll.js"></script>
     <script src="js/drawer.js"></script>
 
+
 </head>
 
-<body id="content">
+    <body id="content" onload="DefaultSave();">
    <div id="wrap">
     <header id="maze"><img src="asset/header.png" width="2224px" height="163px"></header>
-    <div id="tab-box">
-       <div id="nav" class="navA navB navC navD">
-        <button id="nav1" onclick="SelectPage(1);"><img src="asset/nav_1_on.png" alt="" width="743" height="104"></button>
+       <div id="tab-box">
+       <div id="nav">
+        <button id="nav1"><img src="asset/nav_1_on.png" alt="" width="743" height="104"></button>
         <button id="nav1-2" onclick="SelectPage(1);" style="display: none;"><img src="asset/nav_1_off.png" alt="" width="743" height="104"></button>
-        <button id="nav2" onclick="SelectPage(2);" style="display: none;"><img src="asset/nav_2_on.png" alt="" width="831" height="104"></button>
+        <button id="nav2" style="display: none;"><img src="asset/nav_2_on.png" alt="" width="831" height="104"></button>
         <button id="nav2-2" onclick="SelectPage(2);"><img src="asset/nav_2_off.png" alt="" width="831" height="104"></button>
         <button id="nav3" onclick="SelectPage(3);" style="display: none;"><img src="asset/nav_3_on.png" alt="" width="736" height="104"></button>
         <button id="nav3-2" onclick="SelectPage(3);"><img src="asset/nav_3_off.png" alt="" width="736" height="104"></button>
-        <button id="nav4" onclick="SelectPage(4);" style="display: none;"><img src="asset/nav_3-2_on.png" alt="" width="775" height="105"></button>
+        <button id="nav4" style="display: none;"><img src="asset/nav_3-2_on.png" alt="" width="775" height="105"></button>
         <button id="nav4-2" onclick="SelectPage(4);" style="display: none;"><img src="asset/nav_3-2_off.png" alt="" width="775" height="105"></button>
     </div>
 
         <div class="panel_area">
             <div id='panel1' class='panel1'>
                 <ul class="tab_panel">
-                   <video src="img/CYM_CG_01.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_01_4.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
-            <div id='panel2' class='panel2' style="display: none;">
+            <div id='panel2' class='panel2' style="visibility: hidden; opacity: 0;">
                 <ul class="tab_panel">
-                    <video src="img/CYM_CG_02.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_02_4.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
-            <div id='panel3' class='panel3' style="display: none;">
+            <div id='panel3' class='panel3' style="visibility: hidden; opacity: 0;">
                 <ul class="tab_panel">
-                    <video src="img/CYM_CG_03.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_03_4.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
-            <div id='panel4' class='panel4' style="display: none;">
+            <div id='panel4' class='panel4' style="visibility: hidden; opacity: 0;">
                 <ul class="tab_panel">
-                    <video src="img/CYM_CG_04.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_04_4.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
            
@@ -80,31 +84,31 @@
                 <a id="popup1" href="#ex1"><img class="popup" src="asset/popup.png" alt=""></a>
                 <a id="popup2" href="#ex2" style="display: none;"><img class="popup" src="asset/popup2.png" alt=""></a>
                 <a id="popup3" href="#ex3" style="display: none;"><img class="popup" src="asset/popup3.png" alt=""></a>
-                <a id="popup4" href="#ex4" style="display: none;"><img class="popup" src="asset/popup4.png" alt=""></a>
+                <a id="popup4" href="#ex5" style="display: none;"><img class="popup" src="asset/popup4.png" alt=""></a>
 
 
-                <div id="ex1" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1920" height="1080" rel="modal:close"></video></div>
+                <div id="ex1" class="modal"><video src="img/CYM_CG_01_popup.mp4" muted autoplay loop width="1920" height="1080" rel="modal:close"></video></div>
                 　　　<!--jQueryModalのexample1以外「rel="modal*close"」はなくても良い？ -->
-                <div id="ex2" class="modal"><video src="img/sample_2.mp4" muted autoplay loop width="1920" height="1080"></video></div>
-                <div id="ex3" class="modal"><video src="img/sample_3.mp4" muted autoplay loop width="1920" height="1080"></video></div>
-                <div id="ex4" class="modal"><video src="img/sample_1.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(5);"><a href="#ex5"><img src="asset/action.png" alt=""></a></div></div>
+                <div id="ex2" class="modal"><video src="img/CYM_CG_02_popup.mp4" muted autoplay loop width="1920" height="1080"></video></div>
+                <div id="ex3" class="modal"><video src="img/CYM_CG_03_popup.mp4" muted autoplay loop width="1920" height="1080"></video></div>
+                <div id="ex4" class="modal"><video src="img/CYM_CG_04_popup.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(5);"><a href="#ex5" id="action1"><img src="asset/action.png" alt=""></a></div></div>
                 
           
                 
                 
               
 
-                    <div id="ex5" class="modal">
+                <div id="ex5" class="modal">
                         <img id="drug_before" src="asset/drug_before.png" width="800" alt="">
                         <img id="drug_after" src="asset/drug_after.png" width="800" style="display: none;" alt="">
-                        <video id="before" src="img/sample_2.mp4" muted autoplay loop width="1920" height="1080"></video>
-                        <video id="after" src="img/sample_4.mp4" muted autoplay loop width="1920" height="1080" style="display: none;"></video>
-                        <div class="action" onclick="SelectPage(6);"><a href="#wrap_secondary" rel="modal:close"><img src="asset/action3.png" alt=""></a></div>
-                        <div class="action2" onclick="SelectPage(8);"><a href="#wrap_secondary" rel="modal:close"><img src="asset/action2.png" alt=""></a></div>
+                        <video id="before" src="img/CYM_CG_05_before.mp4" muted autoplay loop width="1920" height="1080"></video>
+                        <video id="after" src="img/CYM_CG_05_after.mp4" muted autoplay loop width="1920" height="1080" style="display: none;"></video>
+                        <div class="action" onclick="SelectPage(6);"><a href="#wrap_secondary" rel="modal:close" id="action3"><img src="asset/action3.png" alt=""></a></div>
+                        <div class="action2" onclick="SelectPage(8);"><a href="#wrap_secondary" rel="modal:close" id="action2"><img src="asset/action2.png" alt=""></a></div>
                         
-                        <div id="innerBin" class="innerBin"></div>
+                        <div id="innerBin"></div>
                         <ul>
-                            <li id="medicine"><a href="#" id="one"><img src="asset/item_cat_pouch.png" draggable="true" width="320" height="320" alt=""></a></li>
+                            <li id="medicine"><a href="#" id="one"><img src="asset/cymbalta.png" draggable="true" width="320" height="320" alt=""></a></li>
                         </ul>
 
                     </div>
@@ -124,16 +128,16 @@
                
 
 
-            </div>
-
-        
+            </div> 
+            
+        <div id="info">
             <button id="info1" class="info"><img src="asset/info.png" alt=""></button>
             <button id="info2" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
             <button id="info3" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
             <button id="info4" class="info" style="display: none;"><img src="asset/info4.png" alt=""></button>
             <button id="info5-1" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
             <button id="info5-2" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
-           
+        </div>
         
             <div id="infoPSD1" class="box infoPSD">
                 <img src="asset/info_psd.png" alt="">
@@ -165,11 +169,11 @@
 
     </div>
 
-
+<!--
     <div id="launch">
-        <a href="#" class="enter_link"><img src="asset/launch_screen2.jpg" alt=""></a>
+        <img src="asset/launch_screen2.jpg" alt="">
     </div>
-
+-->
 
     </div>
 
@@ -177,8 +181,8 @@
     <div id="wrap_secondary" style="display: none;" class="drawer drawer--left">
         <header class="green_belt">
             <img id="green_belt" src="asset/header2_2.png" width="2224px" height="163px">
-            <button type="button" class="drawer-toggle drawer-hamburger">
-                <a class="menu-trigger" href="#">
+            <button type="button" id="hamburger" class="drawer-toggle drawer-hamburger">
+                <a class="drawer-hamburger-icon">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -189,7 +193,7 @@
     
         
         <div id="tab-box_secondary">
-            <div id="nav_secondary" class="navA navB navC navD">
+            <div id="nav_secondary">
                 <button id="nav5" onclick="SelectPage(7);"><img src="asset/nav_4_on.png" alt="" width="1179" height="104"></button>
                 <button id="nav5-2" onclick="SelectPage(7);" style="display: none;"><img src="asset/nav_4_off.png" alt="" width="1179" height="104"></button>
                 <button id="nav6" onclick="SelectPage(8);" style="display: none;"><img src="asset/nav_5_on.png" alt="" width="1105" height="104"></button>
@@ -200,17 +204,17 @@
             <div class="panel_area">
                 <div id='panel6' class='panel6'>
                     <ul class="tab_panel">
-                        <img src="asset/main6.png" alt="">
+                        <video class="video" id="video6" src="img/CYM_CG_06_synapse_1.mp4" width="2224" muted autoplay></video>
                     </ul>
                 </div>
-                <div id='panel7' class='panel7' style="display: none;">
+                <div id='panel7' class='panel7'>
                     <ul class="tab_panel">
-                        <img src="asset/main7.png" alt="">
+                        <video class="video" id="video7" preload="none" poster="asset/poster2.png" src="img/CYM_CG_07_synapse_1.mp4" width="2224" style="display: none;"></video>
                     </ul>
                 </div>
                 <div id='panel8' class='panel8' style="display: none;">
                     <ul class="tab_panel">
-                        <img src="asset/main8.png" alt="">
+                        <video src="img/CYM_CG_08_synapse.mp4" muted autoplay loop width="2224"></video>
                     </ul>
                 </div>
                 
@@ -235,15 +239,15 @@
         </div>
         <nav class="drawer-nav" role="navigation">
             <ul class="drawer-menu">
-                <li><a class="drawer-brand" href="#">はじめの画面にもどる</a></li>
+                <li class="drawer-brand">はじめの画面にもどる</li>
                 <hr><hr>
-                <li><a class="drawer-menu-item" onclick="SelectPage(1);"><img src="asset/main.png" width="300" alt="">痛みの伝わり方</a></li>
+                <li><a class="drawer-menu-item drawer-toggle" onclick="SelectPage(1);"><img src="asset/main.png" width="300" alt="">痛みの伝わり方</a></li>
                 <hr>
-                <li><a class="drawer-menu-item" onclick="SelectPage(2);"><img src="asset/main2.png" width="300" alt="">急性期の痛み</a></li>
+                <li><a class="drawer-menu-item drawer-toggle" onclick="SelectPage(2);"><img src="asset/main2.png" width="300" alt="">急性期の痛み</a></li>
                 <hr>
-                <li><a class="drawer-menu-item" onclick="SelectPage(3);"><img src="asset/main3.png" width="300" alt="">慢性期の痛み</a></li>
+                <li><a class="drawer-menu-item drawer-toggle" onclick="SelectPage(3);"><img src="asset/main3.png" width="300" alt="">慢性期の痛み</a></li>
                 <hr>
-                <li><a class="drawer-menu-item" onclick="SelectPage(4);"><img src="asset/main4.png" width="300" alt="">サインバルタ®の効果</a></li>
+                <li><a class="drawer-menu-item drawer-toggle" onclick="SelectPage(4);"><img src="asset/main4.png" width="300" alt="">サインバルタ®の効果</a></li>
                 <hr>
             </ul>
         </nav>
@@ -265,64 +269,6 @@
         });
     
     </script>
-    <script>
-        $('#medicine')
-            .on('dragstart', onDragStart)
-            .on('dragend', onDragEnd);
-
-        var $dropzone = $('#innerBin')
-        .on('dragover', onDragOver)
-        .on('dragenter', onDragEnter)
-        .on('dragleave', onDragLeave)
-        .on('drop', onDrop);
-
-        function onDragStart(e) {
-            e.originalEvent.dataTransfer.setData('text', e.originalEvent.target.id);
-            addDraggingEffect();
-        }
-        function onDragEnter(e) {
-            addEnterEffect();
-        }
-
-        function onDragLeave(e) {
-            removeEnterEffect();
-        }
-
-        function onDragOver(e) {
-            e.preventDefault();
-        }
-
-        function onDragEnd(e) {
-            resetAllEffect();
-        }
-
-        function onDrop(e) {
-            e.preventDefault();
-            
-        }
-        
-        
-        // フィードバックの表示を制御するメソッド
-        function addDraggingEffect() {
-            $dropzone.addClass('dragging');
-        }
-        function removeDraggingEffect() {
-            $dropzone.removeClass('dragging');
-        }
-        function addEnterEffect() {
-            $dropzone.addClass('dragenter');
-        }
-        function removeEnterEffect() {
-            $dropzone.removeClass('dragenter');
-        }
-        function resetAllEffect(e) {
-            removeDraggingEffect();
-            removeEnterEffect();
-        }
-    
-    
-    </script>
-
 
     <script>
         var btn = document.getElementById('info1');
@@ -331,8 +277,6 @@
         var box2 = document.getElementById('infoPSD2');
         var btn3 = document.getElementById('info3');
         var box3 = document.getElementById('infoPSD3');
-        var btn4 = document.getElementById('info4');
-        var box4 = document.getElementById('infoPSD4');
         var btn4 = document.getElementById('info4');
         var box4 = document.getElementById('infoPSD4');
         var btn5a = document.getElementById('info5-1');
@@ -346,86 +290,133 @@
         var btn8 = document.getElementById('info8');
         var box8 = document.getElementById('infoPSD8');
         var nav = document.getElementById('nav');
+        var nav2 = document.getElementById('nav_secondary');
+        var action = document.getElementById('action1');
+        var action2 = document.getElementById('action2');
+        var action3 = document.getElementById('action3');
+        
+        let elementPop4 = document.getElementById("popup4");
+        let elementModal = document.getElementById("ex5");
+        
+        let elementPanel6 = document.getElementById("panel6");
+        let elementPanel7 = document.getElementById("panel7");
+        let hamburger = document.getElementById("hamburger");
 
         btn.onclick = function() {
-            box.classList.toggle('is-show')
+            box.classList.toggle('is-show');
+            nav.classList.toggle('disable');
         };
         box.onclick = function() {
-            box.classList.remove('is-show')
+            box.classList.remove('is-show');
+            nav.classList.remove('disable');
         };
-        nav.onclick = function() {
-            box.classList.remove('is-show')
-        };
+      
     
         btn2.onclick = function() {
-            box2.classList.toggle('is-show')
+            box2.classList.toggle('is-show');
+            nav.classList.toggle('disable');
         };
         box2.onclick = function() {
-            box2.classList.remove('is-show')
-        };
-        nav2.onclick = function() {
-            box2.classList.remove('is-show')
+            box2.classList.remove('is-show');
+            nav.classList.toggle('disable');
         };
         
         btn3.onclick = function() {
-            box3.classList.toggle('is-show')
+            box3.classList.toggle('is-show');
+            nav.classList.toggle('disable');
         };
         box3.onclick = function() {
-            box3.classList.remove('is-show')
+            box3.classList.remove('is-show');
+            nav.classList.remove('disable');
         };
 
         btn4.onclick = function() {
-            box4.classList.toggle('is-show')
+            box4.classList.toggle('is-show');
+            nav.classList.toggle('disable');
+            elementPop4.classList.toggle('disable');
         };
         box4.onclick = function() {
+            box4.classList.remove('is-show');
+            nav.classList.remove('disable');
+            elementPop4.classList.remove('disable');
+        };
+        action.onclick = function(){
             box4.classList.remove('is-show')
         };
 
         btn5a.onclick = function() {
-            box5a.classList.toggle('is-show')
+            box5a.classList.toggle('is-show');
+            nav.classList.toggle('disable');
+            elementModal.classList.toggle('disable');
         };
         box5a.onclick = function() {
-            box5a.classList.remove('is-show')
+            box5a.classList.remove('is-show');
+            elementModal.classList.remove('disable');
+        };
+        action2.onclick = function(){
+            box5a.classList.remove('is-show');
+        };
+        action3.onclick = function(){
+            box5a.classList.remove('is-show');
+            nav.classList.remove('disable');
         };
         
         btn5b.onclick = function() {
-            box5b.classList.toggle('is-show')
+            box5b.classList.toggle('is-show');
+            nav.classList.toggle('disable');
+            elementModal.classList.toggle('disable');
         };
         box5b.onclick = function() {
-            box5b.classList.remove('is-show')
+            box5b.classList.remove('is-show');
+            nav.classList.remove('disable');
+            elementModal.classList.remove('disable');
         };
         
+        
         btn6.onclick = function() {
-            box6.classList.toggle('is-show')
+            box6.classList.toggle('is-show');
+            nav2.classList.toggle('disable');
+            elementPanel7.classList.toggle('disable');
+            hamburger.classList.toggle('disable');
         };
         box6.onclick = function() {
-            box6.classList.remove('is-show')
+            box6.classList.remove('is-show');
+            nav2.classList.remove('disable');
+            elementPanel6.classList.remove('disable');
+            elementPanel7.classList.remove('disable');
+            hamburger.classList.remove('disable');
         };
         
         btn7.onclick = function() {
-            box7.classList.toggle('is-show')
+            box7.classList.toggle('is-show');
+            nav2.classList.toggle('disable');
+            elementPanel6.classList.toggle('disable');
+            hamburger.classList.toggle('disable');
         };
         box7.onclick = function() {
-            box7.classList.remove('is-show')
+            box7.classList.remove('is-show');
+            nav2.classList.remove('disable');
+            elementPanel6.classList.remove('disable');
+            elementPanel7.classList.remove('disable');
+            hamburger.classList.remove('disable');
         };
         
         btn8.onclick = function() {
-            box8.classList.toggle('is-show')
+            box8.classList.toggle('is-show');
+            nav2.classList.toggle('disable');
+            hamburger.classList.toggle('disable');
         };
         box8.onclick = function() {
-            box8.classList.remove('is-show')
+            box8.classList.remove('is-show');
+            nav2.classList.remove('disable');
+            hamburger.classList.remove('disable');
         };
+
+        
     </script>
 
 
-<script>
-    $('.enter_link').click(function() { 
-        $(this).parent().fadeOut(1000);
-    });
-    
-    </script>
-    
-    <!--
+<!--
     <script>
         $(document).ready(function() {
             //queue()で処理を溜めてdequeue()で実行。3秒経ったらfadeOut()
@@ -434,7 +425,7 @@
                     $("#launch").dequeue();
                 }, 3000);
             });
-            $("#launch").fadeOut(2000);
+            $("#launch").fadeOut(1000);
         });
     </script>
 -->
@@ -474,11 +465,16 @@
         $('a[href="#ex5"]').on('click touchstart',function(event) {
             event.preventDefault();
             $(this).modal({
-                fadeDuration: 200,
+                fadeDuration: 1000,
+                fadeDelay: 0.50,
                 escapeClose: false,
                 clickClose: false,
                 showClose: false
             });
+            $("#info4").hide();
+            $("#info5-1").show();
+            $("#info5-2").hide();
+         
         });
 
 
@@ -1045,20 +1041,107 @@
         $(function($) {
             $(document).ready(function() {
                 $('.drawer').drawer();
-                $('.menu-trigger').on('click touchstart', function () { //クリックしたら
+                $('.drawer-hamburger-icon').on('click touchstart', function () { //クリックしたら
                     $(this).toggleClass('active');  //toggleでクラス追加・削除
                 });
             });
             //別領域をクリックでクラス'active'削除
             $(document).on('click touchstart', function(event) {
-                if (!$(event.target).closest('.menu-trigger').length) {
-                    $('.menu-trigger').removeClass('active');
+                if (!$(event.target).closest('.drawer-hamburger-icon').length) {
+                    $('.drawer-hamburger-icon').removeClass('active');
                 }
             });
         });
     </script>
+    
+    <!--
+    <script>
+        var scrollOff = function( e ){
+            e.preventDefault();
+        }
+        // スクロールをキャンセル
+        document.addEventListener( 'touchmove',scrollOff, false);
+        //removeEventListenerで「スクロールをキャンセル」をキャンセル
+        document.removeEventListener( 'touchmove', scrollOff, false );
+    </script>
+-->
+<!--
+    <script >
+       //動画再生後にイベント
+        $( window ).ready(function(){
+            var video = document.getElementsById('panel6')["#video1", "#video2"];
+           
+            video1.addEventListener('ended', function() {
+                video.load();
+                video.autoplay=false;
+            }, false);
+        });
+    </script>
+    -->
+    
+    <script>
+        /* "passive" が使えるかどうかを検出 */
+        var passiveSupported = false;
+        try {
+            document.addEventListener("test", null, Object.defineProperty({}, "passive", {
+                get: function() {
+                    passiveSupported = true;
+                }
+            }));
+        } catch(err) {}
 
-
+        /* リスナーを登録 */
+      //  document.addEventListener('touchstart', function listener(e) {
+            /* do something */
+        //    e.preventDefault();
+    //    }, passiveSupported ? { passive: false } : false);  
+        document.addEventListener('touchmove', function listener(e) {
+            /* do something */
+            e.preventDefault();
+        }, passiveSupported ? { passive: false } : false);
+        
+        </script>
+        <script>
+            //ビューポートをフリーズし、オーバースキャンを無効
+            document.body.addEventListener('touchmove',function(e){
+                e.preventDefault();
+            });
+        
+        </script>
+    
+    <script>
+        $('.video').click(function(){this.play();});
+        $(function(){
+            $("#video6").on("ended", function() {
+                $("#video6").hide();
+                $("#video7").show();
+            });
+            $("#video7").on("ended", function() {
+                $("#video7").hide();
+                $("#video6").show();
+            });
+            $("#video6").on('click touchstart', function() {
+                $("#info7").hide();
+                $("#info6").show();
+            });
+            $("#video7").on('click touchstart', function() {
+                $("#info6").hide();
+                $("#info7").show();
+            });
+            
+        });
+    </script>
+<script>
+    // 初期HTML記述をセット
+    var defaultHTML;
+    function DefaultSave() {
+        defaultHTML = document.body.innerHTML;
+    }
+    // HTML記述を初期状態に戻す
+    function HTMLRestore() {
+        document.body.innerHTML = defaultHTML;
+    }
+    </script>
 
 </body>
 </html>

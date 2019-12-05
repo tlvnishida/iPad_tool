@@ -46,6 +46,16 @@ function SelectPage(page) {
     let elementWrap1 = document.getElementById("wrap");
     let elementWrap2 = document.getElementById("wrap_secondary");
     
+    let beforeDrug = document.getElementById('before');
+    let afterDrug = document.getElementById('after');
+    let drugStatusBefore = document.getElementById('drug_before');
+    let drugStatusAfter = document.getElementById('drug_after');
+    let medicine = document.getElementById('medicine');
+
+    
+    let elementVideo6 = document.getElementById("video6");
+    let elementVideo7 = document.getElementById("video7");
+    
 
     switch (page) {
         case 1:
@@ -237,6 +247,7 @@ function SelectPage(page) {
             
             elementEx4.style.display = 'none';
             elementEx5.style.display = 'block';
+            
             break;
             
             
@@ -244,6 +255,14 @@ function SelectPage(page) {
 
             elementWrap1.style.display = 'none';
             elementWrap2.style.display = 'block';
+            
+            beforeDrug.style.display = 'block';
+            afterDrug.style.display = 'none';
+            drugStatusBefore.style.display ='block';
+            drugStatusAfter.style.display = 'none';
+            medicine.style.display = 'block';
+            elementInfo5a.style.display = 'block';
+            elementInfo5b.style.display = 'none';
       
             break;
             
@@ -266,6 +285,10 @@ function SelectPage(page) {
             elementInfo6.style.display = 'block';
             elementInfo7.style.display = 'none';
             elementInfo8.style.display = 'none';
+            
+            elementVideo6.currentTime = 0;
+            elementVideo7.style.display = 'none';
+            elementVideo6.style.display = 'block';
 
             break;
             

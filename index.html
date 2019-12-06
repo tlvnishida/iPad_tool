@@ -11,15 +11,15 @@
     <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
     <link rel="apple-touch-startup-image" href="asset/launch_screen2.png">
     <title>サインバルタ</title>
-    <link rel="stylesheet" href="css/menutab_img16.css">
-    <link rel="stylesheet" href="css/display-none_test13.css">
+    <link rel="stylesheet" href="css/menutab_img17.css">
+    <link rel="stylesheet" href="css/display-none_test14.css">
     <link rel="stylesheet" href="css/drag&drop3.css">
     <link rel="stylesheet" href="css/drawer_customized7.css">
     <link rel="stylesheet" href="css/drawer-open2.css">
     
 
     <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/display-none_test16.js"></script>
+    <script src="js/display-none_test19.js"></script>
 
     <script src="js/modal-in-modal.js"></script>
     <script src="js/jquery-ui.js"></script>
@@ -39,6 +39,11 @@
 
     <body id="content" onload="DefaultSave();">
    <div id="wrap">
+   
+       <div id="launch">
+           <img src="asset/launch_screen2.jpg" alt="">
+       </div>
+   
     <header id="maze"><img src="asset/header.png" width="2224px" height="163px"></header>
        <div id="tab-box">
        <div id="nav">
@@ -98,8 +103,13 @@
               
 
                 <div id="ex5" class="modal">
-                        <img id="drug_before" src="asset/drug_before.png" width="800" alt="">
-                        <img id="drug_after" src="asset/drug_after.png" width="800" style="display: none;" alt="">
+                    <div id="nav_drug">
+                        <button id="nav7"><img src="asset/drug_before_on.png" alt="" height="93"></button>
+                        <button id="nav7-2" onclick="SelectPage(9);" style="display: none;"><img src="asset/drug_before_off.png" alt="" height="93"></button>
+                        <button id="nav8" style="display: none;"><img src="asset/drug_after_on.png" alt="" height="93"></button>
+                        <button id="nav8-2" onclick="SelectPage(10);"><img src="asset/drug_after_off.png" alt="" height="93"></button>
+                      
+                    </div>
                         <video id="before" src="img/CYM_CG_05_before.mp4" muted autoplay loop width="1920" height="1080"></video>
                         <video id="after" src="img/CYM_CG_05_after.mp4" muted autoplay loop width="1920" height="1080" style="display: none;"></video>
                         <div class="action" onclick="SelectPage(6);"><a href="#wrap_secondary" rel="modal:close" id="action3"><img src="asset/action3.png" alt=""></a></div>
@@ -171,10 +181,6 @@
     </div>
 
 
-    <div id="launch">
-        <img src="asset/launch_screen2.jpg" alt="">
-    </div>
-
 
     </div>
 
@@ -242,13 +248,13 @@
             <ul class="drawer-menu">
                 <li class="drawer-brand">はじめの画面にもどる</li>
                 <hr><hr>
-                <li><a class="drawer-menu-item drawer-toggle" onclick="SelectPage(1);"><img src="asset/main.png" width="300" alt="">痛みの伝わり方</a></li>
+                <li><a class="drawer-menu-item" onclick="SelectPage(1);"><img src="asset/main.png" width="300" alt="">痛みの伝わり方</a></li>
                 <hr>
-                <li><a class="drawer-menu-item drawer-toggle" onclick="SelectPage(2);"><img src="asset/main2.png" width="300" alt="">急性期の痛み</a></li>
+                <li><a class="drawer-menu-item" onclick="SelectPage(2);"><img src="asset/main2.png" width="300" alt="">急性期の痛み</a></li>
                 <hr>
-                <li><a class="drawer-menu-item drawer-toggle" onclick="SelectPage(3);"><img src="asset/main3.png" width="300" alt="">慢性期の痛み</a></li>
+                <li><a class="drawer-menu-item" onclick="SelectPage(3);"><img src="asset/main3.png" width="300" alt="">慢性期の痛み</a></li>
                 <hr>
-                <li><a class="drawer-menu-item drawer-toggle" onclick="SelectPage(4);"><img src="asset/main4.png" width="300" alt="">サインバルタ®の効果</a></li>
+                <li><a class="drawer-menu-item" onclick="SelectPage(4);"><img src="asset/main4.png" width="300" alt="">サインバルタ®の効果</a></li>
                 <hr>
             </ul>
         </nav>
@@ -495,6 +501,10 @@
         let medicine = document.getElementById('medicine');
         let elementInfo5a = document.getElementById('info5-1');
         let elementInfo5b = document.getElementById('info5-2');
+        let elementNav7 = document.getElementById("nav7");
+        let elementNav8 = document.getElementById("nav8");
+        let elementNav72 = document.getElementById("nav7-2");
+        let elementNav82 = document.getElementById("nav8-2");
 
 
         //        var DEBUG = false;
@@ -859,11 +869,15 @@
 
             beforeDrug.style.display = 'none';
             afterDrug.style.display = 'block';
-            drugStatusBefore.style.display ='none';
-            drugStatusAfter.style.display = 'block';
+           //drugStatusBefore.style.display ='none';
+           //drugStatusAfter.style.display = 'block';
             medicine.style.display = 'none';
             elementInfo5a.style.display = 'none';
             elementInfo5b.style.display = 'block';
+            elementNav7.style.display = 'none';
+            elementNav8.style.display = 'block';
+            elementNav72.style.display = 'block';
+            elementNav82.style.display = 'none';
 
             console.log('apperture drop');
 
@@ -1040,19 +1054,15 @@
     
     <script>
         $(function($) {
-            $(document).ready(function() {
+         
                 $('.drawer').drawer();
-                $('.drawer-hamburger-icon').on('click touchstart', function () { //クリックしたら
-                    $(this).toggleClass('active');  //toggleでクラス追加・削除
-                });
+            $('.drawer-menu-item').on('click', function() {
+                $('.drawer').drawer('close');
             });
-            //別領域をクリックでクラス'active'削除
-            $(document).on('click touchstart', function(event) {
-                if (!$(event.target).closest('.drawer-hamburger-icon').length) {
-                    $('.drawer-hamburger-icon').removeClass('active');
-                }
-            });
+            
+                
         });
+      
     </script>
     
     <!--

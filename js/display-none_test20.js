@@ -25,7 +25,9 @@ function SelectPage(page) {
     let elementPanel2 = document.getElementById("panel2");
     let elementPanel3 = document.getElementById("panel3");
     let elementPanel4 = document.getElementById("panel4");
-    let elementPanel6 = document.getElementById("panel6");
+    let elementPanel6a = document.getElementById("panel6");
+    let elementPanel6b = document.getElementById("panel6-2");
+    let elementPanel6c = document.getElementById("panel6-3");
     let elementPanel7 = document.getElementById("panel7");
     let elementPanel8 = document.getElementById("panel8");
     
@@ -297,17 +299,14 @@ function SelectPage(page) {
             elementNav52.style.display = 'none';
             elementNav62.style.display = 'block';
             
-            elementPanel6.style.display = 'block';
-            elementPanel7.style.display = 'block';
+            elementPanel6a.style.display = 'block';
+            elementPanel6b.style.display = 'none';
+            elementPanel6c.style.display = 'none';
             elementPanel8.style.display = 'none';
             
             elementInfo6.style.display = 'block';
             elementInfo7.style.display = 'none';
             elementInfo8.style.display = 'none';
-            
-            elementVideo6.currentTime = 0;
-            elementVideo7.style.display = 'none';
-            elementVideo6.style.display = 'block';
 
             break;
             
@@ -323,8 +322,9 @@ function SelectPage(page) {
             elementNav52.style.display = 'block';
             elementNav62.style.display = 'none';
             
-            elementPanel6.style.display = 'none';
-            elementPanel7.style.display = 'none';
+            elementPanel6a.style.display = 'none';
+            elementPanel6b.style.display = 'none';
+            elementPanel6c.style.display = 'none';
             elementPanel8.style.display = 'block';
             
             elementInfo6.style.display = 'none';
@@ -362,6 +362,51 @@ function SelectPage(page) {
             elementInfo5a.style.display = 'none';
             elementInfo5b.style.display = 'block';
           
+            break;
+            
+            
+        case 11:
+
+            elementWrap1.style.display = 'none';
+            elementWrap2.style.display = 'block';
+
+            elementNav5.style.display = 'block';
+            elementNav6.style.display = 'none';
+
+            elementNav52.style.display = 'none';
+            elementNav62.style.display = 'block';
+
+            elementPanel6a.style.display = 'none';
+            elementPanel6b.style.display = 'block';
+            elementPanel6c.style.display = 'none';
+            elementPanel8.style.display = 'none';
+
+            elementInfo6.style.display = 'none';
+            elementInfo7.style.display = 'none';
+            elementInfo8.style.display = 'block';
+
+            break;
+            
+        case 12:
+
+            elementWrap1.style.display = 'none';
+            elementWrap2.style.display = 'block';
+
+            elementNav5.style.display = 'block';
+            elementNav6.style.display = 'none';
+
+            elementNav52.style.display = 'none';
+            elementNav62.style.display = 'block';
+
+            elementPanel6a.style.display = 'none';
+            elementPanel6b.style.display = 'none';
+            elementPanel6c.style.display = 'block';
+            elementPanel8.style.display = 'none';
+
+            elementInfo6.style.display = 'none';
+            elementInfo7.style.display = 'none';
+            elementInfo8.style.display = 'block';
+
             break;
 
     }

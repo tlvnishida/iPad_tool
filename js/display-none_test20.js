@@ -61,6 +61,16 @@ function SelectPage(page) {
     let elementVideo6 = document.getElementById("video6");
     let elementVideo7 = document.getElementById("video7");
     
+    let elementButton1 = document.getElementById("button1");
+    let elementPrimary = document.getElementById("primary");
+    let elementSub = document.getElementById("sub");
+    
+    let elementButton2 = document.getElementById("button2");
+    let elementAction4a = document.getElementById("action4");
+    let elementAction4b = document.getElementById("action4-2");
+    let elementVideo4a = document.getElementById("video4");
+    let elementVideo4b = document.getElementById("video4-2");
+    
 
     switch (page) {
         case 1:
@@ -99,6 +109,10 @@ function SelectPage(page) {
             elementInfo4.style.display = 'none';
             elementInfo5a.style.display = 'none';
             elementInfo5b.style.display = 'none';
+            
+            elementPrimary.style.display = 'block';
+            elementSub.style.display = 'none';
+            elementButton1.style.display = 'block';
             
             $('.drawer').drawer();
             
@@ -220,6 +234,12 @@ function SelectPage(page) {
             elementInfo4.style.display = 'block';
             elementInfo5a.style.display = 'none';
             elementInfo5b.style.display = 'none';
+            
+            elementAction4a.style.display = 'block';
+            elementAction4b.style.display = 'none';
+            elementVideo4a.style.display = 'block';
+            elementVideo4b.style.display = 'none';
+            elementButton2.style.display = 'block';
             
             $('.drawer').drawer();
             
@@ -344,6 +364,7 @@ function SelectPage(page) {
             beforeDrug.style.display = 'block';
             afterDrug.style.display = 'none';
             
+            medicine.style.display = 'none';
             elementInfo5a.style.display = 'block';
             elementInfo5b.style.display = 'none';
 
@@ -406,6 +427,24 @@ function SelectPage(page) {
             elementInfo6.style.display = 'none';
             elementInfo7.style.display = 'none';
             elementInfo8.style.display = 'block';
+
+            break;
+            
+        case 13:
+
+            elementPrimary.style.display = 'none';
+            elementSub.style.display = 'block';
+            elementButton1.style.display = 'none';
+
+            break;
+            
+        case 14:
+
+            elementAction4a.style.display = 'none';
+            elementAction4b.style.display = 'block';
+            elementVideo4a.style.display = 'none';
+            elementVideo4b.style.display = 'block';
+            elementButton2.style.display = 'none';
 
             break;
 

@@ -204,15 +204,15 @@ ul.tab_panel video{
 
 #button1{
     top: 220px;
-    left: 920px
+    left: 920px;
 }
 
 #button2{
     top: 550px;
-    left: 980px
+    left: 980px;
 }
 
-#button3,#button3-2{
+#button3, #button3-2{
     top: 930px;
     left: 110px;
     z-index: 100;
@@ -224,4 +224,11 @@ ul.tab_panel video{
     width: 200px;
     bottom: 60px;
     right: -80px;
+}
+
+#action4, #action4-2{
+    position: absolute;
+    top: -105px;
+    left: 15px;
+    z-index: 1;
 }

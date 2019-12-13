@@ -65,7 +65,7 @@ function SelectPage(page) {
     let elementPrimary = document.getElementById("primary");
     let elementSub = document.getElementById("sub");
     
-    let elementButton2 = document.getElementById("button2");
+    let elementButton2b = document.getElementById("button2-2");
     let elementAction4a = document.getElementById("action4");
     let elementAction4b = document.getElementById("action4-2");
     let elementVideo4a = document.getElementById("video4");
@@ -239,7 +239,7 @@ function SelectPage(page) {
             elementAction4b.style.display = 'none';
             elementVideo4a.style.display = 'block';
             elementVideo4b.style.display = 'none';
-            elementButton2.style.display = 'block';
+            elementButton2b.style.display = 'block';
             
             $('.drawer').drawer();
             
@@ -444,7 +444,7 @@ function SelectPage(page) {
             elementAction4b.style.display = 'block';
             elementVideo4a.style.display = 'none';
             elementVideo4b.style.display = 'block';
-            elementButton2.style.display = 'none';
+            elementButton2b.style.display = 'none';
 
             break;
 

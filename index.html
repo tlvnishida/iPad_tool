@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="iPad_tool">
+    <meta name="apple-mobile-web-app-title" content="Cymbalta">
     <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" sizes="72x72">
     <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
     <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
     <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
     <link rel="apple-touch-startup-image" href="asset/launch_screen2.png">
     <title>サインバルタ</title>
-    <link rel="stylesheet" href="css/menutab_img17.css">
-    <link rel="stylesheet" href="css/display-none_test15.css">
+    <link rel="stylesheet" href="css/menutab_img18.css">
+    <link rel="stylesheet" href="css/display-none_test17.css">
     <link rel="stylesheet" href="css/drag&drop3.css">
     <link rel="stylesheet" href="css/drawer_customized7.css">
     <link rel="stylesheet" href="css/drawer-open2.css">
     
 
     <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/display-none_test20.js"></script>
-
-    <script src="js/modal-in-modal.js"></script>
-    <script src="js/jquery-ui.js"></script>
-
+    <script src="js/display-none_test23.js"></script>
+    
+    <script src="js/jquery.pep.js"></script>
+    
     <!-- jQuery Modal -->
     <script src="js/jquery.modal.js"></script>
-    <link rel="stylesheet" href="css/jquery.modal_customized7.css" />
+    <link rel="stylesheet" href="css/jquery.modal_customized9.css" />
     
     <script src="js/drag&drop.js"></script>
     <script src="js/mobiledragdrop.js"></script>
@@ -46,7 +45,7 @@
    
     <header id="maze"><img src="asset/header.png" width="2224px" height="163px"></header>
        <div id="tab-box">
-       <main>
+       <main id="main">
        <div id="nav">
         <button id="nav1"><img src="asset/nav_1_on.png" alt="" width="743" height="104"></button>
         <button id="nav1-2" onclick="SelectPage(1);" style="display: none;"><img src="asset/nav_1_off.png" alt="" width="743" height="104"></button>
@@ -57,28 +56,31 @@
         <button id="nav4" style="display: none;"><img src="asset/nav_3-2_on.png" alt="" width="775" height="105"></button>
         <button id="nav4-2" onclick="SelectPage(4);" style="display: none;"><img src="asset/nav_3-2_off.png" alt="" width="775" height="105"></button>
     </div>
-    </main>
         <div class="panel_area">
-           <main>
             <div id='panel1' class='panel1'>
                 <ul class="tab_panel">
-                    <video src="img/CYM_CG_01_4.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_01_S.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
             <div id='panel2' class='panel2' style="visibility: hidden; opacity: 0;">
                 <ul class="tab_panel">
-                    <video src="img/CYM_CG_02_4.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_02_S.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
             <div id='panel3' class='panel3' style="visibility: hidden; opacity: 0;">
                 <ul class="tab_panel">
-                    <video src="img/CYM_CG_03_4.mp4" muted autoplay loop width="2224"></video>
+                    <video src="img/CYM_CG_03_S.mp4" muted autoplay loop width="2224"></video>
                 </ul>
             </div>
             <div id='panel4' class='panel4' style="visibility: hidden; opacity: 0;">
                 <ul class="tab_panel">
-                    <button id="button2" class="button"><img src="asset/point2.png" alt=""><span class="ripple"></span></button>
-                    <video src="img/CYM_CG_04_4.mp4" muted autoplay loop width="2224"></video>
+                    <button id="button2" class="button" onclick="SelectPage(14);">
+                    <div id="button2-2">
+                    <img src="asset/point3.png" alt=""><span class="ripple"></span>
+                    </div>
+                        <img id="action4" src="asset/transparent_btn.png" alt=""><img id="action4-2" src="asset/transparent_btn.png" alt="" style="display: none;" onclick="SelectPage(4);"></button>
+                    <video id="video4" src="img/CYM_CG_04-1_S.mp4" muted autoplay loop width="2224"></video>
+                    <video id="video4-2" src="img/CYM_CG_04-2_S.mp4" muted autoplay loop width="2224" style="display: none;"></video>
                 </ul>
             </div>
            
@@ -94,7 +96,7 @@
                 <a id="popup4" href="#ex5" style="display: none;"><img class="popup" src="asset/popup4.png" alt=""></a>
 
 
-                <div id="ex1" class="modal"><button id="button1" class="button"><img src="asset/point2.png" alt=""><span class="ripple"></span></button><video src="img/CYM_CG_01_popup.mp4" muted autoplay loop width="1920" height="1080" rel="modal:close"></video></div>
+                <div id="ex1" class="modal"><button id="button1" class="button" onclick="SelectPage(13);"><img src="asset/point3.png" alt=""><span class="ripple"></span><img class="transparent_btn" src="asset/transparent_btn.png" alt=""></button><video id="primary" src="img/CYM_CG_01_popup_A.mp4" muted autoplay loop width="1920" height="1080" rel="modal:close"></video><video id="sub" src="img/CYM_CG_01_popup_B.mp4" muted autoplay loop width="1920" height="1080" rel="modal:close" style="display: none;"></video></div>
                 　　　<!--jQueryModalのexample1以外「rel="modal*close"」はなくても良い？ -->
                 <div id="ex2" class="modal"><video src="img/CYM_CG_02_popup.mp4" muted autoplay loop width="1920" height="1080"></video></div>
                 <div id="ex3" class="modal"><video src="img/CYM_CG_03_popup.mp4" muted autoplay loop width="1920" height="1080"></video></div>
@@ -115,12 +117,13 @@
                     </div>
                         <video id="before" src="img/CYM_CG_05_before.mp4" muted autoplay loop width="1920" height="1080"></video>
                         <video id="after" src="img/CYM_CG_05_after.mp4" muted autoplay loop width="1920" height="1080" style="display: none;"></video>
+                    <!--
                         <div class="action" onclick="SelectPage(6);"><a href="#wrap_secondary" rel="modal:close" id="action3"><img src="asset/action3.png" alt=""></a></div>
-                        <!--
+                        
                         <div class="action2" onclick="SelectPage(8);"><a href="#wrap_secondary" rel="modal:close" id="action2"><img src="asset/action2.png" alt=""></a></div>
                         -->
                         
-                        <div id="innerBin"></div>
+                    <div id="innerBin" class="droppable"></div>
                         <ul>
                             <li id="medicine"><a href="#" id="one"><img src="asset/cymbalta.png" draggable="true" width="320" height="320" alt=""></a></li>
                         </ul>
@@ -144,42 +147,43 @@
 
             </div> 
             
-            </main>
+           
             
-        <div id="info">
-            <button id="info1" class="info"><img src="asset/info.png" alt=""></button>
-            <button id="info2" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
-            <button id="info3" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
-            <button id="info4" class="info" style="display: none;"><img src="asset/info4.png" alt=""></button>
-            <button id="info5-1" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
-            <button id="info5-2" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
-        </div>
         
-            <div id="infoPSD1" class="box infoPSD">
-                <img src="asset/info_psd.png" alt="">
-            </div>
-            <div id="infoPSD2" class="box infoPSD">
-                <img src="asset/info_psd2.png" alt="">
-            </div>
-            <div id="infoPSD3" class="box infoPSD">
-                <img src="asset/info_psd3.png" alt="">
-            </div>
-            <div id="infoPSD4" class="box infoPSD">
-                <img src="asset/info_psd4.png" alt="">
-            </div>
-            <div id="infoPSD5-1" class="box infoPSD">
-                <img src="asset/info_psd2.png" alt="">
-            </div>
-            <div id="infoPSD5-2" class="box infoPSD">
-                <img src="asset/info_psd3.png" alt="">
-            </div>
 
        
 
         </div>
+           </main>
 
+           <div id="info">
+               <button id="info1" class="info"><img src="asset/info.png" alt=""></button>
+               <button id="info2" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
+               <button id="info3" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
+               <button id="info4" class="info" style="display: none;"><img src="asset/info4.png" alt=""></button>
+               <button id="info5-1" class="info2" style="display: none;"><img src="asset/info2.png" alt=""></button>
+               <div class="action" onclick="SelectPage(7);"><a href="#wrap_secondary" rel="modal:close" id="action3" style="display: none;"><img src="asset/action3.png" alt=""></a></div>
+               <button id="info5-2" class="info2" style="display: none;"><img src="asset/info3.png" alt=""></button>
+           </div>
 
-
+           <div id="infoPSD1" class="box infoPSD">
+               <img src="asset/info_psd.png" alt="">
+           </div>
+           <div id="infoPSD2" class="box infoPSD">
+               <img src="asset/info_psd2.png" alt="">
+           </div>
+           <div id="infoPSD3" class="box infoPSD">
+               <img src="asset/info_psd3.png" alt="">
+           </div>
+           <div id="infoPSD4" class="box infoPSD">
+               <img src="asset/info_psd4.png" alt="">
+           </div>
+           <div id="infoPSD5-1" class="box infoPSD">
+               <img src="asset/info_psd2.png" alt="">
+           </div>
+           <div id="infoPSD5-2" class="box infoPSD">
+               <img src="asset/info_psd3.png" alt="">
+           </div>
 
 
 
@@ -205,6 +209,7 @@
     
         
         <div id="tab-box_secondary">
+           <main id="main2">
             <div id="nav_secondary">
                 <button id="nav5" onclick="SelectPage(7);"><img src="asset/nav_4_on.png" alt="" width="1179" height="104"></button>
                 <button id="nav5-2" onclick="SelectPage(7);" style="display: none;"><img src="asset/nav_4_off.png" alt="" width="1179" height="104"></button>
@@ -216,13 +221,13 @@
             <div class="panel_area">
                 <div id='panel6' class='panel6'>
                     <ul class="tab_panel">
-                        <button id="button3" class="button" onclick="SelectPage(11);"><img src="asset/point2.png" alt=""><span class="ripple"></span><img class="transparent_btn" src="asset/transparent_btn.png" alt=""></button>
+                        <button id="button3" class="button" onclick="SelectPage(11);"><img src="asset/point3.png" alt=""><span class="ripple"></span><img class="transparent_btn3" src="asset/transparent_btn.png" alt=""></button>
                         <video class="video" id="video6" src="img/CYM_CG_06_synapse_A.mp4" width="2224" muted autoplay loop></video>
                     </ul>
                 </div>
                 <div id='panel6-2' class='panel6' style="display: none;">
                     <ul class="tab_panel">
-                        <button id="button3-2" class="button" onclick="SelectPage(12);"><img src="asset/point2.png" alt=""><span class="ripple"></span><img class="transparent_btn" src="asset/transparent_btn.png" alt=""></button>
+                        <button id="button3-2" class="button" onclick="SelectPage(12);"><img src="asset/point3.png" alt=""><span class="ripple"></span><img class="transparent_btn3" src="asset/transparent_btn.png" alt=""></button>
                         <video class="video" id="video6-2" src="img/CYM_CG_06_synapse_B.mp4" width="2224" muted autoplay loop></video>
                     </ul>
                 </div>
@@ -244,22 +249,22 @@
                     </ul>
                 </div>
                 
-                
-                <button id="info6" class="info"><img src="asset/info6.png" alt=""></button>
-                <button id="info7" class="info" style="display: none;"><img src="asset/info7.png" alt=""></button>
-                <button id="info8" class="info" style="display: none;"><img src="asset/info8.png" alt=""></button>
-                
-                <div id="infoPSD6" class="box infoPSD">
-                    <img src="asset/info_psd6.png" alt="">
-                </div>
-                <div id="infoPSD7" class="box infoPSD">
-                    <img src="asset/info_psd7.png" alt="">
-                </div>
-                <div id="infoPSD8" class="box infoPSD">
-                    <img src="asset/info_psd8.png" alt="">
-                </div>
             
                 
+            </div>
+            </main>
+            <button id="info6" class="info"><img src="asset/info6.png" alt=""></button>
+            <button id="info7" class="info" style="display: none;"><img src="asset/info7.png" alt=""></button>
+            <button id="info8" class="info" style="display: none;"><img src="asset/info8.png" alt=""></button>
+
+            <div id="infoPSD6" class="box infoPSD">
+                <img src="asset/info_psd6.png" alt="">
+            </div>
+            <div id="infoPSD7" class="box infoPSD">
+                <img src="asset/info_psd7.png" alt="">
+            </div>
+            <div id="infoPSD8" class="box infoPSD">
+                <img src="asset/info_psd8.png" alt="">
             </div>
             
         </div>
@@ -327,44 +332,55 @@
         let elementPanel6 = document.getElementById("panel6");
         let elementPanel7 = document.getElementById("panel7");
         let hamburger = document.getElementById("hamburger");
+        
+        let main = document.getElementById("main");
+        let main2 = document.getElementById("main2");
 
         btn.onclick = function() {
             box.classList.toggle('is-show');
             nav.classList.toggle('disable');
+            main.classList.toggle('de-emphasized');
         };
         box.onclick = function() {
             box.classList.remove('is-show');
             nav.classList.remove('disable');
+            main.classList.remove('de-emphasized');
         };
       
     
         btn2.onclick = function() {
             box2.classList.toggle('is-show');
             nav.classList.toggle('disable');
+            main.classList.toggle('de-emphasized');
         };
         box2.onclick = function() {
             box2.classList.remove('is-show');
             nav.classList.toggle('disable');
+            main.classList.remove('de-emphasized');
         };
         
         btn3.onclick = function() {
             box3.classList.toggle('is-show');
             nav.classList.toggle('disable');
+            main.classList.toggle('de-emphasized');
         };
         box3.onclick = function() {
             box3.classList.remove('is-show');
             nav.classList.remove('disable');
+            main.classList.remove('de-emphasized');
         };
 
         btn4.onclick = function() {
             box4.classList.toggle('is-show');
             nav.classList.toggle('disable');
             elementPop4.classList.toggle('disable');
+            main.classList.toggle('de-emphasized');
         };
         box4.onclick = function() {
             box4.classList.remove('is-show');
             nav.classList.remove('disable');
             elementPop4.classList.remove('disable');
+            main.classList.remove('de-emphasized');
         };
         action.onclick = function(){
             box4.classList.remove('is-show')
@@ -384,6 +400,7 @@
         //};
         action3.onclick = function(){
             box5a.classList.remove('is-show');
+            box5b.classList.remove('is-show');
             nav.classList.remove('disable');
         };
         
@@ -402,40 +419,44 @@
         btn6.onclick = function() {
             box6.classList.toggle('is-show');
             nav2.classList.toggle('disable');
-            elementPanel7.classList.toggle('disable');
+    //        elementPanel7.classList.toggle('disable');
             hamburger.classList.toggle('disable');
+            main2.classList.toggle('de-emphasized');
         };
         box6.onclick = function() {
             box6.classList.remove('is-show');
             nav2.classList.remove('disable');
             elementPanel6.classList.remove('disable');
-            elementPanel7.classList.remove('disable');
+    //        elementPanel7.classList.remove('disable');
             hamburger.classList.remove('disable');
+            main2.classList.remove('de-emphasized');
         };
-        
-        btn7.onclick = function() {
-            box7.classList.toggle('is-show');
-            nav2.classList.toggle('disable');
-            elementPanel6.classList.toggle('disable');
-            hamburger.classList.toggle('disable');
-        };
-        box7.onclick = function() {
-            box7.classList.remove('is-show');
-            nav2.classList.remove('disable');
-            elementPanel6.classList.remove('disable');
-            elementPanel7.classList.remove('disable');
-            hamburger.classList.remove('disable');
-        };
+    
+    //    btn7.onclick = function() {
+    //        box7.classList.toggle('is-show');
+    //        nav2.classList.toggle('disable');
+    //        elementPanel6.classList.toggle('disable');
+    //        hamburger.classList.toggle('disable');
+    //    };
+    //    box7.onclick = function() {
+    //        box7.classList.remove('is-show');
+    //        nav2.classList.remove('disable');
+    //        elementPanel6.classList.remove('disable');
+    //        elementPanel7.classList.remove('disable');
+    //        hamburger.classList.remove('disable');
+    //    };
         
         btn8.onclick = function() {
             box8.classList.toggle('is-show');
             nav2.classList.toggle('disable');
             hamburger.classList.toggle('disable');
+            main2.classList.toggle('de-emphasized');
         };
         box8.onclick = function() {
             box8.classList.remove('is-show');
             nav2.classList.remove('disable');
             hamburger.classList.remove('disable');
+            main2.classList.remove('de-emphasized');
         };
 
         
@@ -500,7 +521,9 @@
             $("#info4").hide();
             $("#info5-1").show();
             $("#info5-2").hide();
-         
+            $("#button2-2").hide();
+            $("#action3").show();
+            
         });
 
 
@@ -508,7 +531,7 @@
 
     });
 </script>
-
+<!--
     <script>
 
 
@@ -1070,7 +1093,7 @@
 
 
     </script>
-    
+    -->
     <script>
         $(function($) {
          
@@ -1109,6 +1132,21 @@
     </script>
     -->
     
+        <script>
+            $(function(){
+                $('#medicine').pep({
+                    droppable: ".droppable",
+                    revert: true,
+                    revertIf: function(){
+                        return !this.activeDropRegions.length;
+                    },
+                    drag: function(ev, obj){
+                        console.log( obj.activeDropRegions);
+                    }
+                });
+            });
+        </script>
+    
     <script>
         /* "passive" が使えるかどうかを検出 */
         var passiveSupported = false;
@@ -1131,6 +1169,8 @@
         }, passiveSupported ? { passive: false } : false);
         
         </script>
+        
+        <!--
         <script>
             //ビューポートをフリーズし、オーバースキャンを無効
             document.body.addEventListener('touchmove',function(e){
@@ -1138,6 +1178,7 @@
             });
         
         </script>
+        -->
     
     <script>
         $('.video').click(function(){this.play();});
@@ -1173,7 +1214,7 @@
         document.body.innerHTML = defaultHTML;
     }
     </script>
-   <!-- 
+  <!--
     <script>
         
         function $(sel) {
@@ -1190,7 +1231,7 @@
             main.classList.add('de-emphasized');
         }
 
-        dialog.onclick = function() {
+        main.onclick = function() {
             if (dialog.close) {
                 dialog.close();
             }

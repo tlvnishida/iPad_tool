@@ -299,8 +299,7 @@ function SelectPage(page) {
             elementNav72.style.display = 'none';
             elementNav82.style.display = 'block';
             
-            elementAction3.style.display = 'none';
-            $("#action3").hide();
+    
       
             break;
             
@@ -324,6 +323,8 @@ function SelectPage(page) {
             elementInfo6.style.display = 'block';
             elementInfo7.style.display = 'none';
             elementInfo8.style.display = 'none';
+            
+            $("#action3").hide();
 
             break;
             

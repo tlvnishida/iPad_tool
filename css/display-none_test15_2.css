@@ -1,0 +1,234 @@
+@charset "utf-8"; 
+
+/* CSSリセット */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,
+pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,
+strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
+caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,
+figure,footer,header,hgroup,menu,nav,section,summary,time,mark,
+audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;
+    vertical-align:baseline;background:transparent;font-weight:normal;}
+body{line-height:1}article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{display:block}
+ul{list-style:none}blockquote,q{quotes:none}blockquote:before,
+blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;
+    font-size:100%;vertical-align:baseline;background:transparent}
+del{text-decoration:line-through}abbr[title],dfn[title]
+{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;
+    margin:1em 0;padding:0}input,select{vertical-align:middle}
+
+
+.tab_wrap{width:2224px; margin:80px auto;}
+input[type="radio"]{display:none;}
+.tab_area{font-size:0; margin:0px;}
+
+
+
+#tab-box,#tab-box_secondary{
+    width: 2224px;
+    height: 1398px;
+    margin: 0px;
+    position: relative;
+}
+
+
+#nav1,#nav2,#nav3,#nav4,#nav5,#nav6,#nav7,#nav8,#nav1-2,#nav2-2,#nav3-2,#nav4-2,#nav5-2,#nav6-2,#nav7-2,#nav8-2{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#nav1,#nav1-2{
+    float: left;
+}
+
+#nav2,#nav2-2{
+    float: left;
+    margin-left: -44px;
+    
+}
+
+#nav3,#nav3-2{
+    float: right;
+    margin-left: -48.5px;
+}
+
+#nav4,#nav4-2{
+    position: absolute;
+    margin-top: 104px;
+    right: 0;
+}
+
+#nav5,#nav5-2{
+    float: left;
+}
+
+#nav6,#nav6-2{
+    float: right;
+    margin-left: -60px;
+}
+
+#nav7,#nav7-2{
+    display: block;
+    position: absolute;
+    float: left;
+}
+
+#nav8,#nav8-2{
+    display: block;
+    position: absolute;
+    float: left;
+    left: 320px;
+}
+
+
+button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+button img {
+    display: block;
+}
+
+
+/* キーフレームをanimationプロパティで指定 */
+/*
+video{
+    animation: fadein 1s ease-in 0s 1;
+}
+
+@-webkit-keyframes fadein {
+    0%{
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+*/
+
+.infoPSD{
+    position: absolute;
+    top: 200px;
+    left: 80px;
+    z-index: 900;
+}
+
+.box {
+    /* 変更：　iOS Safariでも動く */
+    transition: opacity 1s, visibility 0s ease 1s;
+    display: none;
+}
+
+.box.is-show {
+    /* 変更：　iOS Safariでも動く */
+    transition-delay: 0s;
+    display: block;
+
+    animation-name:is-show;
+    animation-duration:2s; //アニメーション時間
+    animation-timing-function: ease-out; //アニメーションさせるイージング
+    animation-delay:1s; //アニメーション開始させる時間
+    animation-iteration-count:1; //繰り返し回数
+    animation-direction:normal; //往復処理をするかどうか
+    animation-fill-mode: forwards; //アニメーション後のスタイルをどうするか
+    animation-delay: 1s;
+}
+
+@keyframes is-show {
+    0% {opacity: 0; transform: translate(-300px,0);}
+    100% {opacity: 1; transform: translate(0px,0);}
+}
+
+
+
+#launch {
+    position:absolute;
+    top: 0;
+    width:2224px;;
+    background-color:white;
+    z-index: 999;
+}
+
+ul.tab_panel video{
+    position: absolute;
+    left: 0;
+    top: 125px;
+}
+
+.disable{
+    pointer-events: none;
+}
+
+
+
+
+.button {
+    position: absolute;
+    display: block;
+}
+
+.ripple {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: -1;
+    width: 50px;
+    height: 50px;
+    background-color: #0065ac;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,101,172,1);
+    animation-name: rippleAnimation;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+
+}
+@keyframes rippleAnimation {
+    0% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3.5, 3.5);
+        opacity: 0;
+    }
+}
+
+
+#button1{
+    top: 220px;
+    left: 920px;
+}
+
+#button2{
+    top: 550px;
+    left: 980px;
+}
+
+#button3, #button3-2{
+    top: 930px;
+    left: 110px;
+    z-index: 100;
+}
+
+.transparent_btn{
+    position: absolute;
+    display: block;
+    width: 200px;
+    bottom: 60px;
+    right: -80px;
+}
+
+#action4, #action4-2{
+    position: absolute;
+    top: -105px;
+    left: 15px;
+    z-index: -1;
+}

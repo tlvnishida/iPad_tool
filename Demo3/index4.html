@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="ja" manifest="demo.manifest">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Cymbalta">
+    <meta name="viewport" content="width=device-width">
+    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="images/icons/icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="images/icons/icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="img/ico/apple-touch-icon.png" sizes="192x192">
+    <link rel="apple-touch-startup-image" href="asset/launch_screen2.png">
+    <title>サインバルタ</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/display-none_test23.js"></script>
+    
+    <script src="js/jquery.pep.js"></script>
+    
+    <!-- jQuery Modal -->
+    <script src="js/jquery.modal.js"></script>
+
+    
+    <script src="js/iscroll.js"></script>
+    <script src="js/drawer.js"></script>
+
+
+</head>
+
+    <body id="content">
+   <div id="wrap">
+   
+       <div id="launch">
+           <img src="asset/launch_screen2.jpg" alt="">
+       </div>
+   
+    <header id="maze"><img src="asset/header.png" width="2224px" height="163px"></header>
+       <div id="tab-box">
+       <main id="main">
+       <div id="nav">
+        <button id="nav1"><img src="asset/nav_1_on.png" alt="" width="743" height="104"></button>
+        <button id="nav1-2" onclick="SelectPage(1);" style="display: none;"><img src="asset/nav_1_off.png" alt="" width="743" height="104"></button>
+        <button id="nav2" style="display: none;"><img src="asset/nav_2_on.png" alt="" width="831" height="104"></button>
+        <button id="nav2-2" onclick="SelectPage(2);"><img src="asset/nav_2_off.png" alt="" width="831" height="104"></button>
+        <button id="nav3" onclick="SelectPage(3);" style="display: none;"><img src="asset/nav_3_on.png" alt="" width="736" height="104"></button>
+        <button id="nav3-2" onclick="SelectPage(3);"><img src="asset/nav_3_off.png" alt="" width="736" height="104"></button>
+        <button id="nav4" style="display: none;"><img src="asset/nav_3-2_on.png" alt="" width="775" height="105"></button>
+        <button id="nav4-2" onclick="SelectPage(4);" style="display: none;"><img src="asset/nav_3-2_off.png" alt="" width="775" height="105"></button>
+    </div>
+        <div class="panel_area">
+            <div id='panel1' class='panel1'>
+                <ul class="tab_panel">
+                    <video src="img/CYM_CG_01_S.mp4" muted autoplay loop width="2224"></video>
+                </ul>
+            </div>
+            <div id='panel2' class='panel2' style="visibility: hidden; opacity: 0;">
+                <ul class="tab_panel">
+                    <video src="img/CYM_CG_02_S.mp4" muted autoplay loop width="2224"></video>
+                </ul>
+            </div>
+            <div id='panel3' class='panel3' style="visibility: hidden; opacity: 0;">
+                <ul class="tab_panel">
+                    <video src="img/CYM_CG_03_S.mp4" muted autoplay loop width="2224"></video>
+                </ul>
+            </div>
+            <div id='panel4' class='panel4' style="visibility: hidden; opacity: 0;">
+                <ul class="tab_panel">
+                    <button id="button2" class="button" onclick="SelectPage(14);">
+                    <div id="button2-2">
+                    <img src="asset/point3.png" alt=""><span class="ripple"></span>
+                    </div>
+                        <img id="action4" src="asset/transparent_btn.png" alt=""><img id="action4-2" src="asset/transparent_btn.png" alt="" style="display: none;" onclick="SelectPage(4);"></button>
+                    <video id="video4" src="img/CYM_CG_04-1_S.mp4" muted autoplay loop width="2224"></video>
+                    <video id="video4-2" src="img/CYM_CG_04-2_S.mp4" muted autoplay loop width="2224" style="display: none;"></video>
+                </ul>
+            </div>
+           
+
+            <div>
+
+                
+                
+                
+                <a id="popup1" href="#ex1"><img class="popup" src="asset/popup.png" alt=""></a>
+                <a id="popup2" href="#ex2" style="display: none;"><img class="popup" src="asset/popup2.png" alt=""></a>
+                <a id="popup3" href="#ex3" style="display: none;"><img class="popup" src="asset/popup3.png" alt=""></a>
+                <a id="popup4" href="#ex5" style="display: none;"><img class="popup" src="asset/popup4.png" alt=""></a>
+
+
+                <div id="ex1" class="modal"><button id="button1" class="button" onclick="SelectPage(13);"><img src="asset/point3.png" alt=""><span class="ripple"></span><img class="transparent_btn" src="asset/transparent_btn.png" alt=""></button><video id="primary" src="img/CYM_CG_01_popup_A.mp4" muted autoplay loop width="1920" height="1080" rel="modal:close"></video><video id="sub" src="img/CYM_CG_01_popup_B.mp4" muted autoplay loop width="1920" height="1080" rel="modal:close" style="display: none;"></video></div>
+                　　　<!--jQueryModalのexample1以外「rel="modal*close"」はなくても良い？ -->
+                <div id="ex2" class="modal"><video src="img/CYM_CG_02_popup.mp4" muted autoplay loop width="1920" height="1080"></video></div>
+                <div id="ex3" class="modal"><video src="img/CYM_CG_03_popup.mp4" muted autoplay loop width="1920" height="1080"></video></div>
+                <div id="ex4" class="modal"><video src="img/CYM_CG_04_popup.mp4" muted autoplay loop width="1920" height="1080"></video><div class="action" onclick="SelectPage(5);"><a href="#ex5" id="action1"><img src="asset/action.png" alt=""></a></div></div>
+                
+          
+                
+                
+              
+
+                <div id="ex5" class="modal">
+                    <div id="nav_drug">
+                        <button id="nav7"><img src="asset/drug_before_on.png" alt="" height="93"></button>
+                        <button id="nav7-2" onclick="SelectPage(9);" style="display: none;"><img src="asset/drug_before_off.png" alt="" height="93"></button>
+                        <button id="nav8" style="display: none;"><img src="asset/drug_after_on.png" alt="" height="93"></button>
+                        <button id="nav8-2" onclick="SelectPage(10);"><img src="asset/drug_after_off.png" alt="" height="93"></button>
+                      
+                    </div>
+                        <video id="before" src="img/CYM_CG_05_before.mp4" muted autoplay loop width="1920" height="1080"></video>
+                        <video id="after" src="img/CYM_CG_05_after.mp4" muted autoplay loop width="1920" height="1080" style="display: none;"></video>
+                    <!--
+                        <div class="action" onclick="SelectPage(6);"><a href="#wrap_secondary" rel="modal:close" id="action3"><img src="asset/action3.png" alt=""></a></div>
+                        
+                        <div class="action2" onclick="SelectPage(8);"><a href="#wrap_secondary" rel="modal:close" id="action2"><img src="asset/action2.png" alt=""></a></div>
+                        -->
+                        
+                    <div id="innerBin" class="droppable"></div>
+                        <ul>
+                            <li id="medicine"><a href="#" id="one"><img src="asset/cymbalta.png" draggable="true" width="400" alt=""></a></li>
+                        </ul>
+
+                    </div>
+               
+                    
+                
+                     
+
+
+
+
+             
+
+        
+
+               
+               
+
+
+            </div> 
+            
+           
+            
+        
+
+       
+
+        </div>
+           </main>
+
+           <div id="info">
+               <button id="info1" class="info"><img src="asset/info.png" alt=""></button>
+               <button id="info2" class="info" style="display: none;"><img src="asset/info2.png" alt=""></button>
+               <button id="info3" class="info" style="display: none;"><img src="asset/info3.png" alt=""></button>
+               <button id="info4" class="info" style="display: none;"><img src="asset/info4.png" alt=""></button>
+               <button id="info5-1" class="info2" style="display: none;"><img src="asset/info5-1.png" alt=""></button>
+               <div class="action" onclick="SelectPage(7);"><a href="#wrap_secondary" rel="modal:close" id="action3" style="display: none;"><img src="asset/action3.png" alt=""></a></div>
+               <button id="info5-2" class="info2" style="display: none;"><img src="asset/info5-2.png" alt=""></button>
+           </div>
+
+           <div id="infoPSD1" class="box infoPSD">
+               <img src="asset/info_psd.png" alt="">
+           </div>
+           <div id="infoPSD2" class="box infoPSD">
+               <img src="asset/info_psd2.png" alt="">
+           </div>
+           <div id="infoPSD3" class="box infoPSD">
+               <img src="asset/info_psd3.png" alt="">
+           </div>
+           <div id="infoPSD4" class="box infoPSD">
+               <img src="asset/info_psd4.png" alt="">
+           </div>
+           <div id="infoPSD5-1" class="box infoPSD">
+               <img src="asset/info_psd5-1.png" alt="">
+           </div>
+           <div id="infoPSD5-2" class="box infoPSD">
+               <img src="asset/info_psd5-2.png" alt="">
+           </div>
+
+
+
+    </div>
+
+
+
+    </div>
+
+    
+    <div id="wrap_secondary" style="display: none;" class="drawer drawer--left">
+        <header class="green_belt">
+            <img id="green_belt" src="asset/header2_2.png" width="2224px" height="163px">
+            <button type="button" id="hamburger" class="drawer-toggle drawer-hamburger">
+                <a class="drawer-hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </button>
+            </header>
+            
+    
+        
+        <div id="tab-box_secondary">
+           <main id="main2">
+            <div id="nav_secondary">
+                <button id="nav5" onclick="SelectPage(7);"><img src="asset/nav_4_on.png" alt="" width="1179" height="104"></button>
+                <button id="nav5-2" onclick="SelectPage(7);" style="display: none;"><img src="asset/nav_4_off.png" alt="" width="1179" height="104"></button>
+                <button id="nav6" onclick="SelectPage(8);" style="display: none;"><img src="asset/nav_5_on.png" alt="" width="1105" height="104"></button>
+                <button id="nav6-2" onclick="SelectPage(8);"><img src="asset/nav_5_off.png" alt="" width="1105" height="104"></button>
+                
+            </div>
+            
+            <div class="panel_area">
+                <div id='panel6' class='panel6'>
+                    <ul class="tab_panel">
+                        <button id="button3" class="button" onclick="SelectPage(11);"><img src="asset/point3.png" alt=""><span class="ripple"></span><img class="transparent_btn3" src="asset/transparent_btn.png" alt=""></button>
+                        <video class="video" id="video6" src="img/CYM_CG_06_synapse_A.mp4" width="2224" muted autoplay loop></video>
+                    </ul>
+                </div>
+                <div id='panel6-2' class='panel6' style="display: none;">
+                    <ul class="tab_panel">
+                        <button id="button3-2" class="button" onclick="SelectPage(12);"><img src="asset/point3.png" alt=""><span class="ripple"></span><img class="transparent_btn3" src="asset/transparent_btn.png" alt=""></button>
+                        <video class="video" id="video6-2" src="img/CYM_CG_06_synapse_B.mp4" width="2224" muted autoplay loop></video>
+                    </ul>
+                </div>
+                <div id='panel6-3' class='panel6' style="display: none;">
+                <ul class="tab_panel">
+                    <video class="video" id="video6-3" src="img/CYM_CG_06_synapse_C.mp4" width="2224" muted autoplay loop></video>
+                </ul>
+                </div>
+                <!--
+                <div id='panel7' class='panel7'>
+                    <ul class="tab_panel">
+                        <video class="video" id="video7" preload="none" poster="asset/poster2.png" src="img/CYM_CG_07_synapse_1.mp4" width="2224" style="display: none;"></video>
+                    </ul>
+                </div>
+                -->
+                <div id='panel8' class='panel8' style="display: none;">
+                    <ul class="tab_panel">
+                        <video src="img/CYM_CG_08_synapse.mp4" muted autoplay loop width="2224"></video>
+                    </ul>
+                </div>
+                
+            
+                
+            </div>
+            </main>
+            <button id="info6" class="info"><img src="asset/info6.png" alt=""></button>
+            <button id="info7" class="info" style="display: none;"><img src="asset/info7.png" alt=""></button>
+            <button id="info8" class="info" style="display: none;"><img src="asset/info8.png" alt=""></button>
+
+            <div id="infoPSD6" class="box infoPSD">
+                <img src="asset/info_psd6.png" alt="">
+            </div>
+            <div id="infoPSD7" class="box infoPSD">
+                <img src="asset/info_psd7.png" alt="">
+            </div>
+            <div id="infoPSD8" class="box infoPSD">
+                <img src="asset/info_psd8.png" alt="">
+            </div>
+            
+        </div>
+        <nav class="drawer-nav" role="navigation">
+            <ul class="drawer-menu">
+                <li class="drawer-brand">はじめの画面にもどる</li>
+                <hr><hr>
+                <li><a class="drawer-menu-item" onclick="SelectPage(1);"><img src="asset/main.png" width="300" alt="">痛みの伝わり方</a></li>
+                <hr>
+                <li><a class="drawer-menu-item" onclick="SelectPage(2);"><img src="asset/main2.png" width="300" alt="">急性期の痛み</a></li>
+                <hr>
+                <li><a class="drawer-menu-item" onclick="SelectPage(3);"><img src="asset/main3.png" width="300" alt="">慢性期の痛み</a></li>
+                <hr>
+                <li><a class="drawer-menu-item" onclick="SelectPage(4);"><img src="asset/main4.png" width="300" alt="">サインバルタ®の効果</a></li>
+                <hr>
+            </ul>
+        </nav>
+        
+        
+    </div>
+    
+    
+
+    <footer id="logo"><img src="asset/footer2.png" width="2224" height="103" alt="" /></footer>
+    
+    <script>
+        document.addEventListener('dragstart', function(event) {
+            const draggable = event.target.getAttribute('draggable');
+            // 明示的にdraggableにしている要素以外ドラッグ禁止
+            if (!draggable || draggable === 'auto') {
+                event.preventDefault();
+            }
+        });
+    
+    </script>
+
+    <script>
+        var btn = document.getElementById('info1');
+        var box = document.getElementById('infoPSD1');
+        var btn2 = document.getElementById('info2');
+        var box2 = document.getElementById('infoPSD2');
+        var btn3 = document.getElementById('info3');
+        var box3 = document.getElementById('infoPSD3');
+        var btn4 = document.getElementById('info4');
+        var box4 = document.getElementById('infoPSD4');
+        var btn5a = document.getElementById('info5-1');
+        var box5a = document.getElementById('infoPSD5-1');
+        var btn5b = document.getElementById('info5-2');
+        var box5b = document.getElementById('infoPSD5-2');
+        var btn6 = document.getElementById('info6');
+        var box6 = document.getElementById('infoPSD6');
+        var btn7 = document.getElementById('info7');
+        var box7 = document.getElementById('infoPSD7');
+        var btn8 = document.getElementById('info8');
+        var box8 = document.getElementById('infoPSD8');
+        var nav = document.getElementById('nav');
+        var nav2 = document.getElementById('nav_secondary');
+        var action = document.getElementById('action1');
+        var action2 = document.getElementById('action2');
+        var action3 = document.getElementById('action3');
+        
+        let elementPop4 = document.getElementById("popup4");
+        let elementModal = document.getElementById("ex5");
+        
+        let elementPanel6 = document.getElementById("panel6");
+        let elementPanel7 = document.getElementById("panel7");
+        let hamburger = document.getElementById("hamburger");
+        
+        let main = document.getElementById("main");
+        let main2 = document.getElementById("main2");
+
+        btn.onclick = function() {
+            box.classList.toggle('is-show');
+            nav.classList.toggle('disable');
+            main.classList.toggle('de-emphasized');
+        };
+        box.onclick = function() {
+            box.classList.remove('is-show');
+            nav.classList.remove('disable');
+            main.classList.remove('de-emphasized');
+        };
+      
+    
+        btn2.onclick = function() {
+            box2.classList.toggle('is-show');
+            nav.classList.toggle('disable');
+            main.classList.toggle('de-emphasized');
+        };
+        box2.onclick = function() {
+            box2.classList.remove('is-show');
+            nav.classList.toggle('disable');
+            main.classList.remove('de-emphasized');
+        };
+        
+        btn3.onclick = function() {
+            box3.classList.toggle('is-show');
+            nav.classList.toggle('disable');
+            main.classList.toggle('de-emphasized');
+        };
+        box3.onclick = function() {
+            box3.classList.remove('is-show');
+            nav.classList.remove('disable');
+            main.classList.remove('de-emphasized');
+        };
+
+        btn4.onclick = function() {
+            box4.classList.toggle('is-show');
+            nav.classList.toggle('disable');
+            elementPop4.classList.toggle('disable');
+            main.classList.toggle('de-emphasized');
+        };
+        box4.onclick = function() {
+            box4.classList.remove('is-show');
+            nav.classList.remove('disable');
+            elementPop4.classList.remove('disable');
+            main.classList.remove('de-emphasized');
+        };
+        action.onclick = function(){
+            box4.classList.remove('is-show')
+        };
+
+        btn5a.onclick = function() {
+            box5a.classList.toggle('is-show');
+            nav.classList.toggle('disable');
+            elementModal.classList.toggle('disable');
+        };
+        box5a.onclick = function() {
+            box5a.classList.remove('is-show');
+            elementModal.classList.remove('disable');
+        };
+       // action2.onclick = function(){
+         //   box5a.classList.remove('is-show');
+        //};
+        action3.onclick = function(){
+            box5a.classList.remove('is-show');
+            box5b.classList.remove('is-show');
+            nav.classList.remove('disable');
+        };
+        
+        btn5b.onclick = function() {
+            box5b.classList.toggle('is-show');
+            nav.classList.toggle('disable');
+            elementModal.classList.toggle('disable');
+        };
+        box5b.onclick = function() {
+            box5b.classList.remove('is-show');
+            nav.classList.remove('disable');
+            elementModal.classList.remove('disable');
+        };
+        
+        
+        btn6.onclick = function() {
+            box6.classList.toggle('is-show');
+            nav2.classList.toggle('disable');
+    //        elementPanel7.classList.toggle('disable');
+            hamburger.classList.toggle('disable');
+            main2.classList.toggle('de-emphasized');
+        };
+        box6.onclick = function() {
+            box6.classList.remove('is-show');
+            nav2.classList.remove('disable');
+            elementPanel6.classList.remove('disable');
+    //        elementPanel7.classList.remove('disable');
+            hamburger.classList.remove('disable');
+            main2.classList.remove('de-emphasized');
+        };
+    
+    //    btn7.onclick = function() {
+    //        box7.classList.toggle('is-show');
+    //        nav2.classList.toggle('disable');
+    //        elementPanel6.classList.toggle('disable');
+    //        hamburger.classList.toggle('disable');
+    //    };
+    //    box7.onclick = function() {
+    //        box7.classList.remove('is-show');
+    //        nav2.classList.remove('disable');
+    //        elementPanel6.classList.remove('disable');
+    //        elementPanel7.classList.remove('disable');
+    //        hamburger.classList.remove('disable');
+    //    };
+        
+        btn8.onclick = function() {
+            box8.classList.toggle('is-show');
+            nav2.classList.toggle('disable');
+            hamburger.classList.toggle('disable');
+            main2.classList.toggle('de-emphasized');
+        };
+        box8.onclick = function() {
+            box8.classList.remove('is-show');
+            nav2.classList.remove('disable');
+            hamburger.classList.remove('disable');
+            main2.classList.remove('de-emphasized');
+        };
+
+        
+    </script>
+
+
+
+    <script>
+        $(document).ready(function() {
+            //queue()で処理を溜めてdequeue()で実行。3秒経ったらfadeOut()
+            $("#launch").fadeIn().queue(function() {
+                setTimeout(function() {
+                    $("#launch").dequeue();
+                }, 3000);
+            });
+            $("#launch").fadeOut(1000);
+        });
+    </script>
+
+
+<script>
+    //jQueryModalのスクリプト
+    $(function() {
+
+        $('a[href="#ex1"]').on('click touchstart',function(event) {
+            event.preventDefault();
+            $(this).modal({
+                fadeDuration: 1000,
+                fadeDelay: 0.50
+            });
+        });
+        $('a[href="#ex2"]').on('click touchstart',function(event) {
+            event.preventDefault();
+            $(this).modal({
+                fadeDuration: 1000,
+                fadeDelay: 0.50
+            });
+        });
+        $('a[href="#ex3"]').on('click touchstart',function(event) {
+            event.preventDefault();
+            $(this).modal({
+                fadeDuration: 1000,
+                fadeDelay: 0.50
+            });
+        });
+        $('a[href="#ex4"]').on('click touchstart',function(event) {
+            event.preventDefault();
+            $(this).modal({
+                fadeDuration: 1000,
+                fadeDelay: 0.50
+            });
+        });
+        $('a[href="#ex5"]').on('click touchstart',function(event) {
+            event.preventDefault();
+            $(this).modal({
+                fadeDuration: 1000,
+                fadeDelay: 0.50,
+                escapeClose: false,
+                clickClose: false,
+                showClose: false
+            });
+            $("#info4").hide();
+            $("#info5-1").show();
+            $("#info5-2").hide();
+            $("#button2-2").hide();
+            $("#action3").show();
+            
+        });
+
+
+
+
+    });
+</script>
+<!--
+    <script>
+
+
+
+        let beforeDrug = document.getElementById('before');
+        let afterDrug = document.getElementById('after');
+        let drugStatusBefore = document.getElementById('drug_before');
+        let drugStatusAfter = document.getElementById('drug_after');
+        let medicine = document.getElementById('medicine');
+        let elementInfo5a = document.getElementById('info5-1');
+        let elementInfo5b = document.getElementById('info5-2');
+        let elementNav7 = document.getElementById("nav7");
+        let elementNav8 = document.getElementById("nav8");
+        let elementNav72 = document.getElementById("nav7-2");
+        let elementNav82 = document.getElementById("nav8-2");
+
+
+        //        var DEBUG = false;
+
+        var allowDragWithTwoFingersOnly = function (event) {
+
+            // only allow drag with two fingers
+            return (event.touches.length === 2);
+        };
+
+        var threshold = 10;
+        var startX, startY;
+
+        var allowHorizontalDragOnly = function (event) {
+
+            var touch = event.touches[0];
+
+            if (startX === undefined || startY === undefined) {
+                startX = touch.clientX;
+                startY = touch.clientY;
+
+                // we are uncertain if we shall start a drag operation.. return undefined
+                return;
+            }
+
+            var deltaX = Math.abs(startX - touch.clientX),
+                deltaY = Math.abs(startY - touch.clientY);
+
+            console.log("startX: " + startX);
+            console.log("startY: " + startY);
+
+            console.log("deltaX: " + deltaX);
+            console.log("deltaY: " + deltaY);
+
+            if (deltaX > threshold || deltaY > threshold) {
+
+                console.log("threshold reached.");
+
+                // reset our initial values
+                startX = undefined;
+                startY = undefined;
+
+                if (deltaX > deltaY) {
+
+                    console.log('horizontal drag detected, starting drag');
+                    // we know for sure to start it, return true
+                    return true;
+                }
+                else {
+
+                    console.log('vertical scroll detected, aborting drag');
+                    // we know for sure to abort it, return false
+                    return false;
+                }
+            }
+        };
+
+        var alertAction = function (event) {
+
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            alert("I'm your default action override");
+            return true;
+        };
+
+        var urlParams = new URLSearchParams(window.location.search);
+        var holdToDrag = urlParams.get('holdToDrag');
+
+        var polyfillApplied = MobileDragDrop.polyfill({
+            //            dragImageCenterOnTouch: true,
+            //            dragImageOffset: {
+            //                x: 0,
+            //                y: 0
+            //            },
+            //            dragStartConditionOverride: allowHorizontalDragOnly,
+            //            defaultActionOverride: alertAction,
+            dragImageTranslateOverride: MobileDragDrop.scrollBehaviourDragImageTranslateOverride,
+            holdToDrag: holdToDrag
+        });
+
+
+
+        /**
+         * ---------------------------------------------------------------------------------------------------------
+         */
+
+        var missed = ['hey!', 'missed it :(', 'that was close..', 'ARRRR'];
+        var eat = ['yum!', 'gulp', 'burp!', 'nom'];
+        var yum = document.createElement('p');
+
+        /**
+         * ---------------------------------------------------------------------------------------------------------
+         */
+
+        var links = document.querySelectorAll('li > a'), el = null;
+        for (var i = 0; i < links.length; i++) {
+            el = links[i];
+
+            el.setAttribute('draggable', 'true');
+
+            addEvent(el, 'dragstart', function (e) {
+                console.log('dragstart');
+
+                e.dataTransfer.effectAllowed = 'copyLink';
+
+                //TODO fails on desktop safari because drag is immediately aborted
+                //                this.style.display = "none";
+
+                console.log('setting data: ' + this.id);
+
+                e.dataTransfer.setData('Text', this.id); // required otherwise doesn't work
+            });
+
+            addEvent(el, 'drag', function (e) {
+                console.log('drag');
+            });
+
+            addEvent(el, 'dragend', function (e) {
+
+                //                this.style.display = "block";
+
+                console.log('dragend with effect: ' + e.dataTransfer.dropEffect);
+            });
+
+            addEvent(el, 'click', function (e) {
+                console.log('clicked on draggable');
+
+                console.log('click offsetX, offsetY: ' + e.offsetX + ", " + e.offsetY);
+            });
+
+            // Custom event fires only if holdToDrag is true
+            addEvent(el, 'dnd-poly-dragstart-pending', function (e) {
+                console.log('dnd-poly-dragstart-pending');
+
+                e.preventDefault();
+                e.stopPropagation(); // stop it here to prevent it bubble up
+            });
+
+            addEvent(el, 'dnd-poly-dragstart-cancel', function (e) {
+                console.log('dnd-poly-dragstart-cancel');
+
+                e.preventDefault();
+                e.stopPropagation(); // stop it here to prevent it bubble up
+            });
+        }
+
+        var draggables = document.querySelectorAll('.draggable');
+        var dragHandles = document.querySelectorAll('.drag-handle');
+        var noDrags = document.querySelectorAll('.no-drag');
+
+        for (var i = 0; i < draggables.length; i++) {
+            makeElementDraggable(draggables[i]);
+        }
+
+        for (var i = 0; i < dragHandles.length; i++) {
+            makeElementDragHandle(dragHandles[i]);
+        }
+
+        for (var i = 0; i < noDrags.length; i++) {
+
+            makeElementNoDrag(noDrags[i]);
+        }
+
+        function makeElementDraggable(element) {
+
+            element.setAttribute('draggable', 'true');
+
+            addEvent(element, 'dragstart', function (e) {
+
+                // Check whether the element is draggable, since dragstart might be triggered on a child.
+                if (element.getAttribute('draggable') == 'false') return true;
+
+                console.log('dragstart');
+
+                e.dataTransfer.effectAllowed = 'copyLink';
+
+                console.log('setting data: ' + this.id);
+
+                e.dataTransfer.setData('Text', this.id); // required otherwise doesn't work
+
+                // Try setting a proper drag image if triggered on a dnd-handle (won't work in IE).
+                if (e._dndHandle && e.dataTransfer.setDragImage) {
+
+                    e.dataTransfer.setDragImage(element);
+                }
+            });
+
+            addEvent(element, 'drag', function (e) {
+                console.log('drag');
+            });
+
+            addEvent(element, 'dragend', function (e) {
+                console.log('dragend with effect: ' + e.dataTransfer.dropEffect);
+            });
+
+            addEvent(element, 'click', function (e) {
+                console.log('clicked on draggable');
+            });
+        }
+
+        function makeElementDragHandle(element) {
+            element.setAttribute('draggable', 'true');
+
+            addEvent(element, 'dragstart', function (event) {
+                console.log("drag handle start");
+                event._dndHandle = true;
+            });
+
+            addEvent(element, 'dragend', function (event) {
+                console.log("drag handle end");
+                event._dndHandle = true;
+            });
+        }
+
+        function makeElementNoDrag(element) {
+
+            // Set as draggable so that we can cancel the events explicitly
+            element.setAttribute('draggable', 'true');
+
+            /**
+             * Since the element is draggable, the browser's default operation is to drag it on dragstart.
+             * We will prevent that and also stop the event from bubbling up.
+             */
+            addEvent(element, 'dragstart', function (event) {
+
+                console.log("nodrag: dragstart");
+
+                if (!event._dndHandle) {
+
+                    console.log("nodrag: no dnd handle");
+                    // If a child element already reacted to dragstart and set a dataTransfer object, we will
+                    // allow that. For example, this is the case for user selections inside of input elements.
+                    if (!(event.dataTransfer.types && event.dataTransfer.types.length)) {
+
+                        console.log("nodrag: prevent default");
+                        event.preventDefault();
+                    }
+                    console.log("nodrag: stopPropagation");
+                    event.stopPropagation();
+                }
+            });
+
+            /**
+             * Stop propagation of dragend events, otherwise dnd-moved might be triggered and the element
+             * would be removed.
+             */
+            addEvent(element, 'dragend', function (event) {
+                if (!event._dndHandle) {
+                    event.stopPropagation();
+                }
+            });
+        }
+
+        /**
+         * ---------------------------------------------------------------------------------------------------------
+         */
+
+        var bin = document.querySelector('#ex5');
+
+        addEvent(bin, 'dragenter', function (e) {
+            console.log('bin dragenter');
+
+            console.log('bin offsetX, offsetY: ' + e.offsetX + ", " + e.offsetY);
+
+            e.preventDefault();
+            e.stopPropagation(); // stop it here to prevent it bubble up
+
+            bin.classList.add('over');
+
+        });
+
+        addEvent(bin, 'dragover', function (e) {
+            console.log('bin dragover');
+
+            console.log('bin offsetX, offsetY: ' + e.offsetX + ", " + e.offsetY);
+
+            e.preventDefault(); // allows us to drop
+            e.stopPropagation(); // stop it here to prevent it bubble up
+
+            e.dataTransfer.dropEffect = 'link'; // we have to set it for firefox to be happy
+        });
+
+        addEvent(bin, 'dragexit', function (e) {
+            console.log('bin dragexit');
+
+            console.log('bin offsetX, offsetY: ' + e.offsetX + ", " + e.offsetY);
+
+            e.stopPropagation(); // stop it here to prevent it bubble up
+        });
+
+        addEvent(bin, 'dragleave', function (e) {
+            console.log('bin dragleave');
+
+            console.log('bin offsetX, offsetY: ' + e.offsetX + ", " + e.offsetY);
+
+            e.stopPropagation(); // stop it here to prevent it bubble up
+
+            bin.classList.remove('over');
+        });
+
+        addEvent(bin, 'drop', function (e) {
+            console.log('bin drop');
+
+            console.log('bin offsetX, offsetY: ' + e.offsetX + ", " + e.offsetY);
+
+            e.stopPropagation(); // stop it here to prevent it bubble up
+
+            // stupid nom text + fade effect
+            yum.innerHTML = missed[parseInt(Math.random() * missed.length)];
+
+            var y = yum.cloneNode(true);
+            bin.appendChild(y);
+
+            setTimeout(function () {
+                y.classList.add('fadeout');
+            }, 250);
+        });
+
+        /**
+         * ---------------------------------------------------------------------------------------------------------
+         */
+
+        var innerBin = document.querySelector('#innerBin');
+
+        bin.classList.add('zoom');
+
+        addEvent(innerBin, 'dragenter', function (e) {
+            console.log('apperture dragenter');
+
+            e.preventDefault();
+            e.stopPropagation(); // stop it here to prevent it bubble up
+
+            bin.classList.add('in');
+        });
+
+        addEvent(innerBin, 'dragover', function (e) {
+            console.log('apperture dragover');
+
+            e.preventDefault(); // allows us to drop
+            e.stopPropagation(); // stop it here to prevent it bubble up
+
+            e.dataTransfer.dropEffect = 'copy';
+        });
+
+        addEvent(innerBin, 'dragexit', function (e) {
+            console.log('apperture dragexit');
+
+            e.stopPropagation(); // stop it here to prevent it bubble up
+
+            bin.classList.remove('in');
+        });
+
+        addEvent(innerBin, 'dragleave', function (e) {
+            console.log('apperture dragleave');
+
+            e.stopPropagation(); // stop it here to prevent it bubble up
+
+            bin.classList.remove('in');
+        });
+
+        addEvent(innerBin, 'drop', function (e) {
+
+            beforeDrug.style.display = 'none';
+            afterDrug.style.display = 'block';
+           //drugStatusBefore.style.display ='none';
+           //drugStatusAfter.style.display = 'block';
+            medicine.style.display = 'none';
+            elementInfo5a.style.display = 'none';
+            elementInfo5b.style.display = 'block';
+            elementNav7.style.display = 'none';
+            elementNav8.style.display = 'block';
+            elementNav72.style.display = 'block';
+            elementNav82.style.display = 'none';
+
+            console.log('apperture drop');
+
+            e.stopPropagation(); // stop it here to prevent it bubble up
+
+            bin.classList.remove('in');
+
+            var el = document.getElementById(e.dataTransfer.getData('Text'));
+
+            el.parentNode.removeChild(el);
+
+            // stupid nom text + fade effect
+            yum.innerHTML = eat[parseInt(Math.random() * eat.length)];
+
+            var y = yum.cloneNode(true);
+            bin.appendChild(y);
+
+            setTimeout(function () {
+                y.classList.add('fadeout');
+            }, 250);
+        });
+
+
+        //        /**
+        //         * ---------------------------------------------------------------------------------------------------------
+        //         */
+        //
+        //
+        //        var flexboxedDraggables = document.querySelectorAll('ul > li.flex-boxed');
+        //        for (var k = 0; k < flexboxedDraggables.length; k++) {
+        //            var flexboxedDraggable = flexboxedDraggables[k];
+        //
+        //            if (flexboxedDraggable.hasAttribute('draggable') === false) {
+        //                console.log('setting flexboxed item draggable programmatically');
+        //
+        //                flexboxedDraggable.setAttribute('draggable', 'true');
+        //            }
+        //
+        //            addEvent(flexboxedDraggable, 'dragstart', function (e) {
+        //                console.log('dragstart');
+        //
+        //                e.dataTransfer.effectAllowed = 'copyMove';
+        //                e.dataTransfer.setData('Text', "Test"); // required otherwise doesn't work
+        //            });
+        //
+        //            addEvent(flexboxedDraggable, 'drag', function (e) {
+        //                console.log('drag');
+        //            });
+        //
+        //            addEvent(flexboxedDraggable, 'dragend', function (e) {
+        //                console.log('dragend with effect: ' + e.dataTransfer.dropEffect);
+        //            });
+        //
+        //            addEvent(el, 'click', function (e) {
+        //                console.log('clicked on draggable');
+        //
+        //                console.log('click offsetX, offsetY: ' + e.offsetX + ", " + e.offsetY);
+        //            });
+        //        }
+        //
+        //
+        //        var flexboxedDropzones = document.querySelectorAll('.flex-boxed.dropzone');
+        //
+        //        for (var j = 0; j < flexboxedDropzones.length; j++) {
+        //            var flexboxedDropzone = flexboxedDropzones[j];
+        //
+        //            addEvent(flexboxedDropzone, 'dragenter', function (e) {
+        //                console.log('flexbox dropzone dragenter');
+        //
+        //                e.preventDefault();
+        //                e.stopPropagation(); // stop it here to prevent it bubble up
+        //            });
+        //
+        //            addEvent(flexboxedDropzone, 'dragover', function (e) {
+        //                console.log('flexbox dropzone dragover');
+        //
+        //                e.preventDefault(); // allows us to drop
+        //                e.stopPropagation(); // stop it here to prevent it bubble up
+        //
+        //                e.dataTransfer.dropEffect = 'copy';
+        //            });
+        //
+        //            addEvent(flexboxedDropzone, 'dragexit', function (e) {
+        //                console.log('flexbox dropzone dragexit');
+        //
+        //                e.stopPropagation(); // stop it here to prevent it bubble up
+        //            });
+        //
+        //            addEvent(flexboxedDropzone, 'dragleave', function (e) {
+        //                console.log('flexbox dropzone dragleave');
+        //
+        //                e.stopPropagation(); // stop it here to prevent it bubble up
+        //            });
+        //
+        //            addEvent(flexboxedDropzone, 'drop', function (e) {
+        //                console.log('flexbox dropzone drop');
+        //
+        //                e.stopPropagation(); // stop it here to prevent it bubble up
+        //            });
+        //
+        //        }
+        //
+        //        /**
+        //         * ---------------------------------------------------------------------------------------------------------
+        //         */
+        //
+        //        var complexDraggables = document.querySelectorAll('.det.draggable');
+        //        var nestedComplexDraggables = document.querySelectorAll('.oic.draggable');
+        //
+        //        var allComplexDraggables = [].concat(nestedComplexDraggables).concat(complexDraggables);
+        //
+        //        allComplexDraggables.forEach(function (item) {
+        //
+        //            addEvent(item, 'dragstart', function (event) {
+        //
+        ////            this.isInProgress = true;  // Progress styling
+        //                event.dataTransfer.effectAllowed = 'move';
+        //                event.dataTransfer.setData('text', 'foo');
+        //
+        ////        this.onDragStart.trigger(event); // Custom event
+        //            });
+        //
+        //            addEvent(item, 'dragend', function (event) {
+        //
+        ////            this.isInProgress = false; // Progress styling
+        //                var dropOccurred = event.dataTransfer.dropEffect !== 'none';
+        //
+        ////        this.onDragEnd.trigger(event.create(dropOccurred)); // Custom event
+        //            });
+        //
+        //            addEvent(item, 'click', function (event) {
+        //
+        //                alert('clicked on complex draggable');
+        //            });
+        //        });
+        //
+        //        /**
+        //         * ---------------------------------------------------------------------------------------------------------
+        //         */
+        //
+        //        var customDragImageDraggable = document.querySelectorAll('ul > li.custom');
+        //        for (var k = 0; k < flexboxedDraggables.length; k++) {
+        //            var customDragImage = customDragImageDraggable[k];
+        //            var clone;
+        //            addEvent(customDragImage, 'dragstart', function (event) {
+        //
+        //                event.dataTransfer.effectAllowed = 'move';
+        //                event.dataTransfer.setData('text', 'foo');
+        //
+        //                clone = this.cloneNode(true);
+        //                clone.innerHTML = "im custom!";
+        //                clone.style.backgroundColor = "red";
+        //
+        //                document.body.appendChild(clone);
+        //
+        //                event.dataTransfer.setDragImage(clone, 10, 10);
+        //            });
+        //
+        //            addEvent(customDragImage, 'dragend', function (event) {
+        //
+        //                document.body.removeChild(clone);
+        //                clone = null;
+        //            });
+        //        }
+
+        // workaround for iOS10/iOS11 touchmove behaviour (https://github.com/timruffles/mobile-drag-drop/issues/77)
+        try {
+            window.addEventListener('touchmove', function () {
+            }, {passive: false})
+        } catch(e) {}
+
+
+    </script>
+    -->
+    <script>
+        $(function($) {
+         
+                $('.drawer').drawer();
+            $('.drawer-menu-item').on('click', function() {
+                $('.drawer').drawer('close');
+            });
+            
+                
+        });
+      
+    </script>
+    
+    <!--
+    <script>
+        var scrollOff = function( e ){
+            e.preventDefault();
+        }
+        // スクロールをキャンセル
+        document.addEventListener( 'touchmove',scrollOff, false);
+        //removeEventListenerで「スクロールをキャンセル」をキャンセル
+        document.removeEventListener( 'touchmove', scrollOff, false );
+    </script>
+-->
+<!--
+    <script >
+       //動画再生後にイベント
+        $( window ).ready(function(){
+            var video = document.getElementsById('panel6')["#video1", "#video2"];
+           
+            video1.addEventListener('ended', function() {
+                video.load();
+                video.autoplay=false;
+            }, false);
+        });
+    </script>
+    -->
+    
+        <script>
+            $(function(){
+                $('#medicine').pep({
+                    droppable: ".droppable",
+                    revert: true,
+                    revertIf: function(){
+                        return !this.activeDropRegions.length;
+                    },
+                    drag: function(ev, obj){
+                        console.log( obj.activeDropRegions);
+                    }
+                });
+            });
+        </script>
+   
+    <script>
+        /* "passive" が使えるかどうかを検出 */
+        var passiveSupported = false;
+        try {
+            document.addEventListener("test", null, Object.defineProperty({}, "passive", {
+                get: function() {
+                    passiveSupported = true;
+                }
+            }));
+        } catch(err) {}
+
+        /* リスナーを登録 */
+      //  document.addEventListener('touchstart', function listener(e) {
+            /* do something */
+        //    e.preventDefault();
+    //    }, passiveSupported ? { passive: false } : false);  
+        document.addEventListener('touchmove', function listener(e) {
+            /* do something */
+            e.preventDefault();
+        }, passiveSupported ? { passive: false } : false);
+        
+        </script>
+      
+        <!--
+        <script>
+            //ビューポートをフリーズし、オーバースキャンを無効
+            document.body.addEventListener('touchmove',function(e){
+                e.preventDefault();
+            });
+        
+        </script>
+        -->
+    
+    <script>
+        $('.video').click(function(){this.play();});
+        $(function(){
+            $("#video6").on("ended", function() {
+                $("#video6").hide();
+                $("#video7").show();
+            });
+            $("#video7").on("ended", function() {
+                $("#video7").hide();
+                $("#video6").show();
+                $("#video6").get(0).currentTime = 0;
+            });
+            $("#video6").on('click touchstart', function() {
+                $("#info7").hide();
+                $("#info6").show();
+            });
+            $("#video7").on('click touchstart', function() {
+                $("#info6").hide();
+                $("#info7").show();
+            });
+            
+        });
+    </script>
+    <!--
+<script>
+    // 初期HTML記述をセット
+    var defaultHTML;
+    function DefaultSave() {
+        defaultHTML = document.body.innerHTML;
+    }
+    // HTML記述を初期状態に戻す
+    function HTMLRestore() {
+        document.body.innerHTML = defaultHTML;
+    }
+    </script>
+    -->
+  <!--
+    <script>
+        
+        function $(sel) {
+            return document.querySelector(sel);
+        }
+
+        var dialog = $('dialog');
+        var main = $('main');
+
+        $('button.info').onclick = function() {
+
+            dialog.setAttribute('open', '');
+
+            main.classList.add('de-emphasized');
+        }
+
+        main.onclick = function() {
+            if (dialog.close) {
+                dialog.close();
+            }
+            else {
+                dialog.removeAttribute('open');
+            }
+
+            main.classList.remove('de-emphasized');
+        }
+        
+        </script>
+-->
+</body>
+</html>
